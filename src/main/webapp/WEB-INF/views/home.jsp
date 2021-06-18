@@ -10,6 +10,6 @@
 	메인페이지  
 </h1>
 <h2>기능들 테스트</h2>
-<a href="<c:url value="/list.do"/>">게시판</a>
+<a href="<c:url value="/mainpage.do"/>">게시판</a>
 </body>
 </html>
