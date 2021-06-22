@@ -10,6 +10,19 @@
 	메인페이지  
 </h1>
 <h2>기능들 테스트</h2>
-<a href="<c:url value="/mainpage.do"/>">게시판</a>
+	<div>
+		<a href="<c:url value="/mainpage.do"/>">메인페이지</a>
+		<a href="<c:url value="/login.do"/>">로그인</a>
+		<a href="<c:url value="/customerCenter.do"/>">고객센터</a>
+		<a href="<c:url value="/joinProcess.do"/>">회원가입</a>
+		<a href="<c:url value="/mainpage.do"/>">메인페이지</a>
+		<a href="<c:url value="/login.do"/>">로그인</a>
+		<a href="<c:url value="/mainpage.do"/>">메인페이지</a>
+		<a href="<c:url value="/login.do"/>">로그인</a>
+		
+	</div>
+	
+
+
 </body>
 </html>

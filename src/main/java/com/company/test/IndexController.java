@@ -28,22 +28,16 @@ public class IndexController {
 	@RequestMapping("/customerCenter.do")
 	public String customerCenter() {
 			
-		return "page/CustomerCenter";
+		return "CustomerCenter";
 	}
 		
-	//컨텐츠페이지01
-	@RequestMapping("/content01.do")
-	public String content01() {
-		
-		return "page/Content01";
-	}
 		
 		
 	//회원가입페이지로
 	@RequestMapping("/joinProcess.do")
 	public String join() {
 		
-		return "page/Join";
+		return "Join";
 	}
 	
 	//컨트롤러 메소드]
