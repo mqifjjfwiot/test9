@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+    #log {
+        height: 150px;
+    }
+    #nav {
+        float: right;
+    }
+    #nav > ul > li {
+        text-decoration: none;
+        list-style: none;
+        margin-right: 20px;
+        display: inline;
+    }
+    #nav > ul > li > a {
+        color: black;
+    }
+    #nav::after {display: block; content: ""; clear: both;}
+    
+    #wrap{
+        width: 100%;
+    }
+    #wrap::after {display: block; content: ""; clear: both;}
+    #content {
+        width: 80%;
+        float: left;
+    }
+    #sidebar {
+        float: right;
+        width: 20%;
+    }
+    #sidebar > ul > li {
+        text-decoration: none;
+        list-style: none;
+    }
+    #sidebar > ul > li > a{
+        color: black;
+    }
+    #paging{
+        width: 80%;
+    }
