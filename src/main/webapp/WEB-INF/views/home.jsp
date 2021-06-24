@@ -27,7 +27,6 @@
 				<a class="btn pull-right" href="<c:url value='/joinProcess.do'/>" role="button">회원가입</a> 
 				<a class="btn pull-right" href="<c:url value='/login.do'/>" role="button">비회원로그인</a>
 				<a class="btn pull-right" href="<c:url value="/login.do"/>" role="button">로그인</a> 
-				<a href="<c:url value='/login.do'/>">로그인</a>
 			</div>
 			
 <div class="btn-group btn-group-justified">
