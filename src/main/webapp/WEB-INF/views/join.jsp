@@ -5,9 +5,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>join.jsp</title>
 </head>
 <body>
+	<!-- 네비게이션 시작 -->
+	<jsp:include page="/WEB-INF/views/templates/Top.jsp" />
+	<!-- 네비게이션 끝 -->
 	<h2>회원가입</h2>
 	${message }
 	<form action="<c:url value="/join"/>" method="post">
@@ -16,5 +19,9 @@
 		이름 <input type="text" name="name"/>
 		<input type="submit" value="회원가입"/>
 	</form>
+	<!--  푸터 시작 -->
+	<jsp:include page="/WEB-INF/views/templates/Side.jsp" />
+	<jsp:include page="/WEB-INF/views/templates/Footer.jsp" />
+	<!-- 푸터 끝 -->
 </body>
 </html>
