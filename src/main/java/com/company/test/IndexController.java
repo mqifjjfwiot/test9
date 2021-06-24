@@ -10,10 +10,10 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 public class IndexController {
 	
 	//메인으로
-	@RequestMapping("/mainpage.do")
-	public String mainpage() {
+	@RequestMapping("/home.do")
+	public String home() {
 		
-		return "mainpage";
+		return "home";
 	}
 	
 	
@@ -37,14 +37,37 @@ public class IndexController {
 	@RequestMapping("/joinProcess.do")
 	public String join() {
 		
-		return "Join";
+		return "join";
 	}
 	
-	//컨트롤러 메소드]
+	//상품 페이지로
 	@RequestMapping("/list.do")
-	public String bbs() {
+	public String list() {
 		return "list";
 	}
-
+	
+	//상품 상세 페이지로
+	@RequestMapping("/listinfo.do")
+	public String listinfo() {
+		return "listinfo";
+	}
+	
+	//장바구니 페이지로
+	@RequestMapping("/basket.do")
+	public String basket() {
+		return "basket";
+	}
+	
+	//결제 페이지로
+	@RequestMapping("/pay.do")
+	public String pay() {
+		return "pay";
+	}
+	
+	//주문/결제확인 페이지로
+	@RequestMapping("/shoppringrecord.do")
+	public String shoppringrecord() {
+		return "shoppringrecord";
+	}
 
 }
