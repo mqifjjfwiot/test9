@@ -53,7 +53,7 @@ public class IndexController {
 	}
 	
 
-	
+	//상품관련 페이지 - productPage
 	//상품 상세 페이지로
 	@RequestMapping("/listinfo.do")
 	public String listinfo() {
@@ -66,6 +66,7 @@ public class IndexController {
 		return "Basket";
 	}
 	
+	//쇼핑관련 페이지 - 
 	//결제 페이지로
 	@RequestMapping("/pay.do")
 	public String pay() {
