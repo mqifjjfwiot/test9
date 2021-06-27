@@ -19,7 +19,7 @@ public class IndexController {
 	//로그인페이지로
 	@RequestMapping("/Login.do")
 	public String Login() {
-		return "Login";
+		return "clientPage/Login";
 	}
 	
 	//회원가입 메인 페이지로

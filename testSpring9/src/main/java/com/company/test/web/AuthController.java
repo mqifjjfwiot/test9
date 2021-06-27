@@ -26,11 +26,11 @@ public class AuthController {
 		boolean flag=memoService.isLogin(map);
 		if(flag) {
 			session.setAttribute("id", map.get("id"));
-			return "list";
+			return "home";
 		}
 		else {
 			model.addAttribute("NotMember", "아뒤와 비번이 틀려요");
-			return "login";
+			return "clientPage/Login";
 		}
 	}
 	@RequestMapping("Logout.do")
