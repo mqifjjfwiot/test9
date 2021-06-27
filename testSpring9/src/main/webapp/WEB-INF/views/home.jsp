@@ -41,7 +41,7 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
       <div class="item active">
-        <img src="https://placehold.it/1200x400?text=IMAGE" alt="Image">
+        <img src="<c:url value="/images/manager1.jpg"/>" alt="Image" style="width: 1400px; height: 400px">
         <div class="carousel-caption">
           <h3>예제1</h3>
           <p>예제1</p>

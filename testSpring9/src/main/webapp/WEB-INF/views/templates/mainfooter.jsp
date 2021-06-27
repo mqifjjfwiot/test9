@@ -28,12 +28,12 @@ body {
 
 footer {
    width: 100%;
-   height: 90px;
+   height: 70px;
    background-color: #F4EEE8;
    padding: 25px;
    font-size: 150%;
    text-align: center;
-     margin-top: 100px;
+     margin-top: 120px;
 }
 </style>
 </head>
