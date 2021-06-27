@@ -78,28 +78,22 @@ public class IndexController {
 	//장바구니 페이지로
 	@RequestMapping("/Basket.do")
 	public String Basket() {
-		return "Basket";
+		return "shoppingService/Basket";
 	}
 	
 	//결제 페이지로
 	@RequestMapping("/Payment.do")
 	public String Payment() {
-		return "Payment";
+		return "shoppingService/Payment";
 	}
 	
 	//주문/결제확인 페이지로
 	@RequestMapping("/PaymentRecord.do")
 	public String PaymentRecord() {
-		return "PaymentRecord";
+		return "shoppingService/PaymentRecord";
 	}
 	
-	
-	
-	//공지사항 페이지로
-	@RequestMapping("/Notice.do")
-	public String Notice() {
-		return "Notice";
-	}
+
 	
 	
 	//고객센터 관련
@@ -122,6 +116,13 @@ public class IndexController {
 	}
 	
 	
+	
+	//기타
+	//공지사항 페이지로
+	@RequestMapping("/Notice.do")
+	public String Notice() {
+		return "Notice";
+	}
 	
 	//카테고리 페이지로
 	@RequestMapping("/Category.do")
