@@ -33,7 +33,7 @@
 	<!-- 실제 내용 시작 -->
 	<div class="container">
 		<div class="page-header">
-			<h1>카테코리</h1>
+			<h1>내 장바구니</h1>
 		</div>
 	</div>
 	<!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요합니다) -->
