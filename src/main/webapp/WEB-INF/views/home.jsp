@@ -18,24 +18,15 @@
 <body>
 
 	<div class="container-fluid">
-	
-			<div class="row">
-				프로젝트
-				<a class="btn pull-right" href="<c:url value='/login.do'/>" role="button">공지사항</a> 
-				<a class="btn pull-right" href="<c:url value='/login.do'/>" role="button">고객센터</a> 
-				<a class="btn pull-right" href="<c:url value='/login.do'/>" role="button">장바구니</a> 
-				<a class="btn pull-right" href="<c:url value='/joinProcess.do'/>" role="button">회원가입</a> 
-				<a class="btn pull-right" href="<c:url value='/login.do'/>" role="button">비회원로그인</a>
-				<a class="btn pull-right" href="<c:url value="/login.do"/>" role="button">로그인</a> 
-			</div>
+		<%@ include file="templates/mainheader.jsp"%>
 			
-<div class="btn-group btn-group-justified">
+<!--div class="btn-group btn-group-justified">
   <a href="#" class="btn btn-danger">신상품</a>
   <a href="#" class="btn btn-primary">행사상품</a>
   <a href="#" class="btn btn-info">신선식품</a>
   <a href="#" class="btn btn-primary">밀키트,반조리</a>
   <a href="#" class="btn btn-success">음료/차</a>
-</div>
+</div-->
 
 <div class="row"> <!-- 화면분할은 12등분 -->
   <div class="col-xs-10">
@@ -58,7 +49,7 @@
       </div>
       
       <div class="item">
-        <img src="https://placehold.it/1200x400?text=Another Image Maybe" alt="Image">
+        <img src="<c:url value="/images/manager2.jpg"/>" alt="Image" style="width: 1400px; height: 400px">
         <div class="carousel-caption">
           <h3>예제2</h3>
           <p>예제2</p>
@@ -66,7 +57,7 @@
       </div>
       
       <div class="item">
-        <img src="https://placehold.it/1200x400?text=Another Image Maybe" alt="Image">
+        <img src="<c:url value="/images/manager1.jpg"/>" alt="Image" style="width: 1400px; height: 400px">
         <div class="carousel-caption">
           <h3>예제3</h3>
           <p>예제3</p>
@@ -118,7 +109,7 @@
 </div>
 
 
-<div class="col-xs-2">
+<!-- div class="col-xs-2">
 				<div class="input-group" >
 					<div class="option">
 						<div>
@@ -136,12 +127,13 @@
 				<a class="row" href="#" role="button">배송조회</a>
 				<a class="row" href="#" role="button">주변마트조회</a>
 				<a class="row" href="#" role="button">맞춤장바구니서비스</a>
+				</div-->
 				</div>
 				</div>
-				</div>
-<footer class="container-fluid text-center">
+<!-- footer class="container-fluid text-center">
   <p>푸터</p>
-</footer>
-
+</footer-->
+<jsp:include page="/WEB-INF/views/templates/Side.jsp" />
+<jsp:include page="/WEB-INF/views/templates/mainfooter.jsp" />
 </body>
 </html>

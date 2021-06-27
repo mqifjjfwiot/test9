@@ -10,10 +10,6 @@
 </style>
 
 <div class="Side form-group">
-	<form action="#">
-		<input type="text" name="search" placeholder="검색" /> <input
-			type="submit" value="확인" />
-	</form>
 	<button style="margin-top: 20px"
 		class="btn btn-default btn-lg btn-block" onclick="location.href='#'">배송조회</button>
 	<button style="margin-top: 10px"
