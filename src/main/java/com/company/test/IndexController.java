@@ -28,6 +28,11 @@ public class IndexController {
 		return "CustomerCenter";
 	}
 		
+	//공지사항 페이지로
+	@RequestMapping("/notice.do")
+	public String notice() {
+		return "notice";
+	}
 		
 		
 	//개인회원가입페이지로
