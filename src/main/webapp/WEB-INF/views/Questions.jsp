@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Accordian.jsp</title>
+<title>고객센터</title>
 
 <!-- 고객센터 헤더에서 이동. QA와 문의게시판으로 연결 -->
 
