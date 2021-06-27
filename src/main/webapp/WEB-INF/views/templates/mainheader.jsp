@@ -88,10 +88,36 @@
     <ul class="nav navbar-nav">
       
       <li class="nav-item"><a href="#">신상품</a></li>
-      <li class="nav-item"><a href="#">행사상품</a></li>
-      <li class="nav-item"><a href="#">신선식품</a></li>
-      <li class="nav-item"><a href="#">밀키트,반조리</a></li>
-      <li class="nav-item"><a href="#">음료/차</a></li>
+						<li class="nav-item"><a href="#">행사상품</a></li>
+						<li class="nav-item"><a href="#" class="dropdown-toggle"
+							data-toggle="dropdown">신선식품 <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a class="dropdown-item" href="#menu1">육류/계란</a></li>
+								<li><a class="dropdown-item" href="#menu2">생선/어패류</a></li>
+								<li><a class="dropdown-item" href="#menu3">과일</a></li>
+								<li><a class="dropdown-item" href="#menu4">채소</a></li>
+								<li><a class="dropdown-item" href="#menu5">쌀/잡곡/견과</a></li>
+							</ul></li>
+						<li class="nav-item"><a href="#" class="dropdown-toggle"
+							data-toggle="dropdown">밀키트/반조리 <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a class="dropdown-item" href="#menu8">밀키트</a></li>
+								<li><a class="dropdown-item" href="#menu9">냉동/냉장/통조림</a></li>
+								<li><a class="dropdown-item" href="#menu10">레토르트</a></li>
+								<li><a class="dropdown-item" href="#menu11">육/어육가공품</a></li>
+								<li><a class="dropdown-item" href="#menu12">김치</a></li>
+								<li><a class="dropdown-item" href="#menu13">라면/면류</a></li>
+								<li><a class="dropdown-item" href="#menu14">베이커리</a></li>
+								<li><a class="dropdown-item" href="#menu15">과자/시리얼</a></li>
+							</ul></li>
+						<li class="nav-item"><a href="#" class="dropdown-toggle"
+							data-toggle="dropdown">음료/차 <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a class="dropdown-item" href="#menu16">생수</a></li>
+								<li><a class="dropdown-item" href="#menu17">주스/탄산</a></li>
+								<li><a class="dropdown-item" href="#menu18">차</a></li>
+								<li><a class="dropdown-item" href="#menu19">주류</a></li>
+							</ul></li>
     </ul>
   
     <form class="navbar-form navbar-right" action="#">
