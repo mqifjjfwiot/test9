@@ -8,7 +8,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>templates.jsp</title>
+<title>결제하기</title>
 
 <!-- 페이지 설명은 여기에 -->
 
@@ -33,7 +33,7 @@
 	<!-- 실제 내용 시작 -->
 	<div class="container">
 		<div class="page-header">
-			<h1>카테코리</h1>
+			<h1>결제하기</h1>
 		</div>
 	</div>
 	<!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요합니다) -->

@@ -19,69 +19,85 @@ public class IndexController {
 	//로그인페이지로
 	@RequestMapping("/Login.do")
 	public String Login() {
-		return "Login";
+		return "clientPage/Login";
+	}
+	
+	//로그아웃페이지로
+	@RequestMapping("/Logout.do")
+	public String Logout() {
+		return "clientPage/Logout";
 	}
 	
 	//회원가입 메인 페이지로
 	@RequestMapping("/SignUpMain.do")
 	public String SignUpMain() {
-		return "SignUpMain";
+		return "clientPage/SignUpMain";
 	}
 		
 	//개인 회원가입페이지로
 	@RequestMapping("/SignUpPrivate.do")
 	public String SignUpPrivate() {	
-		return "SignUpPrivate";
+		return "clientPage/SignUpPrivate";
 	}
 	
 	//라이더 회원가입페이지로
 	@RequestMapping("/SignUpRider.do")
 	public String SignUpRider() {	
-		return "SignUpRider";
+		return "clientPage/SignUpRider";
 	}
 	
-	//점주 회원가입페이지로
+	//점장 회원가입페이지로
 	@RequestMapping("/SignUpMarket.do")
 	public String SignUpMarket() {	
-		return "SignUpMarket";
+		return "clientPage/SignUpMarket";
 	}
 	
 	//내정보 페이지로
 	@RequestMapping("/MyPage.do")
 	public String MyPage() {
-		return "MyPage";
+		return "clientPage/MyPage";
 	}
 	
 
 	//상품관련 페이지 - productPage
-	//상품 상세 페이지로
-	@RequestMapping("/listinfo.do")
-	public String listinfo() {
-		return "listinfo";
+	//상품 리스트 페이지로
+	@RequestMapping("/ProductList.do")
+	public String ProductList() {
+		return "productPage/ProductList";
 	}
 	
+	//상품 상세 페이지로
+	@RequestMapping("/ProductInfo.do")
+	public String ProductInfo() {
+		return "productPage/ProductInfo";
+	}
+	
+
+	
+	//쇼핑관련 페이지 - shoppingservice
 	//장바구니 페이지로
-	@RequestMapping("/basket.do")
-	public String basket() {
+	@RequestMapping("/Basket.do")
+	public String Basket() {
 		return "Basket";
 	}
 	
-	//쇼핑관련 페이지 - 
 	//결제 페이지로
-	@RequestMapping("/pay.do")
-	public String pay() {
-		return "pay";
+	@RequestMapping("/Payment.do")
+	public String Payment() {
+		return "Payment";
 	}
 	
 	//주문/결제확인 페이지로
-	@RequestMapping("/shoppringrecord.do")
-	public String shoppringrecord() {
-		return "shoppringrecord";
+	@RequestMapping("/PaymentRecord.do")
+	public String PaymentRecord() {
+		return "PaymentRecord";
 	}
 	
+	
+	
 	//공지사항 페이지로
-	@RequestMapping("/notice.do")
-	public String notice() {
+	@RequestMapping("/Notice.do")
+	public String Notice() {
 		return "Notice";
 	}
 	
