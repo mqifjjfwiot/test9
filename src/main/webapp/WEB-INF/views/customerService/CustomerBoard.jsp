@@ -15,67 +15,24 @@
 <!-- 부트스트랩 -->
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-
-<style>
-    #log {
-        height: 150px;
-    }
-    #nav {
-        float: right;
-    }
-    #nav > ul > li {
-        text-decoration: none;
-        list-style: none;
-        margin-right: 20px;
-        display: inline;
-    }
-    #nav > ul > li > a {
-        color: black;
-    }
-    #nav::after {display: block; content: ""; clear: both;}
-    
-    #wrap{
-        width: 100%;
-    }
-    #wrap::after {display: block; content: ""; clear: both;}
-    #content {
-        width: 80%;
-        float: left;
-    }
-    #sidebar {
-        float: right;
-        width: 20%;
-    }
-    #sidebar > ul > li {
-        text-decoration: none;
-        list-style: none;
-    }
-    #sidebar > ul > li > a{
-        color: black;
-    }
-    #paging{
-        width: 80%;
-    }
-</style>
+<link rel="stylesheet" href="<c:url value="/styles/common.css"/>">
+<link href="<c:url value="/bootstrap/css/bootstrap.min.css"/>"
+	rel="stylesheet">
+<!-- IE8 에서 HTML5 요소와 미디어 쿼리를 위한 HTML5 shim 와 Respond.js -->
+<!-- WARNING: Respond.js 는 당신이 file:// 을 통해 페이지를 볼 때는 동작하지 않습니다. -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
 </head>
 <body>
+	<!-- 네비게이션 시작 -->
+	<jsp:include page="../templates/mainheader.jsp" />
+	<!-- 네비게이션 끝 -->
+	<!-- 실제 내용 시작 -->
     <div id="logo">
     </div>
-    <div id="nav">
-		<ul>
-			<c:if test="${empty param.id }" var="login">
-            	<li><a href="<c:url value="Login.do"/>">로그인</a></li>
-			</c:if>
-			<c:if test="${not login }">
-			<li><a href="<c:url value="Logout.do"/>">로그아웃</a></li>
-			</c:if>
-			<li><a href="<c:url value=""/>">마이페이지</a></li>
-			<li><a href="<c:url value=""/>">장바구니</a></li>
-			<li><a href="<c:url value=""/>">고객센터</a></li>
-			<li><a href="<c:url value=""/>">공지사항</a></li>
-		</ul>
-	</div>
 	<div id="wrap">
         <div class="row" id="content">
             <div class="col-md-12">
@@ -110,13 +67,10 @@
         <div class="row" id="paging">
             <div class="col-md-12 text-center">${listPagingData.pagingString}</div>
         </div>
-        <div id="sidebar">
-            <ul>
-                <li><a href="<c:url value=""/>">배송조회</a></li>
-                <li><a href="<c:url value=""/>">주변 마트 조회</a></li>
-                <li><a href="<c:url value=""/>">맞춤 장바구니 서비스</a></li>
-            </ul>
-        </div>
     </div>
+    <!--  푸터 시작 -->
+	<jsp:include page="/WEB-INF/views/templates/Side.jsp" />
+	<jsp:include page="/WEB-INF/views/templates/mainfooter.jsp" />
+	<!-- 푸터 끝 -->
 </body>
 </html>

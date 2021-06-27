@@ -78,7 +78,7 @@ public class IndexController {
 	//고객센터 메인 페이지로
 	@RequestMapping("/CustomerMain.do")
 	public String CustomerMain() {
-		return "CustomerMain";
+		return "customerService/CustomerMain";
 	}
 
 	//QA페이지로
@@ -90,7 +90,7 @@ public class IndexController {
 	//고객문의게시판으로
 	@RequestMapping("/CustomerBoard.do")
 	public String CustomerBoard() {
-		return "CustomerBoard";
+		return "customerService/CustomerBoard";
 	}
 	
 	

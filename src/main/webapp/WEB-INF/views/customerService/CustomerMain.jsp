@@ -56,11 +56,11 @@ img {
 					<h1>고객센터</h1>
 				</div>
 				<fieldset>
-				 	<a href="<c:url value='/Customer.do'/>"><img alt="자주 물어보는 질문" src="<c:url value="/images/manager1.jpg"/>"/></a>
+				 	<a href="<c:url value='/CustomerQA.do'/>"><img alt="자주 물어보는 질문" src="<c:url value="/images/manager1.jpg"/>"/></a>
 					<!-- div class="box1" onclick="location.href='<c:url value='/Manager/Customer.do'/>'">
 						<img alt="자주 물어보는 질문" src="<c:url value="/images/manage1.png"/>">
 					</div-->
-					<a href="<c:url value='#'/>"><img alt="고객 문의 게시판" src="<c:url value="/images/manager2.jpg"/>"/></a>
+					<a href="<c:url value='/CustomerBoard.do'/>"><img alt="고객 문의 게시판" src="<c:url value="/images/manager2.jpg"/>"/></a>
 					<!-- div class="box2" onclick="location.href='<c:url value='#'/>'">고객 문의 게시판</div-->
 				</fieldset>
 			</div>
