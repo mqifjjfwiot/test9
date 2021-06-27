@@ -7,7 +7,10 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>customer.jsp</title>
+<title>Q&A</title>
+
+<!-- Q&A. Questions.jsp에서 연결. -->
+
 <!-- 제이쿼리 UI용 CSS -->
 <link rel="stylesheet"
 	href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">

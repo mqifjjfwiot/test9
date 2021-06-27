@@ -39,10 +39,9 @@ public class IndexController {
 	}
 	
 	//상품 페이지로
-	@RequestMapping("/list.do")
-	public String list() {
-		return "list";
-	}
+	
+	
+
 	
 	//상품 상세 페이지로
 	@RequestMapping("/listinfo.do")
@@ -91,6 +90,12 @@ public class IndexController {
 	@RequestMapping("/QA.do")
 	public String QA() {
 		return "manager/Customer";
+	}
+	
+	//
+	@RequestMapping("/CustomerBoard.do")
+	public String CustomerBoard() {
+		return "CustomerBoard";
 	}
 	
 	//카테고리 페이지로
