@@ -78,7 +78,7 @@
 </div>
 
 <div class="title">
-        <p>KOSMO마트<span class="glyphicon glyphicon-shopping-cart"></span></p>
+        <p><a href="<c:url value="/home.do"/>">KOSMO마트<span class="glyphicon glyphicon-shopping-cart"></span></a></p>
     </div>
 
 <div class="top_bottom">

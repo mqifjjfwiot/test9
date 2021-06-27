@@ -14,9 +14,18 @@
 	<h2>회원가입</h2>
 	${message }
 	<form action="<c:url value="/join"/>" method="post">
-		아이디 <input type="text" name="id"/>
-		비번 <input type="password" name="pwd"/>
-		이름 <input type="text" name="name"/>
+		<div>
+			아이디 <input type="text" name="id"/>
+		</div>
+		<div>
+			비밀번호 <input type="password" name="pwd"/>
+		</div>
+		<div>
+			이름 <input type="text" name="name"/>
+		</div>
+		
+		
+		
 		<input type="submit" value="회원가입"/>
 	</form>
 	<!--  푸터 시작 -->
