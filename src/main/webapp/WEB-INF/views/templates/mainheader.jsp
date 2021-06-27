@@ -69,7 +69,7 @@
         <li><a href="#">비회원로그인</a></li>
         <li><a href="<c:url value="/joins.do"/>">회원가입</a></li>
         <li><a href="#">장바구니</a></li>
-        <li><a href="<c:url value="/customerCenter.do"/>">고객센터</a></li>
+        <li><a href="<c:url value="/Questions.do"/>">고객센터</a></li>
         <li><a href="<c:url value="/notice.do"/>">공지사항</a></li>
       </ul>
     </div>

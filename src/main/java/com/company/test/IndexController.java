@@ -22,17 +22,7 @@ public class IndexController {
 		return "login";
 	}
 		
-	//고객센터페이지로
-	@RequestMapping("/customerCenter.do")
-	public String customerCenter() {
-		return "CustomerCenter";
-	}
-		
-	//공지사항 페이지로
-	@RequestMapping("/notice.do")
-	public String notice() {
-		return "notice";
-	}
+
 		
 		
 	//개인회원가입페이지로
@@ -76,6 +66,25 @@ public class IndexController {
 	@RequestMapping("/shoppringrecord.do")
 	public String shoppringrecord() {
 		return "shoppringrecord";
+	}
+	
+	//고객센터 선택 페이지로
+	@RequestMapping("/Questions.do")
+	public String Questions() {
+		return "Questions";
+	}
+	
+	
+	//고객센터게시판으로
+	@RequestMapping("/Customer.do")
+	public String Customer() {
+		return "Customer";
+	}
+		
+	//공지사항 페이지로
+	@RequestMapping("/notice.do")
+	public String notice() {
+		return "Notice";
 	}
 	
 	//QA페이지로

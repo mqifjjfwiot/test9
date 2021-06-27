@@ -8,6 +8,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Accordian.jsp</title>
+
+<!-- 고객센터 헤더에서 이동. QA와 문의게시판으로 연결 -->
+
+
 <!-- 제이쿼리 UI용 CSS -->
 <link rel="stylesheet"
 	href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
@@ -52,7 +56,7 @@ img {
 					<h1>고객센터</h1>
 				</div>
 				<fieldset>
-				 	<a href="<c:url value='/Manager/Customer.do'/>"><img alt="자주 물어보는 질문" src="<c:url value="/images/manager1.jpg"/>"/></a>
+				 	<a href="<c:url value='/Customer.do'/>"><img alt="자주 물어보는 질문" src="<c:url value="/images/manager1.jpg"/>"/></a>
 					<!-- div class="box1" onclick="location.href='<c:url value='/Manager/Customer.do'/>'">
 						<img alt="자주 물어보는 질문" src="<c:url value="/images/manage1.png"/>">
 					</div-->
