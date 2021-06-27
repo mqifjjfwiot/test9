@@ -67,36 +67,33 @@ public class IndexController {
 		return "shoppringrecord";
 	}
 	
-	//고객센터 선택 페이지로
-	@RequestMapping("/Questions.do")
-	public String Questions() {
-		return "Questions";
-	}
-	
-	
-	//고객센터게시판으로
-	@RequestMapping("/Customer.do")
-	public String Customer() {
-		return "Customer";
-	}
-		
 	//공지사항 페이지로
 	@RequestMapping("/notice.do")
 	public String notice() {
 		return "Notice";
 	}
 	
+	
+	//고객센터 관련
+	//고객센터 메인 페이지로
+	@RequestMapping("/CustomerMain.do")
+	public String CustomerMain() {
+		return "CustomerMain";
+	}
+
 	//QA페이지로
-	@RequestMapping("/QA.do")
-	public String QA() {
-		return "manager/Customer";
+	@RequestMapping("/CustomerQA.do")
+	public String CustomerQA() {
+		return "customerService/CustomerQA";
 	}
 	
-	//
+	//고객문의게시판으로
 	@RequestMapping("/CustomerBoard.do")
 	public String CustomerBoard() {
 		return "CustomerBoard";
 	}
+	
+	
 	
 	//카테고리 페이지로
 	@RequestMapping("/Category.do")
