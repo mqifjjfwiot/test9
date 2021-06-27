@@ -26,7 +26,7 @@
 </head>
 <body>
 	<!-- 네비게이션 시작 -->
-	<jsp:include page="/WEB-INF/views/templates/Top.jsp" />
+	<jsp:include page="templates/mainheader.jsp" />
 	<!-- 네비게이션 끝 -->
 	<!-- 실제 내용 시작 -->
 	<div class="container">
@@ -132,7 +132,7 @@
 	<!-- 실제 내용 끝 -->
 	<!--  푸터 시작 -->
 	<jsp:include page="/WEB-INF/views/templates/Side.jsp" />
-	<jsp:include page="/WEB-INF/views/templates/Footer.jsp" />
+	<jsp:include page="/WEB-INF/views/templates/mainfooter.jsp" />
 	<!-- 푸터 끝 -->
 </body>
 </html>

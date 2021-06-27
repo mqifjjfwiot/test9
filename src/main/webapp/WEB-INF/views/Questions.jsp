@@ -44,7 +44,7 @@ img {
 </style>
 </head>
 <body>
-	<jsp:include page="/WEB-INF/views/templates/Top.jsp" />
+	<jsp:include page="templates/mainheader.jsp" />
 	<div class="row">
 		<div class="col-md-offset-1 col-md-7">
 			<div class="container">
@@ -63,6 +63,6 @@ img {
 		</div>
 	</div>
 	<jsp:include page="/WEB-INF/views/templates/Side.jsp" />
-	<jsp:include page="/WEB-INF/views/templates/Footer.jsp" />
+	<jsp:include page="/WEB-INF/views/templates/mainfooter.jsp" />
 </body>
 </html>

@@ -102,7 +102,7 @@
 					<img src="" alt="회사 로고 이미지" />
 				</div>
 				<div class="topMenu">
-					<%@ include file="templates/Top.jsp"%>
+					<%@ include file="templates/mainheader.jsp"%>
 				</div>
 			</div>
 			<div class="section">

@@ -76,7 +76,7 @@ h3 {
 </script>
 </head>
 <body>
-	<jsp:include page="../templates/Top.jsp" />
+	<jsp:include page="../templates/mainheader.jsp" />
 	<div class="row">
 		<div class="col-md-offset-1 col-md-7">
 			<div class="container">
