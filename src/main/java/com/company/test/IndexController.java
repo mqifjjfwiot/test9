@@ -53,7 +53,7 @@ public class IndexController {
 	//장바구니 페이지로
 	@RequestMapping("/basket.do")
 	public String basket() {
-		return "basket";
+		return "Basket";
 	}
 	
 	//결제 페이지로
