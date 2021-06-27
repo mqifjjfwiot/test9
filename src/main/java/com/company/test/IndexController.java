@@ -36,10 +36,10 @@ public class IndexController {
 		
 		
 	//개인회원가입페이지로
-	@RequestMapping("/joinProcess.do")
+	@RequestMapping("/joinprivate.do")
 	public String join() {
 		
-		return "join";
+		return "joinprivate";
 	}
 	
 	//회원가입종류 선택 페이지로

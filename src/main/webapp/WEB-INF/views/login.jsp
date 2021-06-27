@@ -46,7 +46,7 @@
             <p id="login">
                 <input type="submit" value="로그인" />
             </p>
-            <h2>회원이 아니신가요?<a href="<c:url value='/joinProcess.do'/>" role="button">회원가입</a></h2>
+            <h2>회원이 아니신가요?<a href="<c:url value='/joinprivate.do'/>" role="button">회원가입</a></h2>
         </form>
         <!--  푸터 시작 -->
 	<jsp:include page="/WEB-INF/views/templates/Side.jsp" />

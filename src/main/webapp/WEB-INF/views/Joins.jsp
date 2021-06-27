@@ -18,7 +18,7 @@
 </style>
 <body>
 	<div id="wrap">
-		<button type="button" class="btn btn-primary btn-lg btn-block" onclick="location.href='<c:url value="/GoJoin.do"/>'">일반 회원가입</button>
+		<button type="button" class="btn btn-primary btn-lg btn-block" onclick="location.href='<c:url value="/joinprivate.do"/>'">일반 회원가입</button>
 		<button type="button" class="btn btn-primary btn-lg btn-block">사업자 회원가입</button>
 		<button type="button" class="btn btn-primary btn-lg btn-block">라이더 회원가입</button>
 	</div>

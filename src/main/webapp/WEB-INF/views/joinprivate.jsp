@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>join.jsp</title>
+<title>joinprivate.jsp</title>
 </head>
 <body>
 	<!-- 네비게이션 시작 -->
@@ -20,6 +20,10 @@
 		<div>
 			비밀번호 <input type="password" name="pwd"/>
 		</div>
+		<div>
+			비밀번호 확인 <input type="password" name="pwd"/>
+		</div>
+		
 		<div>
 			이름 <input type="text" name="name"/>
 		</div>
