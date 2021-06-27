@@ -93,8 +93,8 @@
   	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav">
       
-      <li class="nav-item"><a href="<c:url value="Items.do?menu=1"/>">신상품</a></li>
-						<li class="nav-item"><a href="<c:url value="Items.do?menu=2"/>">행사상품</a></li>
+      <li class="nav-item"><a href="<c:url value="/Item/Items.do?menu=1"/>">신상품</a></li>
+						<li class="nav-item"><a href="<c:url value="/Item/Items.do?menu=2"/>">행사상품</a></li>
 						<li class="nav-item"><a href="#" class="dropdown-toggle"
 							data-toggle="dropdown">신선식품 <span class="caret"></span></a>
 							<ul class="dropdown-menu">
