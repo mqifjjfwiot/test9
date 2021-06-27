@@ -8,7 +8,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- 위 3개의 메타 태그는 *반드시* head 태그의 처음에 와야합니다; 어떤 다른 콘텐츠들은 반드시 이 태그들 *다음에* 와야 합니다 -->
-<title>login.jsp</title>
+<title>로그인</title>
+
+<!-- 로그인 처리 페이지 -->
 
 <!-- 부트스트랩 -->
 <link rel="stylesheet"
@@ -20,7 +22,7 @@
 </head>
 <body>
 	<!-- 네비게이션 시작 -->
-	<jsp:include page="templates/mainheader.jsp" />
+	<jsp:include page="../templates/mainheader.jsp" />
 	<!-- 네비게이션 끝 -->
 <!-- 
    <div class="container">
@@ -46,7 +48,7 @@
             <p id="login">
                 <input type="submit" value="로그인" />
             </p>
-            <h2>회원이 아니신가요?<a href="<c:url value='/joinprivate.do'/>" role="button">회원가입</a></h2>
+            <h2>회원이 아니신가요?<a href="<c:url value='/SignUpMain.do'/>" role="button">회원가입</a></h2>
         </form>
         <!--  푸터 시작 -->
 	<jsp:include page="/WEB-INF/views/templates/Side.jsp" />

@@ -102,12 +102,12 @@
 					<img src="" alt="회사 로고 이미지" />
 				</div>
 				<div class="topMenu">
-					<%@ include file="templates/mainheader.jsp"%>
+					<%@ include file="../templates/mainheader.jsp"%>
 				</div>
 			</div>
 			<div class="section">
 				<div class="leftMenu">
-					<%@ include file="templates/Left.jsp"%>
+					<%@ include file="../templates/Left.jsp"%>
 				</div>
 				<div class="body">
 					<div class="content">						

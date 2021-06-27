@@ -15,31 +15,42 @@ public class IndexController {
 		return "home";
 	}
 	
-	
+	//회원관련 컨트롤러 - clientPage
 	//로그인페이지로
-	@RequestMapping("/login.do")
-	public String login() {
-		return "login";
-	}
-		
-
-		
-		
-	//개인회원가입페이지로
-	@RequestMapping("/joinprivate.do")
-	public String join() {
-		
-		return "joinprivate";
+	@RequestMapping("/Login.do")
+	public String Login() {
+		return "Login";
 	}
 	
-	//회원가입종류 선택 페이지로
-	@RequestMapping("/joins.do")
-	public String joins() {
-		return "Joins";
+	//회원가입 메인 페이지로
+	@RequestMapping("/SignUpMain.do")
+	public String SignUpMain() {
+		return "SignUpMain";
+	}
+		
+	//개인 회원가입페이지로
+	@RequestMapping("/SignUpPrivate.do")
+	public String SignUpPrivate() {	
+		return "SignUpPrivate";
 	}
 	
-	//상품 페이지로
+	//라이더 회원가입페이지로
+	@RequestMapping("/SignUpRider.do")
+	public String SignUpRider() {	
+		return "SignUpRider";
+	}
 	
+	//점주 회원가입페이지로
+	@RequestMapping("/SignUpMarket.do")
+	public String SignUpMarket() {	
+		return "SignUpMarket";
+	}
+	
+	//내정보 페이지로
+	@RequestMapping("/MyPage.do")
+	public String MyPage() {
+		return "MyPage";
+	}
 	
 
 	

@@ -5,13 +5,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>joinprivate.jsp</title>
+<title>일반 회원가입</title>
 </head>
 <body>
 	<!-- 네비게이션 시작 -->
-	<jsp:include page="templates/mainheader.jsp" />
+	<jsp:include page="../templates/mainheader.jsp" />
 	<!-- 네비게이션 끝 -->
-	<h2>회원가입</h2>
+	<h2>일반 회원가입</h2>
 	${message }
 	<form action="<c:url value="/join"/>" method="post">
 		<div>
