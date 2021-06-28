@@ -7,7 +7,7 @@
 <!-- ※ibatis와는 다르게 id값에 .(dot)를 사용 못한다. -->
 <mapper namespace="mybatis.mapper.test">
 	<insert id="myInsert" parameterType="testDTO">
-		INSERT INTO MEMBER VALUES(#{id},#{pwd},#{name})
+		INSERT INTO MEMBER VALUES(#{id},#{pwd},#{name},#{tel},#{addr},#{mail})
 	</insert>
 	<select id="myMember" resultType="int" parameterType="testDTO">
 		SELECT COUNT(*) FROM member WHERE id=#{id} AND pwd=#{pwd}
