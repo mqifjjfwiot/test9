@@ -157,7 +157,7 @@
 			
 			<div class="cart_button_box">
 				<a href="<c:url value="/home.do"/>" class="link_home">쇼핑 계속하기</a>
-				<button type="button" class="button">주문하기</button><!-- 결제 api 연동 -->
+				<button type="button" class="button"><a href="<c:url value="/Payment.do"/>">주문하기</a></button><!-- 결제 api 연동 -->
 			</div>
 		</main>
 	</div>
