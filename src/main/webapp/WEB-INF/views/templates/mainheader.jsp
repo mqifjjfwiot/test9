@@ -65,12 +65,18 @@
   <div class="container-fluid">
     <div>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="<c:url value="/Login.do"/>">로그인</a></li>
-        <li><a href="#">비회원로그인</a></li>
-        <li><a href="<c:url value="/SignUpMain.do"/>">회원가입</a></li>
-        <li><a href="<c:url value="/Basket.do"/>">장바구니</a></li>
+      <c:if test="${empty sessionScope.id }" var="login">
+        	<li><a href="<c:url value="Login.do"/>">로그인</a></li>
+        	<li><a href="#">비회원로그인</a></li>
+        	<li><a href="<c:url value="/SignUpMain.do"/>">회원가입</a></li>
+        </c:if>
+        <c:if test="${not login }">
+        	<li><a href="<c:url value="Logout.do"/>">로그아웃</a></li>
+			<li><a href="<c:url value="Mypage.do"/>">마이페이지</a></li>
+        </c:if>
+        <li><a href="<c:url value="/basket.do"/>">장바구니</a></li>
         <li><a href="<c:url value="/CustomerMain.do"/>">고객센터</a></li>
-        <li><a href="<c:url value="/Notice.do"/>">공지사항</a></li>
+        <li><a href="<c:url value="/notice.do"/>">공지사항</a></li>
       </ul>
     </div>
   </div>
