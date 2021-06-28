@@ -22,11 +22,6 @@ public class IndexController {
 		return "clientPage/Login";
 	}
 	
-	//로그아웃페이지로
-	@RequestMapping("/Logout.do")
-	public String Logout() {
-		return "clientPage/Logout";
-	}
 	
 	//회원가입 메인 페이지로
 	@RequestMapping("/SignUpMain.do")
