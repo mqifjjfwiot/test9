@@ -40,14 +40,13 @@
 			<ul>
 				<li><em>장바구니 상품은 최대 30일간 저장됩니다.</em></li>
 				<li>가격, 옵션 등 정보가 변경된 경우 주문이 불가할 수 있습니다.</li>
-				<li>오늘출발 상품은 판매자 설정 시점에 따라 오늘출발 여부가 변경될 수 있으니 주문 시 꼭 다시 확인해 주시기	바랍니다.</li>
+				<li>오늘출발 상품은 판매자 설정 시점에 따라 오늘출발 여부가 변경될 수 있으니 주문 시 꼭 다시 확인해 주시기
+					바랍니다.</li>
 			</ul>
 
 			<h3 class="blind">장바구니 목록</h3>
 			<table class="table">
-				<caption>
-					<span class="blind">장바구니 내역</span>
-				</caption>
+				
 				<colgroup>
 					<col class="col_1--5TSKjnuT7E">
 					<col class="col_2--YKLfiddUoQ">
@@ -60,100 +59,144 @@
 					<tr>
 						<th scope="col" class="th">
 							<div class="checkbox">
-								<label for="check_all" class="blind"><input type="checkbox" id="check_all" class="input"	checked="">전체선택</label>
+								<label for="check_all" class="blind"><input
+									type="checkbox" id="check_all" class="input"  onclick="cAll();">전체선택</label>
 							</div>
 						</th>
-						<th scope="col-3" class="th" style="text-align:center;">상품정보</th>
-						<th scope="col" class="th" style="text-align:center;">옵션</th>
-						<th scope="col" class="th" style="text-align:center;">상품금액</th>
-						<th scope="col" class="th" style="text-align:center;">배송비</th>
+						<th scope="col-3" class="th" style="text-align: center;">상품정보</th>
+						<th scope="col" class="th" style="text-align: center;">옵션</th>
+						<th scope="col" class="th" style="text-align: center;">상품금액</th>
+						<th scope="col" class="th" style="text-align: center;">배송비</th>
 					</tr>
 				</thead>
-				
+
 				<tbody>
+				<!-- 예시상품 1 -->
 					<tr class="table_row">
 					
 						<td class="table_cell">
 							<div class="checkbox">
-									<label	for="bundle_checkbox" class="blind"><input type="checkbox" id="bundle_checkbox"	class="input" checked="">상품 선택</label>
+								<label for="bundle_checkbox" class="blind"><input
+									type="checkbox" id="bundle_checkbox" class="input" >상품	선택</label>
 							</div>
 						</td>
-						
+
 						<td class="table_cell">
-							<div	class="product_desc_wrap">
+							<div class="product_desc_wrap">
 								<div class="product_description">
-									<span class="product_thumb">
-										<!-- img	src=""	alt="" class="product_img--eMB0AlWn-k"-->
-									</span>
-										<a href="#"	class="product_info" target="_blank">상품정보(메이커)</a>
-										<span	class="product_name"> 상품이름과 설명 이런저런 간단하게 보고 이해할 수 있게</span>
+									<span class="product_thumb"> <!-- img	src=""	alt="" class="product_img--eMB0AlWn-k"-->
+									</span> <a href="#" class="product_info" target="_blank">상품정보(메이커)</a>
+									<span class="product_name"> 상품이름과 설명 이런저런 간단하게 보고 이해할 수
+										있게</span>
 								</div>
 							</div>
 						</td>
-						
+
 						<td class="table_cell">
-							<div	class="product_item">
+							<div class="product_item">
 								<div class="product_options">
 									<div class="product_item">상품 주문 수량 : n개 (수량 조절하는 기능 추가)</div>
 								</div>
 							</div>
 						</td>
-						
+
 						<td class="table_cell">
-							<div	class="product_price">
+							<div class="product_price">
 								<em class="product_detail_price">999,999<span class="unit">원</span></em>
 							</div>
 						</td>
-						
+
 						<td rowspan="1" class="table_cell">
 							<div class="delivery_fee">
 								<span class="delivery_price-">무료</span>
 							</div>
 						</td>
-						
+
+					</tr>
+					
+					<!-- 예시상품 2 -->
+					<tr class="table_row">
+					
+						<td class="table_cell">
+							<div class="checkbox">
+								<label for="bundle_checkbox" class="blind"><input
+									type="checkbox" id="bundle_checkbox" class="input" checked="" >상품	선택</label>
+							</div>
+						</td>
+
+						<td class="table_cell">
+							<div class="product_desc_wrap">
+								<div class="product_description">
+									<span class="product_thumb"> <!-- img	src=""	alt="" class="product_img--eMB0AlWn-k"-->
+									</span> <a href="#" class="product_info" target="_blank">상품정보(메이커)</a>
+									<span class="product_name"> 상품이름과 설명 이런저런 간단하게 보고 이해할 수
+										있게</span>
+								</div>
+							</div>
+						</td>
+
+						<td class="table_cell">
+							<div class="product_item">
+								<div class="product_options">
+									<div class="product_item">상품 주문 수량 : n개 (수량 조절하는 기능 추가)</div>
+								</div>
+							</div>
+						</td>
+
+						<td class="table_cell">
+							<div class="product_price">
+								<em class="product_detail_price">999,999<span class="unit">원</span></em>
+							</div>
+						</td>
+
+						<td rowspan="1" class="table_cell">
+							<div class="delivery_fee">
+								<span class="delivery_price-">무료</span>
+							</div>
+						</td>
+
 					</tr>
 				</tbody>
 			</table>
+			
 			<div class="product_button_box">
-				<div class="area_checkbox">
-					<div class="checkbox">
-						<label	for="PRODUCT_BUTTON" class="blind"><input type="checkbox" id="PRODUCT_BUTTON"	class="input" checked="">전체선택</label>
-					</div>
-				</div>
 				<button type="button" class="button">선택상품 삭제</button>
 			</div>
-			
-			
+
+
 			<h3 class="blind">주문금액 정보</h3>
 			<div class="order_calculator">
-				<div class="product_price_detail">
-					<dl class="product_price">
-						<dt>총 상품금액</dt>
-						<dd>
-							<span class="price">999,999</span>원
-						</dd>
-					</dl>
-					
-					<dl class="product_price">
-						<dt>배송비</dt>
-						<dd>
-							<span class="price">0</span>원
-						</dd>
-					</dl>
-					
-					<dl class="product_price">
-						<dt>할인예상금액</dt>
-						<dd class="discount">
-							<span class="price">8,888</span>원
-						</dd>
-					</dl>
-					
-				</div>
-				<div class="product_price_total">
-					<span class="text_mart">총 주문금액</span>
-					<span class="text_point"><span class="price">666,666</span>원</span>
-				</div>
+	
+				<dl class="product_price">
+					<dt>총 상품금액</dt>
+					<dd>
+						<span class="price">999,999</span>원
+					</dd>
+				</dl>
+									
+				<dl class="product_price">
+					<dt>배송비</dt>
+					<dd>
+						<span class="price">0</span>원
+					</dd>
+				</dl>
+								
+				<dl class="product_price">
+					<dt>할인예상금액</dt>
+					<dd class="discount">
+						<span class="price">8,888</span>원
+					</dd>
+				</dl>
+							
 			</div>
+			<div class="product_price_total">
+				<span class="text_mart">총 주문금액</span> <span class="text_point"><span
+					class="price">666,666</span>원</span>
+			</div>
+	</div>
+
+
+			
 			
 			<div class="cart_button_box">
 				<a href="<c:url value="/home.do"/>" class="link_home">쇼핑 계속하기</a>
@@ -168,7 +211,26 @@
 	<!-- 모든 컴파일된 플러그인을 포함합니다 (아래), 원하지 않는다면 필요한 각각의 파일을 포함하세요 -->
 
 	<script src="<c:url value="/bootstrap/js/bootstrap.min.js"/>"></script>
-
+	
+	<script >
+	
+	function cAll() {
+        if ($("#check_all").is(':checked')) {
+            $("input[type=checkbox]").prop("checked", true);
+        } else {
+            $("input[type=checkbox]").prop("checked", false);
+        }
+    }
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	</script>
 	<!-- 실제 내용 끝 -->
 	<!--  푸터 시작 -->
 	<jsp:include page="/WEB-INF/views/templates/Side.jsp" />
