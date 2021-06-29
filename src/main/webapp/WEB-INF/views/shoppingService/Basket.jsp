@@ -119,8 +119,8 @@
 					
 						<td class="table_cell">
 							<div class="checkbox">
-								<label for="bundle_checkbox" class="blind"><input
-									type="checkbox" id="bundle_checkbox" class="input" checked="" >상품	선택</label>
+								<label for="bundle_checkbox_1" class="blind"><input
+									type="checkbox" id="bundle_checkbox_1" class="input" checked="" >상품	선택</label>
 							</div>
 						</td>
 
