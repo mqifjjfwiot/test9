@@ -34,17 +34,29 @@
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 <style>
-img {
-	margin: 50px;
+fieldset div {
 	display: inline-block;
-	width: 350px;
-	height: 350px;
+}
+
+fieldset img {
+	border-radius: 20%;
+	margin: 40px;
+	display: inline-block;
+	width: 400px;
+	height: 400px;
 	border: 2px solid black;
 	text-align: center;
 	vertical-align: middle;
 	cursor: pointer;
+	margin: 50px;
+	margin-bottom: 20px
 }
 
+fieldset p {
+	text-align : center;
+	font-size: 1.5em;
+
+}
 </style>
 </head>
 <body>
@@ -56,11 +68,19 @@ img {
 					<h1>고객센터</h1>
 				</div>
 				<fieldset>
-				 	<a href="<c:url value='/CustomerQA.do'/>"><img alt="자주 물어보는 질문" src="<c:url value="/images/manager1.jpg"/>"/></a>
-					<!-- div class="box1" onclick="location.href='<c:url value='/Manager/Customer.do'/>'">
+					<div class="box">
+						<a href="<c:url value='/CustomerQA.do'/>"><img
+							alt="자주 물어보는 질문" src="<c:url value="/images/manager1.jpg"/>" /></a>
+						<!-- div class="box1" onclick="location.href='<c:url value='/Manager/Customer.do'/>'">
 						<img alt="자주 물어보는 질문" src="<c:url value="/images/manage1.png"/>">
 					</div-->
-					<a href="<c:url value='/CustomerBoard.do'/>"><img alt="고객 문의 게시판" src="<c:url value="/images/manager2.jpg"/>"/></a>
+						<p>자주 물어보는 질문</p>
+					</div>
+					<div class="box">
+						<a href="<c:url value='/CustomerBoard.do'/>"><img
+							alt="고객 문의 게시판" src="<c:url value="/images/manager2.jpg"/>" /></a>
+						<p>고객 문의 게시판</p>
+					</div>
 					<!-- div class="box2" onclick="location.href='<c:url value='#'/>'">고객 문의 게시판</div-->
 				</fieldset>
 			</div>
@@ -69,4 +89,4 @@ img {
 	<jsp:include page="/WEB-INF/views/templates/Side.jsp" />
 	<jsp:include page="/WEB-INF/views/templates/mainfooter.jsp" />
 </body>
-</html>
+</html>	x

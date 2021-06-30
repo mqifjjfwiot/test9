@@ -15,6 +15,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+<!-- 결제 -->
+<script type="text/javascript"
+	src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script type="text/javascript"
+	src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
 <!--------- 스타일 ----------->
 <style>
 	div.top_border {
@@ -72,11 +77,11 @@
         </c:if>
         <c:if test="${not login }">
         	<li><a href="<c:url value="Logout.do"/>">로그아웃</a></li>
-			<li><a href="<c:url value="Mypage.do"/>">마이페이지</a></li>
+			<li><a href="<c:url value="/MyPage.do"/>">마이페이지</a></li>
         </c:if>
-        <li><a href="<c:url value="/basket.do"/>">장바구니</a></li>
+        <li><a href="<c:url value="/Basket.do"/>">장바구니</a></li>
         <li><a href="<c:url value="/CustomerMain.do"/>">고객센터</a></li>
-        <li><a href="<c:url value="/notice.do"/>">공지사항</a></li>
+        <li><a href="<c:url value="/Notice.do"/>">공지사항</a></li>
       </ul>
     </div>
   </div>
@@ -93,36 +98,36 @@
   	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav">
       
-      <li class="nav-item"><a href="#">신상품</a></li>
-						<li class="nav-item"><a href="#">행사상품</a></li>
+      <li class="nav-item"><a href="<c:url value="/Item/Items.do?menu=1"/>">신상품</a></li>
+						<li class="nav-item"><a href="<c:url value="/Item/Items.do?menu=2"/>">행사상품</a></li>
 						<li class="nav-item"><a href="#" class="dropdown-toggle"
 							data-toggle="dropdown">신선식품 <span class="caret"></span></a>
 							<ul class="dropdown-menu">
-								<li><a class="dropdown-item" href="#menu1">육류/계란</a></li>
-								<li><a class="dropdown-item" href="#menu2">생선/어패류</a></li>
-								<li><a class="dropdown-item" href="#menu3">과일</a></li>
-								<li><a class="dropdown-item" href="#menu4">채소</a></li>
-								<li><a class="dropdown-item" href="#menu5">쌀/잡곡/견과</a></li>
+								<li><a class="dropdown-item" href="<c:url value="/Item/Items.do?menu=3"/>">육류/계란</a></li>
+								<li><a class="dropdown-item" href="<c:url value="/Item/Items.do?menu=4"/>">생선/어패류</a></li>
+								<li><a class="dropdown-item" href="<c:url value="/Item/Items.do?menu=5"/>">과일</a></li>
+								<li><a class="dropdown-item" href="<c:url value="/Item/Items.do?menu=6"/>">채소</a></li>
+								<li><a class="dropdown-item" href="<c:url value="/Item/Items.do?menu=7"/>">쌀/잡곡/견과</a></li>
 							</ul></li>
 						<li class="nav-item"><a href="#" class="dropdown-toggle"
 							data-toggle="dropdown">밀키트/반조리 <span class="caret"></span></a>
 							<ul class="dropdown-menu">
-								<li><a class="dropdown-item" href="#menu8">밀키트</a></li>
-								<li><a class="dropdown-item" href="#menu9">냉동/냉장/통조림</a></li>
-								<li><a class="dropdown-item" href="#menu10">레토르트</a></li>
-								<li><a class="dropdown-item" href="#menu11">육/어육가공품</a></li>
-								<li><a class="dropdown-item" href="#menu12">김치</a></li>
-								<li><a class="dropdown-item" href="#menu13">라면/면류</a></li>
-								<li><a class="dropdown-item" href="#menu14">베이커리</a></li>
-								<li><a class="dropdown-item" href="#menu15">과자/시리얼</a></li>
+								<li><a class="dropdown-item" href="<c:url value="/Item/Items.do?menu=8"/>">밀키트</a></li>
+								<li><a class="dropdown-item" href="<c:url value="/Item/Items.do?menu=9"/>">냉동/냉장/통조림</a></li>
+								<li><a class="dropdown-item" href="<c:url value="/Item/Items.do?menu=10"/>">레토르트</a></li>
+								<li><a class="dropdown-item" href="<c:url value="/Item/Items.do?menu=11"/>">육/어육가공품</a></li>
+								<li><a class="dropdown-item" href="<c:url value="/Item/Items.do?menu=12"/>">김치</a></li>
+								<li><a class="dropdown-item" href="<c:url value="/Item/Items.do?menu=13"/>">라면/면류</a></li>
+								<li><a class="dropdown-item" href="<c:url value="/Item/Items.do?menu=14"/>">베이커리</a></li>
+								<li><a class="dropdown-item" href="<c:url value="/Item/Items.do?menu=15"/>">과자/시리얼</a></li>
 							</ul></li>
 						<li class="nav-item"><a href="#" class="dropdown-toggle"
 							data-toggle="dropdown">음료/차 <span class="caret"></span></a>
 							<ul class="dropdown-menu">
-								<li><a class="dropdown-item" href="#menu16">생수</a></li>
-								<li><a class="dropdown-item" href="#menu17">주스/탄산</a></li>
-								<li><a class="dropdown-item" href="#menu18">차</a></li>
-								<li><a class="dropdown-item" href="#menu19">주류</a></li>
+								<li><a class="dropdown-item" href="<c:url value="/Item/Items.do?menu=16"/>">생수</a></li>
+								<li><a class="dropdown-item" href="<c:url value="/Item/Items.do?menu=17"/>">주스/탄산</a></li>
+								<li><a class="dropdown-item" href="<c:url value="/Item/Items.do?menu=18"/>">차</a></li>
+								<li><a class="dropdown-item" href="<c:url value="/Item/Items.do?menu=19"/>">주류</a></li>
 							</ul></li>
     </ul>
   

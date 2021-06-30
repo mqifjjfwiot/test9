@@ -14,19 +14,55 @@
 	<h2>일반 회원가입</h2>
 	${message }
 	<form action="<c:url value="/join"/>" method="post">
-		<div>
-			아이디 <input type="text" name="id"/>
-		</div>
-		<div>
-			비밀번호 <input type="password" name="pwd"/>
-		</div>
-		<div>
-			비밀번호 확인 <input type="password" name="pwd"/>
-		</div>
-		
-		<div>
-			이름 <input type="text" name="name"/>
-		</div>
+		<div class="form-group">					
+					<label class="col-md-2 control-label" for="id">아이디</label>
+					<div class="col-md-4">
+						<input type="text" class="form-control" name="id" placeholder="아이디를 입력하세요?" value="">
+					</div>
+				</div>
+				<div class="form-group">					
+					<label class="col-sm-2 control-label" for="pwd">비밀번호</label>
+					${different }
+					<div class="col-sm-4">
+						<input type="password" class="form-control" name="pwd" placeholder="비밀번호 입력하세요?">
+					</div>
+				</div>
+				<div class="form-group">					
+					<label class="col-sm-2 control-label" for="pass">비밀번호 재입력</label>
+					<div class="col-sm-4">
+						<input type="password" class="form-control" name="pwdCheck" placeholder="비밀번호 입력하세요?">
+					</div>
+				</div>
+				
+				<div class="form-group">					
+					<label class="col-sm-2 control-label" for="name">이름</label>
+					<div class="col-sm-4">
+						<input type="text" class="form-control" name="name" placeholder="이름을 입력하세요?" value="">
+					</div>
+				</div>
+				<div class="form-group">					
+					<label class="col-sm-2 control-label" for="tel">전화번호</label>
+					<div class="col-sm-4">
+						<input type="text" class="form-control" name="tel" placeholder="-를 제외한 번호를 입력하세요" value="">
+					</div>
+				</div>
+				<div class="form-group">					
+					<label class="col-sm-2 control-label" for="addr">주소</label>
+					<div class="col-sm-4">
+						<input type="text" class="form-control" name="addr" placeholder="주소를 입력하세요?" value="">
+					</div>
+				</div>
+				<div class="form-group">					
+					<label class="col-sm-2 control-label" for="mail">이메일</label>
+					<div class="col-sm-4">
+						<input type="text" class="form-control" name="mail" value="">@
+						<select name="mailEnd">
+							<option>naver.com</option>
+							<option>daum.net</option>
+							<option>nate.com</option>
+						</select>
+					</div>
+				</div>
 		
 		
 		
