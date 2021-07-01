@@ -70,6 +70,9 @@ h3 {
 					}
 
 				});
+		  $( function() {
+		    $( "#speed" ).selectmenu();
+		  }
 		//getter
 		var animate = $("#accordion").accordion("option", "animate");
 		console.log("애니메이션 시간:" + animate);
