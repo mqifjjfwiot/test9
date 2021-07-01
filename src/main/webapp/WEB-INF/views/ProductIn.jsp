@@ -37,25 +37,37 @@
 	margin-bottom: 100px;
 }
 table {
-	font-size: 20px;
+	font-size: 17px;
 	color : gray;
 	font-family:sans-serif;
+	width: 70%;
 }
 td {
 	padding: 20px;
 }
+
+tr.space {
+  border-bottom: 10px solid #fff;
+}
 #pro {
 	color: red;
-	font-size:18px;
-	font-family: serif;
+	font-size:20px;
+	border-bottom: 1px solid #fff;
 }
 #proname {
 	font-size: 40px;
 	color : black;
 }
-li{
-	font-size: 1.5em;
-	color: gray;
+#abutton {
+	font-size:30px;
+	padding:5px 10px;
+	margin-top: 5px;
+	width : 100%;
+}
+#navbox {
+	font-size: 20px;
+	color: black;
+	
 }
 </style>
 </head>
@@ -76,56 +88,63 @@ li{
 			<div class="col-md-6">
 				<table>
 					<thead>
-						<tr colspan="2" id="pro">
-							<td>상품 홍보글</td>
+						<tr colspan="2" id="pro" class="space">
+							<td><b>상품 홍보글</b></td>
 						</tr>
-						<tr colspan="2" id="proname">
+						<tr colspan="2" id="proname" class="space">
 							<th>상품명</th>
 					</thead>
 					<tbody>
-						<tr>
+						<tr class="space">
 							<td>판매가</td>
 							<td>{판매가}</td>
 						</tr>
-						<tr>
+						<tr class="space">
 							<td>적립금</td>
 							<td>{적립금}</td>
 						</tr>
-						<tr>
+						<tr class="space">
 							<td>원산지</td>
 							<td>{원산지}</td>
 						</tr>
-						<tr>
+						<tr class="space">
 							<td>제조사/브랜드</td>
 							<td>{제조사/브랜드}</td>
 						</tr>
-						<tr>
+						<tr class="space">
 							<td>배송비</td>
 							<td>{배송비}</td>
 						</tr>
-						<tr>
+						<tr class="space">
 							<td>상품 선택</td>
 							<td><select draggable="true">
-									<option>옵션1aaaaaaaaaaaa</option>
+									<option>옵션을 선택하세요</option>
+									<option>옵션1</option>
 									<option>옵션2</option>
 									<option>옵션3</option>
 									<option>옵션4</option>
 									<option>옵션5</option>
 							</select></td>
 						</tr>
-						<tr>
+						<!-- tr class="space">
 							<td>총 상품금액</td>
 							<td>####원</td>
 						</tr>
-						<tr>
+						<tr class="space">
 							<td><button onclick="<c:url value='#'/>">장바구니</button></td>
 							<td><button onclick="<c:url value='#'/>">구매하기</button></td>
-						</tr>
+						</tr-->
 					</tbody>
 				</table>
+				<hr>
+				<div id="abutton">
+					<button value="장바구니" class="btn btn-default btn-lg" onclick="<c:url value="#"/>">장바구니</button>
+					<button value="구매하기" class="btn btn-default btn-lg" onclick="<c:url value="#"/>">구매하기</button>
+					
+				</div>
 			</div>
 		</div>
-		<ul class="nav nav-tabs">
+		<ul class="nav nav-tabs" id="navbox">
 			<li><a href="#">상품 상세보기</a></li>
 			<li><a href="#">구매후기</a></li>
 			<li><a href="#">상품문의</a></li>
