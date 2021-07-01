@@ -38,5 +38,10 @@ public class ItemController {
 		}
 		return "ProductPage";
 	}
+	
+	@RequestMapping("/Item/Product.do")
+	public String ProductIn() {
+		return "ProductIn";
+	}
 
 }

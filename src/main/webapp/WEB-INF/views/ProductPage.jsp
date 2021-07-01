@@ -44,7 +44,7 @@ li {
 				<div class="col-xs-10"></div>
 				<div>
 					<ul>
-						<li><a href="<c:url value="#"/>">
+						<li><a href="<c:url value="/Item/Product.do"/>">
 								<div style="display: inline-block" class="box">
 									<div style="width: 250px; height: 350px">
 										<img
