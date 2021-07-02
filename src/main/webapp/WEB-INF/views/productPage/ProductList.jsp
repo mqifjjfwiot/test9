@@ -34,7 +34,7 @@ li {
 <body>
 
 	<div class="container-fluid">
-		<%@ include file="templates/mainheader.jsp"%>
+		<jsp:include page="/WEB-INF/views/templates/mainheader.jsp" />
 		<div class="container">
 			<div class="page-header">
 				<h2 style="margin-left: 20px">${message }</h2>

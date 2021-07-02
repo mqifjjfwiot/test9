@@ -96,7 +96,7 @@ li {
 </head>
 <body>
 	<!-- 네비게이션 시작 -->
-	<jsp:include page="templates/mainheader.jsp" />
+	<jsp:include page="/WEB-INF/views/templates/mainheader.jsp" />
 	<!-- 네비게이션 끝 -->
 	<!-- 실제 내용 시작 -->
 	<div class="container">
