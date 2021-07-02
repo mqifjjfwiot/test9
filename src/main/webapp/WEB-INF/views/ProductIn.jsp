@@ -25,7 +25,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 <!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요합니다) -->
-<script
+<script>
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <!-- 모든 컴파일된 플러그인을 포함합니다 (아래), 원하지 않는다면 필요한 각각의 파일을 포함하세요 -->
 
@@ -65,7 +65,7 @@ tr.space {
 
 #abutton {
 	font-size: 30px;
-	padding: 5px 10px;
+	padding: 5px 5px;
 	margin-top: 5px;
 	width: 100%;
 }
@@ -74,16 +74,25 @@ tr.space {
 	font-size: 20px;
 	color: black;
 }
+
 #price {
-	font-size: 17px;
+	font-size: 25px;
 	padding-left: 10px;
 }
+
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	border: 0;
+	float: left;
+}
 </style>
-<script>
-$( function() {
-    $( "#speed" ).selectmenu();
-});
-</script>
 </head>
 <body>
 	<!-- 네비게이션 시작 -->
@@ -132,8 +141,7 @@ $( function() {
 						<tr class="space">
 							<td>상품 선택</td>
 							<td><fieldset>
-									<select name="speed"
-										id="speed">
+									<select name="speed" id="speed">
 										<option selected="selected">옵션을 선택해주세요.</option>
 										<option>옵션1</option>
 										<option>옵션2</option>
@@ -163,11 +171,34 @@ $( function() {
 			</div>
 		</div>
 		<ul class="nav nav-tabs" id="navbox">
-			<li><a href="#">상품 상세보기</a></li>
-			<li><a href="#">구매후기</a></li>
-			<li><a href="#">상품문의</a></li>
-			<li><a href="#">교환/환불/배송정보</a></li>
+			<li class="nav-item"><a class="nav-link active"
+				data-toggle="tab" href="#jkl">상품 상세보기</a></li>
+			<li class="nav-item"><a class="nav-link" data-toggle="tab"
+				href="#abc">구매후기</a></li>
+			<li class="nav-item"><a class="nav-link" data-toggle="tab"
+				href="#def">상품문의</a></li>
+			<li class="nav-item"><a class="nav-link" data-toggle="tab"
+				href="#ghi">교환/환불/배송정보</a></li>
 		</ul>
+		<div class="tab-content">
+			<div class="tab-pane show active " id="jkl">
+				<img alt="상품상세페이지" src="<c:url value="/images/test.jpg"/>">
+			</div>
+			<div class="tab-pane fade" id="abc">
+				<p>Nunc vitae turpis id nibh sodales commodo et non augue. Proin
+					fringilla ex nunc. Integer tincidunt risus ut facilisis tristique.</p>
+			</div>
+			<div class="tab-pane fade" id="def">
+				<p>Curabitur dignissim quis nunc vitae laoreet. Etiam ut mattis
+					leo, vel fermentum tellus. Sed sagittis rhoncus venenatis. Quisque
+					commodo consectetur faucibus. Aenean eget ultricies justo.</p>
+			</div>
+			<div class="tab-pane fade" id="ghi">
+				<p>Curabitur dignissim quis nunc vitae laoreet. Etiam ut mattis
+					leo, vel fermentum tellus. Sed sagittis rhoncus venenatis. Quisque
+					commodo consectetur faucibus. Aenean eget ultricies justo.</p>
+			</div>
+		</div>
 		<!-- 버튼 색상 변경 및 장바구니 구매결정 버튼 생성 -->
 	</div>
 
