@@ -101,7 +101,7 @@ li {
 	<!-- 실제 내용 시작 -->
 	<div class="container">
 		<div class="page-header">
-			<h1>상품 상세페이지</h1>
+			<h1><a href="<c:url value="/Item/Accordian.do"/>">상품 상세페이지</a></h1>
 		</div>
 		<div class="row">
 			<div class="col-md-5">
