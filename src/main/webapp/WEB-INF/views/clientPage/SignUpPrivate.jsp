@@ -13,7 +13,7 @@
 	<!-- 네비게이션 끝 -->
 	<h2>일반 회원가입</h2>
 	${message }
-	<form action="<c:url value="/join"/>" method="post">
+	<form action="<c:url value="/join.do"/>" method="post">
 		<div class="form-group">					
 					<label class="col-md-2 control-label" for="id">아이디</label>
 					<div class="col-md-4">

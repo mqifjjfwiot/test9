@@ -34,7 +34,7 @@ li {
 <body>
 
 	<div class="container-fluid">
-		<%@ include file="templates/mainheader.jsp"%>
+		<jsp:include page="/WEB-INF/views/templates/mainheader.jsp" />
 		<div class="container">
 			<div class="page-header">
 				<h2 style="margin-left: 20px">${message }</h2>
@@ -44,7 +44,7 @@ li {
 				<div class="col-xs-10"></div>
 				<div>
 					<ul>
-						<li><a href="<c:url value="#"/>">
+						<li><a href="<c:url value="/Item/Product.do"/>">
 								<div style="display: inline-block" class="box">
 									<div style="width: 250px; height: 350px">
 										<img

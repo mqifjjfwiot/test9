@@ -56,7 +56,9 @@
   	font-size: 130%;
   	padding-left: 200px;
 	}
-	
+	.dropdown-menu {
+	min-width: 0px;
+	}
 	
 </style>  
 </head>

@@ -36,7 +36,17 @@ public class ItemController {
 		case 18: map.put("message", "차");break;
 		default : map.put("message", "주류");break; 
 		}
-		return "ProductPage";
+		return "productPage/ProductList";
+	}
+	
+	@RequestMapping("/Item/Product.do")
+	public String ProductIn() {
+		return "productPage/ProductInfo";
+	}
+	
+	@RequestMapping("/Item/Accordian.do")
+	public String Accordian() {
+		return "productPage/Intro";
 	}
 
 }
