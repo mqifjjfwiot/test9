@@ -46,7 +46,7 @@ public class ItemController {
 	
 	@RequestMapping("/Item/Accordian.do")
 	public String Accordian() {
-		return "productPage/AccordianBase";
+		return "productPage/Intro";
 	}
 
 }
