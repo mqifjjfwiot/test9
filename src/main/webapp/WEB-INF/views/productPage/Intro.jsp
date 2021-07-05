@@ -18,6 +18,13 @@
 <link rel="stylesheet" href="<c:url value="/styles/common.css"/>">
 <link href="<c:url value="/bootstrap/css/bootstrap.min.css"/>"
 	rel="stylesheet">
+
+<!-- Downloaded chart.css -->
+<link rel="stylesheet" href="chart.css">
+
+<!-- RawGit CDN chart.css -->
+<link rel="stylesheet"
+	href="https://cdn.rawgit.com/theus/chart.css/v1.0.0/dist/chart.css" />
 <!-- IE8 에서 HTML5 요소와 미디어 쿼리를 위한 HTML5 shim 와 Respond.js -->
 <!-- WARNING: Respond.js 는 당신이 file:// 을 통해 페이지를 볼 때는 동작하지 않습니다. -->
 <!--[if lt IE 9]>
@@ -30,6 +37,7 @@
 <!-- 모든 컴파일된 플러그인을 포함합니다 (아래), 원하지 않는다면 필요한 각각의 파일을 포함하세요 -->
 
 <script src="<c:url value="/bootstrap/js/bootstrap.min.js"/>"></script>
+
 </head>
 <body>
 	<ul class="nav nav-tabs" id="navbox">
@@ -44,14 +52,37 @@
 	</ul>
 	<div class="tab-content">
 		<div class="tab-pane fade" id="abc">
-		<!-- img alt="상품상세페이지" src="<c:url value="/images/test.jpg"/>" -->
+			<!-- img alt="상품상세페이지" src="<c:url value="/images/test.jpg"/>" -->
 			<p>상품 상세설명 이미지 ${ITEMS.IMAGE}</p>
 		</div>
 		<div class="tab-pane fade" id="def">
+			<div class="charts">
+				<span>chart--default</span>
+				<div class="charts__chart chart--p100 chart--red" data-percent></div>
+				<!-- /.charts__chart -->
+				
+				<div class="charts__chart chart--p80 chart--red" data-percent></div>
+				<!-- /.charts__chart -->
+				
+				<div class="charts__chart chart--p60 chart--red" data-percent></div>
+				<!-- /.charts__chart -->
+				
+				<div class="charts__chart chart--p40 chart--red" data-percent></div>
+				<!-- /.charts__chart -->
+				
+				<div class="charts__chart chart--p20 chart--red" data-percent></div>
+				<!-- /.charts__chart -->
+				
+				<div class="charts__chart chart--p5 chart--red" data-percent></div>
+				<!-- /.charts__chart -->
+			</div>
+			<!-- /.charts -->
+			<hr>
+
 			<p>구매후기 : c:url value=""</p>
 		</div>
 		<div class="tab-pane fade" id="ghi">
-			<p>상품문의 : </p>
+			<p>상품문의 :</p>
 		</div>
 		<div class="tab-pane show active " id="jkl">
 			<p>교환/환불/배송정보 ${ITEMS.IMAGE2}</p>
