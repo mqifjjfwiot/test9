@@ -6,12 +6,7 @@
 <!-- namespace속성:매퍼파일의 완전한경로 .xml는 생략 -->
 <!-- ※ibatis와는 다르게 id값에 .(dot)를 사용 못한다. -->
 <mapper namespace="onememo.mybatis.mapper.linecomment">
-	<!-- 
-	resultType을 Map으로 지정시
-	키값(대문자)은 컬럼명이고
-	밸류값는 컬럼에 저장된 값
-	 -->
-	<!-- 마이바티스의 resultMap의 collection 미 사용시 -->
+	
 	<select id="commentSelectList" parameterType="Map" resultType="Map">
 		SELECT L.*,M.NAME 
 		FROM member m JOIN LINECOMMENTS L ON M.ID = L.ID 

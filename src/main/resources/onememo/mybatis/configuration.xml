@@ -9,8 +9,10 @@
 	<properties resource="onememo/mybatis/connect.properties" />
 
 	<typeAliases>
+		<typeAlias type="com.company.test.service.TestDTO" alias="testDTO"/>	
+		<!--LineCommentDTO는 별칭 불필요. SELECT결과를 Map에 저장하기때문에
 		<typeAlias type="com.company.test.service.OneMemoDTO" alias="oneMemoDTO"/>	
-		<!--LineCommentDTO는 별칭 불필요. SELECT결과를 Map에 저장하기때문에 -->
+		 -->
 	</typeAliases>
 	
 	<!-- 데이타베이스 연결정보 설정 -->
@@ -36,8 +38,9 @@
 	</environments>
 	<!-- 매퍼파일(SQL쿼리 결과와 자바빈 매핑)의 위치정보 설정 -->
 	<mappers>
-		<mapper resource="onememo/mybatis/mapper/onememo.xml" />
+		<mapper resource="onememo/mybatis/mapper/test.xml" />
 		<!-- 
+		<mapper resource="onememo/mybatis/mapper/onememo.xml" />
 		<mapper resource="onememo/mybatis/mapper/linecomment.xml" />
 		 -->
 	</mappers>

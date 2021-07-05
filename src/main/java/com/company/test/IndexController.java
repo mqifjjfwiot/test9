@@ -48,10 +48,6 @@ public class IndexController {
 	}
 	
 	//내정보 페이지로
-	@RequestMapping("/MyPage.do")
-	public String MyPage() {
-		return "clientPage/MyPage";
-	}
 	
 
 	//상품관련 페이지 - productPage

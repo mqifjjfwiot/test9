@@ -122,6 +122,30 @@
 										</td>
 									</tr>
 									<tr style="background-color: white">
+										<td style="width: 25%">이름</td>
+										<td style="padding-left: 5px">
+											${sessionScope.name }
+										</td>
+									</tr>
+									<tr style="background-color: white">
+										<td style="width: 25%">전화번호</td>
+										<td style="padding-left: 5px">
+											${sessionScope.tel }
+										</td>
+									</tr>
+									<tr style="background-color: white">
+										<td style="width: 25%">주소</td>
+										<td style="padding-left: 5px">
+											${sessionScope.addr }
+										</td>
+									</tr>
+									<tr style="background-color: white">
+										<td style="width: 25%">이메일</td>
+										<td style="padding-left: 5px">
+											${sessionScope.mail }
+										</td>
+									</tr>
+									<tr style="background-color: white">
 										<td colspan="2"><a href="Logout.jsp">로그아웃</a></td>										
 									</tr>
 								</table>

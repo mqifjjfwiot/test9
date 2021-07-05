@@ -32,12 +32,9 @@ public class TestController {
 		else if(!(map.get("pwdCheck").equals(map.get("pwd")))) {
 			model.addAttribute("different","비밀번호가 일치하지않습니다");
 		}
-		return "forward:/";
+		return "clientPage/Login";
 	}
-	@RequestMapping(value="/join.do",method=RequestMethod.GET)
-	public String joinForm() {
-		return "Join";
-	}
+	
 	
 	
 }

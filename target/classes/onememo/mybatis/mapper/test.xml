@@ -5,11 +5,14 @@
   
 <!-- namespace속성:매퍼파일의 완전한경로 .xml는 생략 -->
 <!-- ※ibatis와는 다르게 id값에 .(dot)를 사용 못한다. -->
-<mapper namespace="mybatis.mapper.test">
+<mapper namespace="onememo.mybatis.mapper.test">
 	<insert id="myInsert" parameterType="testDTO">
-		INSERT INTO MEMBER VALUES(#{id},#{pwd},#{name},#{tel},#{addr},#{mail})
+		INSERT INTO MEMBER VALUES(no.nextval,#{id},#{pwd},#{tel},#{name},#{addr},#{mail},default)
 	</insert>
 	<select id="myMember" resultType="int" parameterType="testDTO">
-		SELECT COUNT(*) FROM member WHERE id=#{id} AND pwd=#{pwd}
+		SELECT COUNT(*) FROM member WHERE id=#{id}
+	</select>
+	<select id="memoIsLogin" parameterType="Map" resultType="int">
+		SELECT COUNT(*) FROM member WHERE id=#{id} AND pwd=#{pwd}		
 	</select>
 </mapper>

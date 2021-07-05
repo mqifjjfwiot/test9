@@ -29,7 +29,7 @@ public class AuthController {
 			return "home";
 		}
 		else {
-			model.addAttribute("NotMember", "아뒤와 비번이 틀려요");
+			model.addAttribute("NotMember", "가입한 회원이 아니거나 비밀번호가 일치하지 않습니다");
 			return "clientPage/Login";
 		}
 	}
@@ -37,5 +37,10 @@ public class AuthController {
 	public String logout(HttpSession session) {
 		session.invalidate();
 		return "home";
+	}
+	@RequestMapping("/MyPage.do")
+	public String MyPage() {
+		
+		return "clientPage/MyPage";
 	}
 }
