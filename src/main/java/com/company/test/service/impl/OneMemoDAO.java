@@ -16,6 +16,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.stereotype.Repository;
 
 import com.company.test.service.OneMemoDTO;
+import com.company.test.service.TestDTO;
 
 
 @Repository
@@ -27,8 +28,6 @@ public class OneMemoDAO  {
 	
 
 	public boolean isLogin(Map map) {
-		System.out.println("sqlMapper:"+sqlMapper);
-		System.out.println(map.get("id"));
 		return (Integer)sqlMapper.selectOne("memoIsLogin", map) ==1 ? true : false;
 	}
 
@@ -68,5 +67,8 @@ public class OneMemoDAO  {
 	public String findNameById(String id) {
 		return sqlMapper.selectOne("memoFindNameById", id);
 	}////////////////////////
-	
+	public TestDTO getMemberInfo(String id) {
+		
+		return sqlMapper.selectOne("selectMyMemberInfo",id);
+	}
 }

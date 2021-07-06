@@ -2,6 +2,8 @@ package com.company.test.web;
 
 import java.util.Map;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -33,6 +35,11 @@ public class TestController {
 			model.addAttribute("different","비밀번호가 일치하지않습니다");
 		}
 		return "clientPage/Login";
+	}
+	@RequestMapping("/MyPage.do")
+	public String MyPage(TestDTO dto,@RequestParam Map map,HttpSession session) {
+		
+		return "clientPage/MyPage";
 	}
 	
 	

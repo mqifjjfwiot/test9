@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 public interface OneMemoService {
 	//로그인 용]
 	boolean isLogin(Map map);
+	TestDTO getMemberInfo(String id);
 	//목록용]
 	ListPagingData<OneMemoDTO> selectList(Map map,HttpServletRequest req,int nowPage);
 	//전체 레코드 수]

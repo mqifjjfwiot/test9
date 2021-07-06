@@ -11,6 +11,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.company.test.service.OneMemoService;
+import com.company.test.service.TestDTO;
+import com.company.test.service.TestService;
+import com.company.test.service.impl.TestServiceImpl;
+import com.company.test.vo.UserInfoVo;
 
 
 @Controller
@@ -24,8 +28,17 @@ public class AuthController {
 	@RequestMapping("LoginProcess.do")
 	public String process(@RequestParam Map map,Model model,HttpSession session) {
 		boolean flag=memoService.isLogin(map);
+		TestDTO dto = memoService.getMemberInfo(map.get("id").toString());
+		System.out.println("이름"+dto.getName());
+		System.out.println("주소"+dto.getAddr());
+		System.out.println("번호"+dto.getTel());
+		
 		if(flag) {
-			session.setAttribute("id", map.get("id"));
+			session.setAttribute("id", dto.getId());
+			session.setAttribute("addr", dto.getTel());
+			session.setAttribute("tel", dto.getName());
+			session.setAttribute("mail", dto.getMail());
+			session.setAttribute("name", dto.getAddr());
 			return "home";
 		}
 		else {
@@ -33,14 +46,11 @@ public class AuthController {
 			return "clientPage/Login";
 		}
 	}
+	
 	@RequestMapping("Logout.do")
 	public String logout(HttpSession session) {
 		session.invalidate();
 		return "home";
 	}
-	@RequestMapping("/MyPage.do")
-	public String MyPage() {
-		
-		return "clientPage/MyPage";
-	}
+	
 }

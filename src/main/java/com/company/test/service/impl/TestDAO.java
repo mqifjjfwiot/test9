@@ -1,5 +1,7 @@
 package com.company.test.service.impl;
 
+import java.util.Map;
+
 import javax.annotation.Resource;
 
 import org.mybatis.spring.SqlSessionTemplate;
@@ -28,9 +30,7 @@ public class TestDAO  {
 	}
 	//중복 아이디 체크용
 	public int isExistMember(TestDTO dto) {
-		return sqlMapper.selectOne("myMember",dto);
+		return sqlMapper.selectOne("myMemberCnt",dto);
 	}
-	//마이페이지에 뿌려줄거
-	//public int 
 	
 }

@@ -13,6 +13,7 @@ import com.company.test.service.ListPagingData;
 import com.company.test.service.OneMemoDTO;
 import com.company.test.service.OneMemoService;
 import com.company.test.service.PagingUtil;
+import com.company.test.service.TestDTO;
 
 @Service("memoService")
 public class OneMemoServiceImpl implements OneMemoService {
@@ -79,6 +80,10 @@ public class OneMemoServiceImpl implements OneMemoService {
 	@Override
 	public String findNameById(String id) {		
 		return dao.findNameById(id);
+	}
+	@Override
+	public TestDTO getMemberInfo(String id) {
+		return dao.getMemberInfo(id);
 	}
 
 }
