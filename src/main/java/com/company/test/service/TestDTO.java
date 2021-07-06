@@ -15,9 +15,9 @@ public class TestDTO {
 	private String no;
 	private String id;
 	private String pwd;
+	private String tel;
 	private String name;
 	private String addr;
-	private String tel;
 	private String mail;
 	private Date regDate;
 }

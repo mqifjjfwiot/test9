@@ -29,16 +29,13 @@ public class AuthController {
 	public String process(@RequestParam Map map,Model model,HttpSession session) {
 		boolean flag=memoService.isLogin(map);
 		TestDTO dto = memoService.getMemberInfo(map.get("id").toString());
-		System.out.println("이름"+dto.getName());
-		System.out.println("주소"+dto.getAddr());
-		System.out.println("번호"+dto.getTel());
 		
 		if(flag) {
 			session.setAttribute("id", dto.getId());
-			session.setAttribute("addr", dto.getTel());
-			session.setAttribute("tel", dto.getName());
+			session.setAttribute("tel", dto.getTel());
+			session.setAttribute("name", dto.getName());
 			session.setAttribute("mail", dto.getMail());
-			session.setAttribute("name", dto.getAddr());
+			session.setAttribute("addr", dto.getAddr());
 			return "home";
 		}
 		else {
