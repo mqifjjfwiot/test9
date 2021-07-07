@@ -137,6 +137,7 @@ function execPostCode() {
 
 
 	</form>
+	</article>
 	<!--  푸터 시작 -->
 	<jsp:include page="/WEB-INF/views/templates/Side.jsp" />
 	<jsp:include page="/WEB-INF/views/templates/mainfooter.jsp" />
