@@ -8,7 +8,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>templates.jsp</title>
+<title>상품 정보</title>
 
 <!-- 페이지 설명은 여기에 -->
 

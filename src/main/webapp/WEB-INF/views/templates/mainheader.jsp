@@ -73,12 +73,12 @@
     <div>
       <ul class="nav navbar-nav navbar-right">
       <c:if test="${empty sessionScope.id }" var="login">
-        	<li><a href="<c:url value="Login.do"/>">로그인</a></li>
+        	<li><a href="<c:url value="/Login.do"/>">로그인</a></li>
         	<li><a href="#">비회원로그인</a></li>
         	<li><a href="<c:url value="/SignUpMain.do"/>">회원가입</a></li>
         </c:if>
         <c:if test="${not login }">
-        	<li><a href="<c:url value="Logout.do"/>">로그아웃</a></li>
+        	<li><a href="<c:url value="/Logout.do"/>">로그아웃</a></li>
 			<li><a href="<c:url value="/MyPage.do"/>">마이페이지</a></li>
         </c:if>
         <li><a href="<c:url value="/Basket.do"/>">장바구니</a></li>
