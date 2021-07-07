@@ -21,15 +21,15 @@ public class TestController {
 	private TestService service;
 	@RequestMapping(value="/join.do",method = RequestMethod.POST)
 	public String join(TestDTO dto,Model model,@RequestParam Map map) {
-		dto.setMail(map.get("mail").toString()+"@"+map.get("mailEnd"));
+		//dto.setMail(map.get("mail").toString()+"@"+map.get("mailEnd"));
 		int result=service.insertMember(dto);
 		if(result ==-1) {
 			model.addAttribute("message", "이미 중복된 아이디가 있어요");
-			return "Join";
+			return "clientPage/SignUpPrivate";
 		}
 		else if(result ==-2) {
 			model.addAttribute("message", "입력값이 너무 커요");
-			return "Join";
+			return "clientPage/SignUpPrivate";
 		}
 		else if(!(map.get("pwdCheck").equals(map.get("pwd")))) {
 			model.addAttribute("different","비밀번호가 일치하지않습니다");
