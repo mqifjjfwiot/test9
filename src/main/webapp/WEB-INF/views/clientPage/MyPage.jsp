@@ -95,23 +95,12 @@
 </style>
 </head>
 <body>
+			<jsp:include page="../templates/mainheader.jsp" />
 	<div class="allWrap">
 		<div class="partWrap">
-			<div class="header">
-				<div class="logo">
-					<img src="" alt="회사 로고 이미지" />
-				</div>
-				<div class="topMenu">
-					<%@ include file="../templates/mainheader.jsp"%>
-				</div>
-			</div>
 			<div class="section">
-				<div class="leftMenu">
-					<%@ include file="../templates/Left.jsp"%>
-				</div>
 				<div class="body">
 					<div class="content">						
-						<fieldset style="padding: 10px">
 
 							<legend>마이 페이지</legend>
 							<table	style="width: 300px; border-spacing: 1px; background-color: green">
@@ -149,7 +138,8 @@
 										<td colspan="2"><a href="Logout.jsp">로그아웃</a></td>										
 									</tr>
 								</table>
-						</fieldset>
+	<jsp:include page="/WEB-INF/views/templates/Side.jsp" />
+	<jsp:include page="/WEB-INF/views/templates/mainfooter.jsp" />
 					</div>
 				</div>
 			</div>

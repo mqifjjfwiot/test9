@@ -28,7 +28,7 @@ CREATE TABLE ITEMS
 (
 	INO nvarchar2(20) NOT NULL,
 	IMAGE nvarchar2(100) NOT NULL,
-	IMAGE2 ,
+	IMAGE2 nvarchar2(100),
 	INAME nvarchar2(20) NOT NULL,
 	INAME2 nvarchar2(15),
 	-- 상품리스트에 들어갈 간략한 설명
@@ -61,9 +61,9 @@ CREATE TABLE LINECOMMENTS
 
 CREATE TABLE MART
 (
-	MNO varchar2(2000) NOT NULL UNIQUE,
+	MNO varchar2(2000) NOT NULL,
 	INO nvarchar2(20) NOT NULL,
-	MID nvarchar2(15) NOT NULL UNIQUE,
+	MID nvarchar2(15) NOT NULL,
 	MPWD nvarchar2(20) NOT NULL,
 	MNAME nvarchar2(15) NOT NULL,
 	MADDR nvarchar2(50) NOT NULL,
