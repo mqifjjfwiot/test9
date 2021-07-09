@@ -28,7 +28,7 @@ public class TestController {
 			return "clientPage/SignUpPrivate";
 		}
 		else if(result ==-2) {
-			model.addAttribute("message", "입력값이 너무 커요");
+			model.addAttribute("message", "회원가입에 실패했습니다");
 			return "clientPage/SignUpPrivate";
 		}
 		else if(!(map.get("pwdCheck").equals(map.get("pwd")))) {
