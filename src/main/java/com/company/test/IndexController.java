@@ -84,6 +84,11 @@ public class IndexController {
 		return "shoppingService/PaymentRecord";
 	}
 	
+	//지도에마켓 페이지로
+		@RequestMapping("/FindMarket.do")
+		public String FindMarket() {
+			return "shoppingService/FindMarket";
+		}
 
 	
 	
@@ -120,6 +125,6 @@ public class IndexController {
 	public String Category() {
 		return "Category";
 	}
-
-
+	
+	
 }
