@@ -16,7 +16,10 @@
 	<select id="selectMyMemberInfo" resultType="testDTO" parameterType="testDTO">
 		SELECT * FROM member WHERE id=#{id}
 	</select>
-	
+	<update id="memberUpdate" parameterType="Map">
+		UPDATE member SET pwd=#{pwd} , name=#{name} , addr=#{addr} , tel=#{tel}, mail=#{mail}
+		WHERE id=#{id}	
+	</update>
 	
 	<select id="memoIsLogin" parameterType="Map" resultType="int">
 		SELECT COUNT(*) FROM member WHERE id=#{id} AND pwd=#{pwd}		

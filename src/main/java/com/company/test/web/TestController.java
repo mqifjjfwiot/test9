@@ -41,6 +41,21 @@ public class TestController {
 		
 		return "clientPage/MyPage";
 	}
+	@RequestMapping("/memberEdit.do")
+	public String MemberEdit(TestDTO dto,@RequestParam Map map,HttpSession session,Model model) {
+		int result = service.updateMember(map);
+		if(result == 1){
+			return "clientPage/Login";
+		}
+		else if(!(map.get("pwdCheck").equals(map.get("pwd")))){
+			model.addAttribute("different","비밀번호가 일치하지않습니다");
+			return "forward:/";
+		}
+		else {
+			model.addAttribute("message","회원정보 수정에 실패했습니다");
+			return "forward:/";
+		}
+	}
 	
 	
 	

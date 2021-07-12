@@ -120,6 +120,10 @@ public class IndexController {
 	public String Category() {
 		return "Category";
 	}
+	@RequestMapping("/goMemberEdit.do")
+	public String MemberEdit() {
+		return "clientPage/SignUpEdit";
+	}
 
 
 }

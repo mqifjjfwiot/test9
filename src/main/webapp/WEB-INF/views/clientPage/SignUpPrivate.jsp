@@ -127,7 +127,7 @@
 			<div class="form-group">
 				<label for="addr">주소</label> 
 				<input class="form-control" style="width: 40%; display: inline;" placeholder="우편번호"
-					name="oaddr" id="oaddr" type="text"
+					name="addr" id="oaddr" type="text"
 					readonly="readonly">
 				<button type="button" class="btn btn-default"
 					onclick="execPostCode();">
