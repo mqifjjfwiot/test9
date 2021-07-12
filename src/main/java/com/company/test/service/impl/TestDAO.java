@@ -32,5 +32,16 @@ public class TestDAO  {
 	public int isExistMember(TestDTO dto) {
 		return sqlMapper.selectOne("myMemberCnt",dto);
 	}
+	public int memberUpdate(Map map) {
+		try {
+			return sqlMapper.update("memberUpdate", map);
+		}
+		catch(Exception e) {
+			System.out.println("여기인가");
+			e.printStackTrace();
+			
+			return sqlMapper.update("memberUpdate", map);
+		}
+	}
 	
 }

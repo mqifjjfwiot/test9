@@ -6,5 +6,6 @@ public interface TestService {
 
 	//회원가입
 	int insertMember(TestDTO dto);
+	int updateMember(Map map);
 	//글 작성
 }

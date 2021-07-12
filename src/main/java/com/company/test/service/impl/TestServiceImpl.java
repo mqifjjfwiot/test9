@@ -22,6 +22,11 @@ public class TestServiceImpl implements TestService {
 		
 		return dao.insertMember(dto);
 	}///
+	@Override
+	public int updateMember(Map map) {
+		
+		return dao.memberUpdate(map);
+	}
 	
 	
 	
