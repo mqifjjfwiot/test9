@@ -125,15 +125,10 @@ public class IndexController {
 	public String Category() {
 		return "Category";
 	}
-<<<<<<< HEAD
 	@RequestMapping("/goMemberEdit.do")
 	public String MemberEdit() {
 		return "clientPage/SignUpEdit";
 	}
 
 
-=======
-	
-	
->>>>>>> refs/heads/map
 }

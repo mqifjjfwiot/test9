@@ -43,7 +43,7 @@ public class TestController {
 	}
 	@RequestMapping("/memberEdit.do")
 	public String MemberEdit(TestDTO dto,@RequestParam Map map,HttpSession session,Model model) {
-		int result = service.updateMember(map);
+		int result = service.updateMember(dto);
 		if(result == 1){
 			return "clientPage/Login";
 		}

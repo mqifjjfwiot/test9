@@ -83,6 +83,7 @@
 			<div class="form-group">
 				<label for="id">아이디</label> 
 				<input type="text" class="form-control" id="id" name="id" value="${sessionScope.id }" disabled="disabled">
+				<input type="hidden" name="id" value="${sessionScope.id }"> 
 			</div>
 
 			<div class="form-group">
