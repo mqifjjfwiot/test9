@@ -35,7 +35,7 @@
     </div>
 	<div id="wrap">
         <div class="row" id="content">
-            <div class="col-md-12">
+            <div class="col-md-10">
                 <table class="table table-bordered table-hover table-condensed text-center">
                 <tr>
                     <th class="col-md-1 text-center">번호</th>
@@ -67,10 +67,11 @@
         <div class="row" id="paging">
             <div class="col-md-12 text-center">${listPagingData.pagingString}</div>
         </div>
-    </div>
-    <!--  푸터 시작 -->
+        <a href="<c:url value="/Write.do"/>" class="btn btn-primary">게시글 작성</a>
 	<jsp:include page="/WEB-INF/views/templates/Side.jsp" />
 	<jsp:include page="/WEB-INF/views/templates/mainfooter.jsp" />
+    </div>
+    <!--  푸터 시작 -->
 	<!-- 푸터 끝 -->
 </body>
 </html>
