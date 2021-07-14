@@ -21,7 +21,6 @@ $(document).ready(function() {
 	          ['color', ['color']],
 	          ['para', ['ul', 'ol', 'paragraph']],
 	          ['table', ['table']],
-	          ['insert', ['link', 'picture', 'video']],
 	          ['view', ['fullscreen', 'codeview', 'help']]
 	        ]
 	  });
@@ -32,8 +31,12 @@ $(document).ready(function() {
 <body>
 <jsp:include page="../templates/mainheader.jsp" />
 <div style="width: 60%; margin: 0 auto;">
-	<form method="post">
+	<form method="post" action="#">
+		<input type="text" name="id" style="width: 20%;" value="${sessionScope.id }" disabled="disabled"/><br>
+		<input type="hidden" name="id" value="${sessionScope.id }"/>
+		<input type="text" name="title" style="width: 40%;" placeholder="제목"/>
   		<textarea id="summernote" name="editordata"></textarea>
+  		<input type="submit" value="글 작성" style="float: right;"/>
 	</form>
 </div>
 <jsp:include page="/WEB-INF/views/templates/Side.jsp" />
