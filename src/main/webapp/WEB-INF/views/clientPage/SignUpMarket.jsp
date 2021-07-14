@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>사업자 회원가입</title>
+<jsp:include page="../templates/Links.jsp" />
 </head>
 <!-- daum 도로명주소 찾기 api -->
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
