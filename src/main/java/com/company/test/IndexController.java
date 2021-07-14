@@ -129,10 +129,7 @@ public class IndexController {
 	public String MemberEdit() {
 		return "clientPage/SignUpEdit";
 	}
-	@RequestMapping("/Write.do")
-	public String Write() {
-		return "customerService/Write";
-	}
+	
 
 
 }

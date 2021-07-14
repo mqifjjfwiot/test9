@@ -1,19 +1,27 @@
 package com.company.test.web;
 
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.HttpSessionRequiredException;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.company.test.service.TestDTO;
 import com.company.test.service.TestService;
-
+@SessionAttributes("id")
 @Controller
 public class TestController {
 	
@@ -55,6 +63,24 @@ public class TestController {
 			model.addAttribute("message","회원정보 수정에 실패했습니다");
 			return "forward:/";
 		}
+	}
+	@ExceptionHandler({HttpSessionRequiredException.class})
+	public void notLogin(HttpServletResponse response) throws IOException {
+		response.setContentType("text/html; charset=UTF-8");
+		PrintWriter out = response.getWriter();
+
+		out.println("<script language='javascript'>");
+		out.println("alert('로그인 후 이용하세요');");
+		out.println("location.href=''");
+		//out.println("location.replace('/Login.do')");
+		out.println("</script>");
+		out.flush();
+		//로그인이 안된경우 로그인 페이지로
+	}
+	@RequestMapping("/Write.do")
+	public String Write(@ModelAttribute("id") String id) {
+		
+		return "customerService/Write";
 	}
 	
 	
