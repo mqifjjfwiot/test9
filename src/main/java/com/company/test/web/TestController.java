@@ -65,17 +65,16 @@ public class TestController {
 		}
 	}
 	@ExceptionHandler({HttpSessionRequiredException.class})
-	public void notLogin(HttpServletResponse response) throws IOException {
+	public String notLogin(HttpServletResponse response) throws IOException {
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter out = response.getWriter();
 
 		out.println("<script language='javascript'>");
 		out.println("alert('로그인 후 이용하세요');");
-		out.println("location.href=''");
-		//out.println("location.replace('/Login.do')");
 		out.println("</script>");
 		out.flush();
 		//로그인이 안된경우 로그인 페이지로
+		return "clientPage/Login";
 	}
 	@RequestMapping("/Write.do")
 	public String Write(@ModelAttribute("id") String id) {

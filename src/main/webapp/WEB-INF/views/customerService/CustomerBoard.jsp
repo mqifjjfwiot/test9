@@ -69,9 +69,9 @@
         </div>
         <a href="<c:url value="/Write.do"/>" class="btn btn-primary">게시글 작성</a>
 	<jsp:include page="/WEB-INF/views/templates/Side.jsp" />
-	<jsp:include page="/WEB-INF/views/templates/mainfooter.jsp" />
     </div>
     <!--  푸터 시작 -->
 	<!-- 푸터 끝 -->
+	<jsp:include page="/WEB-INF/views/templates/mainfooter.jsp" />
 </body>
 </html>
