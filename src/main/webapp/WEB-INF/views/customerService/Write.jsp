@@ -34,9 +34,9 @@ $(document).ready(function() {
 	<form method="post" action="#">
 		<input type="text" name="id" style="width: 20%;" value="${sessionScope.id }" disabled="disabled"/><br>
 		<input type="hidden" name="id" value="${sessionScope.id }"/>
-		<input type="text" name="title" style="width: 40%;" placeholder="제목"/>
+		<input type="text" name="bcontent" style="width: 40%;" placeholder="제목"/>
   		<textarea id="summernote" name="editordata"></textarea>
-  		<input type="submit" value="글 작성" style="float: right;"/>
+  		<input type="submit" value="글 작성" class="btn btn-primary" style="float: right;"/>
 	</form>
 </div>
 <jsp:include page="/WEB-INF/views/templates/Side.jsp" />
