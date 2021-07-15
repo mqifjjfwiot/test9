@@ -82,6 +82,7 @@ public class TestController {
 		
 		return "customerService/Write";
 	}
+	/*
 	@RequestMapping("List.do")
 	public String list(
 			@ModelAttribute("id") String id,
@@ -93,6 +94,7 @@ public class TestController {
 		model.addAttribute("listPagingData", listPagingData);
 		return "bbs";
 	}
+	*/
 	
 	
 }
