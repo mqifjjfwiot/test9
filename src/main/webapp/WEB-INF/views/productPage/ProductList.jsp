@@ -44,7 +44,8 @@ li {
 				<div class="col-xs-10"></div>
 				<div>
 					<ul>
-						<li><a href="<c:url value="/Item/Product.do"/>">
+						<li>
+						 <a href="<c:url value="/Item/Product.do"/>">
 								<div style="display: inline-block" class="box">
 									<div style="width: 250px; height: 350px">
 										<img
@@ -57,7 +58,8 @@ li {
 											style="font-family: '맑은 고딕'; color: black; text-align: center;">20,000원</p>
 									</div>
 								</div>
-						</a></li>
+							 </a>
+						</li>
 						<li><a href="<c:url value="#"/>">
 								<div style="display: inline-block" class="box">
 									<div style="width: 250px; height: 350px">

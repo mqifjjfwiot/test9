@@ -13,11 +13,7 @@
 <!-- 페이지 설명은 여기에 -->
 
 <!-- 부트스트랩 -->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-<link rel="stylesheet" href="<c:url value="/styles/common.css"/>">
-<link href="<c:url value="/bootstrap/css/bootstrap.min.css"/>"
-	rel="stylesheet">
+<jsp:include page="../templates/Links.jsp" />
 <!-- IE8 에서 HTML5 요소와 미디어 쿼리를 위한 HTML5 shim 와 Respond.js -->
 <!-- WARNING: Respond.js 는 당신이 file:// 을 통해 페이지를 볼 때는 동작하지 않습니다. -->
 <!--[if lt IE 9]>
@@ -30,6 +26,21 @@
 <!-- 모든 컴파일된 플러그인을 포함합니다 (아래), 원하지 않는다면 필요한 각각의 파일을 포함하세요 -->
 
 <script src="<c:url value="/bootstrap/js/bootstrap.min.js"/>"></script>
+<script>
+$(function(){
+	
+	$('#amount-').click(function(){
+		amount = parseInt($('#amount').html())
+				if (amount > 1) {
+					$('#amount').html(amount-1);
+				}
+	})
+	$('#amount+').click(function(){
+		amount = parseInt($('#amount').html())
+				$('#amount').html(amount+1);
+	})
+});
+</script>
 <style>
 #picture {
 	width: 400px;
@@ -160,7 +171,13 @@ li {
 					</tbody>
 				</table>
 				<hr>
-				<p id="price">금액 : ####원</p>
+				<p>금액 : <span id="price">20000</span>원</p>
+				<p>수량 : 
+        		<button id="amount-">-</button>
+        		<span id="amount">1</span>
+				<button id="amount+">+</button>
+					
+				</p>
 				<div id="abutton">
 					<button value="장바구니" class="btn btn-default btn-lg"
 						onclick="<c:url value="#"/>">장바구니</button>
