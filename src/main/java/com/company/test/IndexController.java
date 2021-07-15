@@ -92,6 +92,11 @@ public class IndexController {
 		public String FindMarket() {
 			return "shoppingService/FindMarket";
 		}
+	//A마트 페이지로
+		@RequestMapping("/Mainpage.do")
+		public String Mainpage() {
+			return "aMart/Mainpage";
+		}	
 
 	
 	

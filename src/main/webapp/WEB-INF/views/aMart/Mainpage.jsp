@@ -8,45 +8,100 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>templates.jsp</title>
-
+<title>A마트main.jsp</title>
 <!-- 페이지 설명은 여기에 -->
 
-<!-- 부트스트랩 -->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-<link rel="stylesheet" href="<c:url value="/styles/common.css"/>">
-<link href="<c:url value="/bootstrap/css/bootstrap.min.css"/>"
-	rel="stylesheet">
-<!-- IE8 에서 HTML5 요소와 미디어 쿼리를 위한 HTML5 shim 와 Respond.js -->
-<!-- WARNING: Respond.js 는 당신이 file:// 을 통해 페이지를 볼 때는 동작하지 않습니다. -->
-<!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+<!-- 부트스트랩, 제이쿼리 -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link href="<c:url value="/bootstrap/css/bootstrap.min.css"/>" rel="stylesheet">
+<!--------- 스타일 ----------->
+<style>
+	div.top_border {
+            padding-right: 10px;
+            padding-left: 10px;
+            border-top: 4px double rgb(57, 169, 203);
+            /*border:박스형/border-top:실선 solid:한줄,double:두줄 */
+        }
+        
+	div.top_header {
+            font-size: 12px;
+        }
+        
+	div.title {
+            font-size: 200%;
+            font-weight: bold;
+            text-align: center;
+            color: rgb(35, 35, 35);
+        }
+        	
+	.navbar .navbar-nav {
+  	display: inline-block;
+  	float: none;
+  	vertical-align: bottom;
+	}
 
+ 	.navbar .navbar-collapse{
+  	text-align: center;
+  	font-size: 130%;
+  	padding-left: 200px;
+	}
+	
+</style>
 </head>
 <body>
-	<!-- 네비게이션 시작 -->
-	<jsp:include page="../templates/mainheader.jsp" />
-	<!-- 네비게이션 끝 -->
-	<!-- 실제 내용 시작 -->
-	<div class="container">
-		<div class="page-header">
-			<h1>카테코리</h1>
-		</div>
-	</div>
-	<!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요합니다) -->
-	<script
-		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-	<!-- 모든 컴파일된 플러그인을 포함합니다 (아래), 원하지 않는다면 필요한 각각의 파일을 포함하세요 -->
+	<div class="top_border">
+    </div>
+<!-- top menu -->
+<div class="top_header">
+<nav class="navbar navbar-default" style="background-color: #ffffff;">
+  <div class="container-fluid">
+    <div>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">로그인</a></li>
+        <li><a href="#">회원가입</a></li>
+        <li><a href="#">고객센터</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+</div>
 
-	<script src="<c:url value="/bootstrap/js/bootstrap.min.js"/>"></script>
-	
-	<!-- 실제 내용 끝 -->
-	<!--  푸터 시작 -->
-	<jsp:include page="/WEB-INF/views/templates/Side.jsp" />
-	<jsp:include page="/WEB-INF/views/templates/mainfooter.jsp" />
-	<!-- 푸터 끝 -->
+<div class="title">
+        <p>A마트</p>
+    </div>
+
+<div class="top_bottom">
+<nav class="navbar navbar-default" style="background-color: #ffffff;">
+  <div class="container-fluid">
+  	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav">
+      
+      <li class="nav-item"><a href="#">신상품</a></li>
+      <li class="nav-item"><a href="#">행사상품</a></li>
+      <li class="nav-item"><a href="#">신선식품</a></li>
+      <li class="nav-item"><a href="#">밀키트,반조리</a></li>
+      <li class="nav-item"><a href="#">음료/차</a></li>
+    </ul>
+  
+    <form class="navbar-form navbar-right" action="#">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="검색어를 입력하세요" name="search">
+        <div class="input-group-btn">
+          <button class="btn btn-default" type="submit">
+            <i class="glyphicon glyphicon-search"></i>
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+  </div>
+</nav>
+</div>
+
+
+
+
 </body>
 </html>
