@@ -94,6 +94,7 @@
                 <li><a href="<c:url value=""/>">배송조회</a></li>
                 <li><a href="<c:url value=""/>">주변 마트 조회</a></li>
                 <li><a href="<c:url value=""/>">맞춤 장바구니 서비스</a></li>
+                <li><a href="<c:url value=""/>">A마트</a></li>
             </ul>
         </div>
     </div>

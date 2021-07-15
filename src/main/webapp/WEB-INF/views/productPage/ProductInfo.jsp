@@ -171,13 +171,13 @@ li {
 					</tbody>
 				</table>
 				<hr>
-				<p>금액 : <span id="price">20000</span>원</p>
 				<p>수량 : 
         		<button id="amount-">-</button>
         		<span id="amount">1</span>
 				<button id="amount+">+</button>
 					
 				</p>
+				<p>금액 : <span id="price">20000</span>원</p>
 				<div id="abutton">
 					<button value="장바구니" class="btn btn-default btn-lg"
 						onclick="<c:url value="#"/>">장바구니</button>
