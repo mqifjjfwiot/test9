@@ -138,6 +138,23 @@ public class IndexController {
 		return "clientPage/SignUpEdit";
 	}
 	
+	
+	//A마트
+	//메인페이지로
+	@RequestMapping("/goMemberEdit.do")
+	public String MemberEdit() {
+		return "clientPage/SignUpEdit";
+	}
+	//상품페이지로
+	@RequestMapping("/goMemberEdit.do")
+	public String MemberEdit() {
+		return "clientPage/SignUpEdit";
+	}
+	//마트소개 페이지로
+	@RequestMapping("/goMemberEdit.do")
+	public String MemberEdit() {
+		return "clientPage/SignUpEdit";
+	}
 
 
 }
