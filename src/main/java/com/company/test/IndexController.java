@@ -1,7 +1,10 @@
 package com.company.test;
 
+import java.util.Map;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -84,6 +87,16 @@ public class IndexController {
 		return "shoppingService/PaymentRecord";
 	}
 	
+	//지도에마켓 페이지로
+		@RequestMapping("/FindMarket.do")
+		public String FindMarket() {
+			return "shoppingService/FindMarket";
+		}
+	//A마트 페이지로
+		@RequestMapping("/Mainpage.do")
+		public String Mainpage() {
+			return "aMart/Mainpage";
+		}	
 
 	
 	
@@ -120,6 +133,11 @@ public class IndexController {
 	public String Category() {
 		return "Category";
 	}
+	@RequestMapping("/goMemberEdit.do")
+	public String MemberEdit() {
+		return "clientPage/SignUpEdit";
+	}
+	
 
 
 }

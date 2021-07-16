@@ -37,7 +37,7 @@
 		</div>
 	</div>
  -->
-	<form action="<c:url value="LoginProcess.do"/>" method="POST" id="form">
+	<form action="<c:url value="LoginProcess.do"/>" method="POST" id="form" style="width:50%; margin: 0 auto">
             <h1>${NotMember }로그인 후 이용해주세요</h1>
             <p id="accout">
                 <input type="text" name="id" minlength="4" placeholder="아이디">

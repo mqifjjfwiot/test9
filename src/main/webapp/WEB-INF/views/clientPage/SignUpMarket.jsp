@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>사업자 회원가입</title>
+<jsp:include page="../templates/Links.jsp" />
 </head>
 <!-- daum 도로명주소 찾기 api -->
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
@@ -98,11 +99,6 @@ function execPostCode() {
 		<div class="eheck_font" id="name_check"></div> 
 		</div>
 		
-		<div class="form-group"> 
-		<label for="Rider_gender">성별 </label> 
-		<input type="checkbox" id="Rider_gender" name="Rider_gender" value="남">남 
-		<input type="checkbox" id="Rider_gender" name="Rider_gender" value="여">여 
-		</div>
 		
 		<div class="form-group"> 
 		<label for="Rider_phone">휴대폰 번호('-'없이 번호만 입력해주세요)</label> 

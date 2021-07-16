@@ -1,26 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>main header</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <!-- 폰트 -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
-<!-- 결제 -->
-<script type="text/javascript"
-	src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-<script type="text/javascript"
-	src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
-<!--------- 스타일 ----------->
+
 <style>
 	div.top_border {
             padding-right: 10px;
@@ -61,9 +42,7 @@
 	}
 	
 </style>  
-</head>
 <!-- 바디 -->
-<body>
 <div class="top_border">
     </div>
 <!-- top menu -->
@@ -73,12 +52,12 @@
     <div>
       <ul class="nav navbar-nav navbar-right">
       <c:if test="${empty sessionScope.id }" var="login">
-        	<li><a href="<c:url value="Login.do"/>">로그인</a></li>
+        	<li><a href="<c:url value="/Login.do"/>">로그인</a></li>
         	<li><a href="#">비회원로그인</a></li>
         	<li><a href="<c:url value="/SignUpMain.do"/>">회원가입</a></li>
         </c:if>
         <c:if test="${not login }">
-        	<li><a href="<c:url value="Logout.do"/>">로그아웃</a></li>
+        	<li><a href="<c:url value="/Logout.do"/>">로그아웃</a></li>
 			<li><a href="<c:url value="/MyPage.do"/>">마이페이지</a></li>
         </c:if>
         <li><a href="<c:url value="/Basket.do"/>">장바구니</a></li>
@@ -148,5 +127,3 @@
 </nav>
 </div>
 
-</body>
-</html>

@@ -96,7 +96,7 @@
 			</form>
 			
 			<button class="btn_payment" onclick="payment()">결제</button>
-			
+			<a href="<c:url value="/PaymentRecord.do"/>" >결제 (결제api생략)</a>
 		</div>
 	</div>
 	</div>

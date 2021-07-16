@@ -1,5 +1,6 @@
 package com.company.test.service.impl;
 
+import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
@@ -8,6 +9,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.company.test.service.OneMemoDTO;
 import com.company.test.service.TestDTO;
 import com.company.test.service.TestService;
 
@@ -32,5 +34,23 @@ public class TestDAO  {
 	public int isExistMember(TestDTO dto) {
 		return sqlMapper.selectOne("myMemberCnt",dto);
 	}
+	public int memberUpdate(TestDTO dto) {
+		return sqlMapper.update("memberUpdate", dto);
+	}
+	
+	public List<TestDTO> selectList(Map map) {
+		
+		return sqlMapper.selectList("memoSelectList",map);
+	}
+
+	
+	public int getTotalRecord(Map map) {
+		
+		return sqlMapper.selectOne("memoTotalCount",map);
+	}
+	public OneMemoDTO selectOne(Map map) {		
+		return sqlMapper.selectOne("memoSelectOne", map);
+	}
+
 	
 }

@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>일반 회원가입</title>
+<jsp:include page="../templates/Links.jsp" />
 </head>
 <!-- daum 도로명주소 찾기 api -->
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
@@ -127,7 +128,7 @@
 			<div class="form-group">
 				<label for="addr">주소</label> 
 				<input class="form-control" style="width: 40%; display: inline;" placeholder="우편번호"
-					name="oaddr" id="oaddr" type="text"
+					name="addr" id="oaddr" type="text"
 					readonly="readonly">
 				<button type="button" class="btn btn-default"
 					onclick="execPostCode();">
