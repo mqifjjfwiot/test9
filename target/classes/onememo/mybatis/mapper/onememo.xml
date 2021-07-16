@@ -45,22 +45,22 @@
 		WHERE no=#{no}	
 	</update>
 
- 	<insert id="itemsInsert" parameterType="Map">
+ 	<insert id="itemsInsert" parameterType="itemsDTO">
 		INSERT INTO ITEMS 
 		VALUES(SEQ_ITEMS.NEXTVAL,#{MNO},#{LNO},#{IMAGE},#{IMAGES2},#{INAME},#{INAME2},#{INAME3},
 		,#{PRICE},#{IPAGE},#{IPAGE2},#{CATEORY},#{STOCK},#{HASHTAG},#{DISH},#{BRAND},#{PNO})
 	</insert>
- 	<delete id="itemsDelete" parameterType="Map">
+ 	<delete id="itemsDelete" parameterType="itemsDTO">
 		DELETE ITEMS WHERE INO=#{INO}
 	</delete>
-	<update id="itemsUpdate" parameterType="Map">
+	<update id="itemsUpdate" parameterType="itemsDTO">
 		UPDATE ITEMS SET IMAGE=#{IMAGE}, INAME = #{INAME}, INAME2=#{INAME2}, PRICE=#{PRICE}
 		WHERE CATEGORY=#{CATEGORY}	
 	</update>
-	<select id="itemaSelectOne" resultMap="itemsDTOResult" parameterType="Map">
+	<select id="itemaSelectOne" resultMap="itemsDTOResult" parameterType="itemsDTO">
 		SELECT * FROM ITEMS WHERE INO = #{INO}
 	</select>
-	<select id="itemsShopping" resultMap="itemsDTOResult" parameterType="Map"><!-- Selectone이 아니라 SelectList로 해야하나.. -->
+	<select id="itemsShopping" resultMap="itemsDTOResult" parameterType="itemsDTO"><!-- Selectone이 아니라 SelectList로 해야하나.. -->
 		SELECT i.* FROM
 		BASKET b JOIN ITEMS i ON b.INO= i.INO
 		WHERE BNO = #{BNO}
