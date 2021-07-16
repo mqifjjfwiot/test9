@@ -87,21 +87,7 @@ public class IndexController {
 		return "shoppingService/PaymentRecord";
 	}
 	
-	//지도에마켓 페이지로
-		@RequestMapping("/FindMarket.do")
-		public String FindMarket() {
-			return "shoppingService/FindMarket";
-		}
-	//A마트 페이지로
-		@RequestMapping("/Mainpage.do")
-		public String Mainpage() {
-			return "aMart/Mainpage";
-		}
-	//A마트 상품 페이지로
-		@RequestMapping("/aMartproductPage.do")
-		public String aMartproductPage() {
-			return "aMart/aMartproductPage";
-		}	
+
 	
 
 	//QA페이지로
@@ -126,6 +112,10 @@ public class IndexController {
 	@RequestMapping("/goMemberEdit.do")
 	public String MemberEdit() {
 		return "clientPage/SignUpEdit";
+	}
+	@RequestMapping("CustomerMain.do")
+	public String CustomerMain() {
+		return "customerService/CustomerMain";
 	}
 	
 	
