@@ -50,5 +50,4 @@
 		WHERE BNO = #{BNO}
 	</select>
 
-	
 </mapper>
