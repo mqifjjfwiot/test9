@@ -25,4 +25,13 @@
 		SELECT COUNT(*) FROM member WHERE id=#{id} AND pwd=#{pwd}		
 	</select>
 	
+<<<<<<< HEAD
+	<insert id="itemsInsert" parameterType="Map">
+		INSERT INTO ITEMS 
+		VALUES(SEQ_ITEMS.NEXTVAL,#{MNO},#{LNO},#{IMAGE},#{IMAGES2},#{INAME},#{INAME2},#{INAME3},
+		,#{PRICE},#{IPAGE},#{IPAGE2},#{CATEORY},#{STOCK},#{HASHTAG},#{DISH},#{BRAND},#{PNO})
+	</insert>
+	
+=======
+>>>>>>> refs/remotes/origin/master
 </mapper>
