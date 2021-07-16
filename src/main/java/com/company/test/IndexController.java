@@ -141,19 +141,19 @@ public class IndexController {
 	
 	//A마트
 	//메인페이지로
-	@RequestMapping("/goMemberEdit.do")
-	public String MemberEdit() {
-		return "clientPage/SignUpEdit";
+	@RequestMapping("/aMainpage.do")
+	public String aMainpage() {
+		return "aMart/aMainpage";
 	}
 	//상품페이지로
-	@RequestMapping("/goMemberEdit.do")
-	public String MemberEdit() {
-		return "clientPage/SignUpEdit";
+	@RequestMapping("/aMartInfo.do")
+	public String aMartInfo() {
+		return "aMart/aMartInfo";
 	}
 	//마트소개 페이지로
-	@RequestMapping("/goMemberEdit.do")
-	public String MemberEdit() {
-		return "clientPage/SignUpEdit";
+	@RequestMapping("/aProductList.do")
+	public String aProductList() {
+		return "aMart/aProductList";
 	}
 
 
