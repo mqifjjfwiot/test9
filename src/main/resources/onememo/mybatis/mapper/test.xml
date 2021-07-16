@@ -56,13 +56,14 @@
 		BOARDCOMPLETE varchar2(10) DEFAULT '0' NOT NULL
 	 -->
 	
-	<!-- 
-	<select id="memoSelectOne" resultMap="oneMemoDTOResult" parameterType="Map">
-		SELECT o.*,m.name FROM
-		member m JOIN board b ON m.id= o.id
-		WHERE no = #{no}
+	<select id="memoSelectOne" resultType="testDTO" parameterType="Map">
+		SELECT b.*,m.name FROM
+		member m JOIN board b ON m.id= b.id
+		WHERE bono = #{bono}
 	</select>
-	 -->
+	<delete id="memoDelete" parameterType="Map">
+		DELETE board WHERE bono=#{bono}
+	</delete>
 	  <!-- 
 	<delete id="itemsDelete" parameterType="Map">
 		DELETE ITEMS WHERE INO=#{INO}

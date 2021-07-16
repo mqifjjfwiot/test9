@@ -2,6 +2,7 @@ package com.company.test.web;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -110,6 +111,28 @@ public class TestController {
 		ListPagingData listPagingData= service.selectList(map,req,nowPage);
 		model.addAttribute("listPagingData", listPagingData);
 		return "customerService/CustomerBoard";
+	}
+	@RequestMapping("View.do")
+	public String view(
+			@ModelAttribute("id") String id,
+			@RequestParam Map map,Model model) {
+		//서비스 호출]
+		TestDTO record=service.selectOne(map);
+		//데이타 저장]
+		//줄바꿈 처리
+		record.setBcontent(record.getBcontent().replace("\r\n","<br/>"));
+		model.addAttribute("record", record);
+		//List<LineCommentDTO> comments=record.getComments();
+		
+		//뷰정보 반환]
+		return "customerService/View";
+	}
+	@RequestMapping("/Delete.do")
+	public String delete(@RequestParam Map map) {
+		//서비스 호출
+		service.delete(map);
+		//뷰정보 반환]
+		return "forward:/CustomerBoard.do";
 	}
 	
 	

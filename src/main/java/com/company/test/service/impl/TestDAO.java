@@ -48,12 +48,16 @@ public class TestDAO  {
 		
 		return sqlMapper.selectOne("memoTotalCount",map);
 	}
-	public OneMemoDTO selectOne(Map map) {		
+	public TestDTO selectOne(Map map) {		
 		return sqlMapper.selectOne("memoSelectOne", map);
 	}
 	public int insert(Map map) {
 		
 		return sqlMapper.insert("memoInsert", map);
+	}
+	public int delete(Map map) {
+		
+		return sqlMapper.delete("memoDelete",map);
 	}
 
 	
