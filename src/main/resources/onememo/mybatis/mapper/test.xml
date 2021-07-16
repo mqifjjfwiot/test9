@@ -24,7 +24,7 @@
 	<select id="memoIsLogin" parameterType="Map" resultType="int">
 		SELECT COUNT(*) FROM member WHERE id=#{id} AND pwd=#{pwd}		
 	</select>
-	
+	<!-- 
 	<delete id="itemsDelete" parameterType="Map">
 		DELETE ITEMS WHERE INO=#{INO}
 	</delete>
@@ -39,5 +39,6 @@
 		UPDATE ITEMS SET IMAGE=#{IMAGE}, INAME = #{INAME}, INAME2=#{INAME2}, PRICE=#{PRICE}
 		WHERE CATEGORY=#{CATEGORY}	
 	</update>
+	 -->
 	
 </mapper>
