@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
+import com.company.test.service.ListPagingData;
 import com.company.test.service.TestDTO;
 import com.company.test.service.TestService;
 @SessionAttributes("id")
@@ -81,7 +82,19 @@ public class TestController {
 		
 		return "customerService/Write";
 	}
-	
+	/*
+	@RequestMapping("List.do")
+	public String list(
+			@ModelAttribute("id") String id,
+			@RequestParam Map map,
+			@RequestParam(required = false,defaultValue = "1") int nowPage,
+			HttpServletRequest req,
+			Model model) {
+		ListPagingData listPagingData= service.selectList(map,req,nowPage);
+		model.addAttribute("listPagingData", listPagingData);
+		return "bbs";
+	}
+	*/
 	
 	
 }
