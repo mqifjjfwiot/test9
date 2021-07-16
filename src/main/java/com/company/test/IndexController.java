@@ -102,15 +102,7 @@ public class IndexController {
 		public String aMartproductPage() {
 			return "aMart/aMartproductPage";
 		}	
-
 	
-	
-	//고객센터 관련
-	//고객센터 메인 페이지로
-	@RequestMapping("/CustomerMain.do")
-	public String CustomerMain() {
-		return "customerService/CustomerMain";
-	}
 
 	//QA페이지로
 	@RequestMapping("/CustomerQA.do")
