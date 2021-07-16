@@ -40,11 +40,11 @@
 		WHERE CATEGORY=#{CATEGORY}	
 	</update>
 	
-	<select id="itemaSelectOne" resultMap="itemsDTOResult" parameterType="itemsDTO">
+	<select id="itemaSelectOne" resultMap="itemsDTOResult" parameterType="Map">
 		SELECT * FROM ITEMS WHERE INO = #{INO}
 	</select>
 	
-	<select id="itemsShopping" resultMap="itemsDTOResult" parameterType="itemsDTO"><!-- Selectone이 아니라 SelectList로 해야하나.. -->
+	<select id="itemsShopping" resultMap="itemsDTOResult" parameterType="Map">
 		SELECT i.* FROM
 		BASKET b JOIN ITEMS i ON b.INO= i.INO
 		WHERE BNO = #{BNO}
