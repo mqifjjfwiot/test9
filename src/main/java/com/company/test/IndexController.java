@@ -138,6 +138,6 @@ public class IndexController {
 		return "clientPage/SignUpEdit";
 	}
 	
-
+	
 
 }
