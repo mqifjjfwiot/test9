@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.HttpSessionRequiredException;
@@ -77,24 +79,38 @@ public class TestController {
 		//로그인이 안된경우 로그인 페이지로
 		return "clientPage/Login";
 	}
+	/*
 	@RequestMapping("/Write.do")
 	public String Write(@ModelAttribute("id") String id) {
 		
 		return "customerService/Write";
 	}
-	/*
-	@RequestMapping("List.do")
-	public String list(
+	*/
+	@RequestMapping(value = "Write.do",method = RequestMethod.GET)
+	public String write( @ModelAttribute("id") String id) {
+		//뷰정보 반환]
+		return "customerService/Write";
+	}/////////////
+	//입력처리]
+	@RequestMapping(value = "Write.do",method = RequestMethod.POST)
+	public String writeoK(
 			@ModelAttribute("id") String id,
+			@RequestParam Map map) {
+		map.put("id", id);
+		service.insert(map);		
+		return "forward:/CustomerBoard.do";
+	}
+	
+	@RequestMapping("/CustomerBoard.do")
+	public String list(
 			@RequestParam Map map,
 			@RequestParam(required = false,defaultValue = "1") int nowPage,
 			HttpServletRequest req,
 			Model model) {
 		ListPagingData listPagingData= service.selectList(map,req,nowPage);
 		model.addAttribute("listPagingData", listPagingData);
-		return "bbs";
+		return "customerService/CustomerBoard";
 	}
-	*/
 	
 	
 }

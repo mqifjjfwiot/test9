@@ -53,11 +53,9 @@
 						varStatus="loop">
 						<tr>
 							<td>${listPagingData.totalRecordCount - (((listPagingData.nowPage - 1) * listPagingData.pageSize) + loop.index)}</td>
-							<td class="text-left"><a
-								href="<c:url value="/OneMemo/BBS/View.do?no=${item.no}&nowPage="/><c:out value="${param.nowPage}" default="1"/>">${item.title }</a>
-								<span class="badge">${item.commentCount }</span></td>
+							<td class="text-left"><a href="<c:url value="/View.do?no=${item.no}&nowPage="/><c:out value="${param.nowPage}" default="1"/>">${item.sno }</a>
 							<td>${item.name }</td>
-							<td>${item.postDate }</td>
+							<td>${item.postDate}</td>
 						</tr>
 					</c:forEach>
 				</c:if>
@@ -68,6 +66,24 @@
             <div class="col-md-12 text-center">${listPagingData.pagingString}</div>
         </div>
         <a href="<c:url value="/Write.do"/>" class="btn btn-primary">게시글 작성</a>
+        <div class="row">
+		<div class="text-center">
+			<form class="form-inline" method="post"
+				action="#">
+				<div class="form-group">
+					<select name="searchColumn" class="form-control">
+						<option value="title">제목</option>
+						<option value="name">작성자</option>
+						<option value="content">내용</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<input type="text" name="searchWord" class="form-control" />
+				</div>
+				<button type="submit" class="btn btn-primary">검색</button>
+			</form>
+		</div>
+	</div>
 	<jsp:include page="/WEB-INF/views/templates/Side.jsp" />
     </div>
     <!--  푸터 시작 -->

@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Mypage</title>
+<jsp:include page="../templates/Links.jsp" />
 <style>
 * {
 	margin: 0;

@@ -51,6 +51,10 @@ public class TestDAO  {
 	public OneMemoDTO selectOne(Map map) {		
 		return sqlMapper.selectOne("memoSelectOne", map);
 	}
+	public int insert(Map map) {
+		
+		return sqlMapper.insert("memoInsert", map);
+	}
 
 	
 }

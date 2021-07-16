@@ -113,13 +113,6 @@ public class IndexController {
 		return "customerService/CustomerQA";
 	}
 	
-	//고객문의게시판으로
-	@RequestMapping("/CustomerBoard.do")
-	public String CustomerBoard() {
-		return "customerService/CustomerBoard";
-	}
-	
-	
 	
 	//기타
 	//공지사항 페이지로

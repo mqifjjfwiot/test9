@@ -9,6 +9,7 @@
 </head>
 <!-- daum 도로명주소 찾기 api -->
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
+<jsp:include page="../templates/Links.jsp" />
 <script>
 	//우편번호 찾기 버튼 클릭시 발생 이벤트 
 	function execPostCode() {
