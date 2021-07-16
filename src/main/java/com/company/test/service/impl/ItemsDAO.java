@@ -25,28 +25,28 @@ public class ItemsDAO  {
 	private SqlSessionTemplate sqlMapper;
 	
 	
-	public ItemsDTO selectOne(ItemsDTO dto) {		
-		return sqlMapper.selectOne("itemsSelectOne", dto);
+	public ItemsDTO selectOne(Map map) {		
+		return sqlMapper.selectOne("itemsSelectOne", map);
 	}
 
 	
-	public int insert(ItemsDTO dto) {
+	public int insert(Map map) {
 		
-		return sqlMapper.insert("itemsInsert", dto);
+		return sqlMapper.insert("itemsInsert", map);
 	}
 
 	
-	public int delete(ItemsDTO dto) {
+	public int delete(Map map) {
 		
-		return sqlMapper.delete("itemsDelete",dto);
+		return sqlMapper.delete("itemsDelete",map);
 	}
 
 	
-	public int update(ItemsDTO dto) {		
-		return sqlMapper.update("itemsUpdate",dto);
+	public int update(Map map) {		
+		return sqlMapper.update("itemsUpdate",map);
 	}
 	
-	public ItemsDTO shopping(ItemsDTO dto) {		
-		return sqlMapper.selectOne("itemsShopping",dto);
+	public ItemsDTO shopping(Map map) {		
+		return sqlMapper.selectOne("itemsShopping",map);
 	}
 }

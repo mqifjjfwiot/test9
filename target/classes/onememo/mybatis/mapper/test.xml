@@ -25,17 +25,17 @@
 		SELECT COUNT(*) FROM member WHERE id=#{id} AND pwd=#{pwd}		
 	</select>
 	
-	<delete id="itemsDelete" parameterType="itemsDTO">
+	<delete id="itemsDelete" parameterType="Map">
 		DELETE ITEMS WHERE INO=#{INO}
 	</delete>
 	
-	<insert id="itemsInsert" parameterType="itemsDTO">
+	<insert id="itemsInsert" parameterType="Map">
 		INSERT INTO ITEMS 
 		VALUES(SEQ_ITEMS.NEXTVAL,#{MNO},#{LNO},#{IMAGE},#{IMAGES2},#{INAME},#{INAME2},#{INAME3},
 		,#{PRICE},#{IPAGE},#{IPAGE2},#{CATEORY},#{STOCK},#{HASHTAG},#{DISH},#{BRAND},#{PNO})
 	</insert>
 	
-	<update id="itemsUpdate" parameterType="itemsDTO">
+	<update id="itemsUpdate" parameterType="Map">
 		UPDATE ITEMS SET IMAGE=#{IMAGE}, INAME = #{INAME}, INAME2=#{INAME2}, PRICE=#{PRICE}
 		WHERE CATEGORY=#{CATEGORY}	
 	</update>
