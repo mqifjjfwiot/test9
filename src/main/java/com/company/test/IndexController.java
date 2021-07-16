@@ -96,6 +96,11 @@ public class IndexController {
 		@RequestMapping("/Mainpage.do")
 		public String Mainpage() {
 			return "aMart/Mainpage";
+		}
+	//A마트 상품 페이지로
+		@RequestMapping("/aMartproductPage.do")
+		public String aMartproductPage() {
+			return "aMart/aMartproductPage";
 		}	
 
 	

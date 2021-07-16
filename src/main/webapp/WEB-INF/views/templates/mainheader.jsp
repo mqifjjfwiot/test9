@@ -63,6 +63,7 @@
         <li><a href="<c:url value="/Basket.do"/>">장바구니</a></li>
         <li><a href="<c:url value="/CustomerMain.do"/>">고객센터</a></li>
         <li><a href="<c:url value="/Notice.do"/>">공지사항</a></li>
+        <li><a href="<c:url value="/aMartproductPage.do"/>">A_마트상품</a></li>
       </ul>
     </div>
   </div>
