@@ -23,28 +23,28 @@ public class ItemsServiceImpl implements ItemsService {
 
 
 	@Override
-	public ItemsDTO selectOne(Map map) {
-		return dao.selectOne(map);
+	public ItemsDTO selectOne(ItemsDTO dto) {
+		return dao.selectOne(dto);
 	}
 
 	@Override
-	public ItemsDTO shopping(Map map) {
-		return dao.shopping(map);
+	public ItemsDTO shopping(ItemsDTO dto) {
+		return dao.shopping(dto);
 	}
 
 	@Override
-	public int insert(Map map) {		
-		return dao.insert(map);
+	public int insert(ItemsDTO dto) {		
+		return dao.insert(dto);
 	}
 
 	@Override
-	public int delete(Map map) {		
-		return dao.delete(map);
+	public int delete(ItemsDTO dto) {		
+		return dao.delete(dto);
 	}
 
 	@Override
-	public int update(Map map) {		
-		return dao.update(map);
+	public int update(ItemsDTO dto) {		
+		return dao.update(dto);
 	}
 
 
