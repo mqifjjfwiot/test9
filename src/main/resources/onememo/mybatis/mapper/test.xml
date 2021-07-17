@@ -31,8 +31,6 @@
 		</if>		
 	</select>
 	
-<<<<<<< HEAD
-=======
 	<select id="memoSelectList" parameterType="Map" resultType="testDTO">
 		SELECT * FROM
 		(SELECT T.*,ROWNUM R FROM (SELECT b.*,m.name,(SELECT COUNT(*) FROM linecomments WHERE lno=b.bono) as commentcount FROM
@@ -76,11 +74,8 @@
 		VALUES(SEQ_ITEMS.NEXTVAL,#{MNO},#{LNO},#{IMAGE},#{IMAGES2},#{INAME},#{INAME2},#{INAME3},
 		,#{PRICE},#{IPAGE},#{IPAGE2},#{CATEORY},#{STOCK},#{HASHTAG},#{DISH},#{BRAND},#{PNO})
 	</insert>
->>>>>>> branch 'master' of https://github.com/mqifjjfwiot/test9.git
 	
-<<<<<<< HEAD
 	
-=======
 	<update id="itemsUpdate" parameterType="Map">
 		UPDATE ITEMS SET IMAGE=#{IMAGE}, INAME = #{INAME}, INAME2=#{INAME2}, PRICE=#{PRICE}
 		WHERE CATEGORY=#{CATEGORY}	
@@ -97,5 +92,4 @@
 	</select>
 	   -->
 
->>>>>>> branch 'master' of https://github.com/mqifjjfwiot/test9.git
 </mapper>

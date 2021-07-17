@@ -97,7 +97,6 @@ CREATE TABLE MASTER
 
 CREATE TABLE MEMBER
 (
-<<<<<<< HEAD
 	NO number NOT NULL PRIMARY KEY,
 	ID varchar2(20) NOT NULL,
 	PWD nvarchar2(20) NOT NULL,
@@ -106,16 +105,6 @@ CREATE TABLE MEMBER
 	TEL varchar2(13) NOT NULL,
 	MAIL varchar2(50) NOT NULL,
 	BIRTH date DEFAULT SYSDATE
-=======
-   NO number NOT NULL PRIMARY KEY,
-   ID varchar2(20) NOT NULL,
-   PWD nvarchar2(20) NOT NULL,
-   NAME nvarchar2(20) NOT NULL,
-   ADDR varchar2(100) NOT NULL,
-   TEL varchar2(13) NOT NULL,
-   MAIL varchar2(50) NOT NULL,
-   BIRTH date DEFAULT SYSDATE
->>>>>>> branch 'master' of https://github.com/mqifjjfwiot/test9.git
 );
 
 
@@ -281,7 +270,6 @@ NOCYCLE;
 CREATE SEQUENCE SEQ_RBASKET
 NOCACHE
 NOCYCLE;
->>>>>>> branch 'master' of https://github.com/mqifjjfwiot/test9.git
 
 CREATE SEQUENCE SEQ_SCRAP
 NOCACHE
