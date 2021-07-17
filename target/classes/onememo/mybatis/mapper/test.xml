@@ -64,7 +64,7 @@
 	<delete id="memoDelete" parameterType="Map">
 		DELETE board WHERE bono=#{bono}
 	</delete>
-	  <!-- 
+
 	<delete id="itemsDelete" parameterType="Map">
 		DELETE ITEMS WHERE INO=#{INO}
 	</delete>
@@ -75,20 +75,21 @@
 		,#{PRICE},#{IPAGE},#{IPAGE2},#{CATEORY},#{STOCK},#{HASHTAG},#{DISH},#{BRAND},#{PNO})
 	</insert>
 	
+	
 	<update id="itemsUpdate" parameterType="Map">
 		UPDATE ITEMS SET IMAGE=#{IMAGE}, INAME = #{INAME}, INAME2=#{INAME2}, PRICE=#{PRICE}
 		WHERE CATEGORY=#{CATEGORY}	
 	</update>
-	
-	<select id="itemaSelectOne" resultMap="itemsDTOResult" parameterType="Map">
+	<!--
+	<select id="itemsSelectOne" resultMap="itemsDTOResult" parameterType="Map">
 		SELECT * FROM ITEMS WHERE INO = #{INO}
 	</select>
-	
+	 
 	<select id="itemsShopping" resultMap="itemsDTOResult" parameterType="Map">
 		SELECT i.* FROM
 		BASKET b JOIN ITEMS i ON b.INO= i.INO
 		WHERE BNO = #{BNO}
 	</select>
-	   -->
+	-->
 
 </mapper>

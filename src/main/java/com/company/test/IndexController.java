@@ -119,5 +119,29 @@ public class IndexController {
 	}
 	
 	
+	//A마트 관련
+	//a메인
+	@RequestMapping("aMainpage.do")
+	public String aMainpage() {
+		return "aMart/aMainpage";
+	}
+	//a마트정보페이지
+	@RequestMapping("aMartInfo.do")
+	public String aMartInfo() {
+		return "aMart/aMartInfo";
+	}
+	//a상품리스트페이지
+	@RequestMapping("aMartproductPage.do")
+	public String aMartproductPage() {
+		return "aMart/aMartproductPage";
+	}
+	
+	
+	//테스트용(나중에삭제)
+	//본인인증 기능 테스트
+	@RequestMapping("/SignUpTest.do")
+	public String SignUpTest() {	
+		return "clientPage/SignUpTest";
+	}
 
 }
