@@ -115,11 +115,7 @@ CREATE TABLE PLIST
 	DELIVERYPAY varchar2(500) NOT NULL,
 	COUPON nvarchar2(20),
 	PVIEW varchar2(200) NOT NULL,
-<<<<<<< HEAD
-	PBUYCOUNT number(38) NOT NULL,
-=======
 	PBUYCOUNT number(10) NOT NULL,
->>>>>>> branch 'master' of https://github.com/mqifjjfwiot/test9.git
 	PSCORE varchar2(500) NOT NULL,
 	PTAG nvarchar2(200),
 	PRIMARY KEY (PNO)
