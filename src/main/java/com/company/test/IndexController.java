@@ -87,38 +87,14 @@ public class IndexController {
 		return "shoppingService/PaymentRecord";
 	}
 	
-	//지도에마켓 페이지로
-		@RequestMapping("/FindMarket.do")
-		public String FindMarket() {
-			return "shoppingService/FindMarket";
-		}
-	//A마트 페이지로
-		@RequestMapping("/Mainpage.do")
-		public String Mainpage() {
-			return "aMart/Mainpage";
-		}	
 
 	
-	
-	//고객센터 관련
-	//고객센터 메인 페이지로
-	@RequestMapping("/CustomerMain.do")
-	public String CustomerMain() {
-		return "customerService/CustomerMain";
-	}
 
 	//QA페이지로
 	@RequestMapping("/CustomerQA.do")
 	public String CustomerQA() {
 		return "customerService/CustomerQA";
 	}
-	
-	//고객문의게시판으로
-	@RequestMapping("/CustomerBoard.do")
-	public String CustomerBoard() {
-		return "customerService/CustomerBoard";
-	}
-	
 	
 	
 	//기타
@@ -136,6 +112,10 @@ public class IndexController {
 	@RequestMapping("/goMemberEdit.do")
 	public String MemberEdit() {
 		return "clientPage/SignUpEdit";
+	}
+	@RequestMapping("CustomerMain.do")
+	public String CustomerMain() {
+		return "customerService/CustomerMain";
 	}
 	
 	

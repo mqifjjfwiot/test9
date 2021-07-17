@@ -13,9 +13,7 @@
 <!-- 페이지 설명은 여기에 -->
 
 <!-- 부트스트랩 -->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-<link rel="stylesheet" href="<c:url value="/styles/common.css"/>">
+<jsp:include page="../templates/Links.jsp" />
 <link href="<c:url value="/bootstrap/css/bootstrap.min.css"/>"
 	rel="stylesheet">
 <!-- IE8 에서 HTML5 요소와 미디어 쿼리를 위한 HTML5 shim 와 Respond.js -->

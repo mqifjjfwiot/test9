@@ -2,6 +2,7 @@ package com.company.test.web;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -9,6 +10,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.HttpSessionRequiredException;
@@ -77,24 +80,60 @@ public class TestController {
 		//로그인이 안된경우 로그인 페이지로
 		return "clientPage/Login";
 	}
+	/*
 	@RequestMapping("/Write.do")
 	public String Write(@ModelAttribute("id") String id) {
 		
 		return "customerService/Write";
 	}
-	/*
-	@RequestMapping("List.do")
-	public String list(
+	*/
+	@RequestMapping(value = "Write.do",method = RequestMethod.GET)
+	public String write( @ModelAttribute("id") String id) {
+		//뷰정보 반환]
+		return "customerService/Write";
+	}/////////////
+	//입력처리]
+	@RequestMapping(value = "Write.do",method = RequestMethod.POST)
+	public String writeoK(
 			@ModelAttribute("id") String id,
+			@RequestParam Map map) {
+		map.put("id", id);
+		service.insert(map);		
+		return "forward:/CustomerBoard.do";
+	}
+	
+	@RequestMapping("/CustomerBoard.do")
+	public String list(
 			@RequestParam Map map,
 			@RequestParam(required = false,defaultValue = "1") int nowPage,
 			HttpServletRequest req,
 			Model model) {
 		ListPagingData listPagingData= service.selectList(map,req,nowPage);
 		model.addAttribute("listPagingData", listPagingData);
-		return "bbs";
+		return "customerService/CustomerBoard";
 	}
-	*/
+	@RequestMapping("View.do")
+	public String view(
+			@ModelAttribute("id") String id,
+			@RequestParam Map map,Model model) {
+		//서비스 호출]
+		TestDTO record=service.selectOne(map);
+		//데이타 저장]
+		//줄바꿈 처리
+		record.setBcontent(record.getBcontent().replace("\r\n","<br/>"));
+		model.addAttribute("record", record);
+		//List<LineCommentDTO> comments=record.getComments();
+		
+		//뷰정보 반환]
+		return "customerService/View";
+	}
+	@RequestMapping("/Delete.do")
+	public String delete(@RequestParam Map map) {
+		//서비스 호출
+		service.delete(map);
+		//뷰정보 반환]
+		return "forward:/CustomerBoard.do";
+	}
 	
 	
 }

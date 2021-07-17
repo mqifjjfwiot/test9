@@ -24,7 +24,47 @@
 	<select id="memoIsLogin" parameterType="Map" resultType="int">
 		SELECT COUNT(*) FROM member WHERE id=#{id} AND pwd=#{pwd}		
 	</select>
+	<select id="memoTotalCount" parameterType="Map" resultType="int">
+		SELECT COUNT(*) FROM board b JOIN member m ON b.id=m.id
+		<if test="searchWord !=null">
+			WHERE ${searchColumn} LIKE '%' || #{searchWord} || '%'
+		</if>		
+	</select>
 	
+	<select id="memoSelectList" parameterType="Map" resultType="testDTO">
+		SELECT * FROM
+		(SELECT T.*,ROWNUM R FROM (SELECT b.*,m.name,(SELECT COUNT(*) FROM linecomments WHERE lno=b.bono) as commentcount FROM
+		member m JOIN board b ON m.id= b.id
+		<if test="searchWord !=null">
+			WHERE ${searchColumn} LIKE '%' || #{searchWord} || '%'
+		</if>
+		
+		ORDER BY bono DESC) T)
+		WHERE R BETWEEN #{start} AND #{end}	
+	</select>
+	<insert id="memoInsert" parameterType="Map">
+		INSERT INTO BOARD 
+		VALUES(SEQ_BOARD.NEXTVAL,#{id},#{sno},'ex',DEFAULT,#{bcontent},DEFAULT)
+	</insert>
+	<!-- 
+		BONO varchar2(200) NOT NULL PRIMARY KEY,
+		ID varchar2(20) NOT NULL,
+		SNO varchar2(200) NOT NULL,
+		CATEGORY varchar2(200) NOT NULL,
+		BDATE date DEFAULT SYSDATE NOT NULL,
+		BCONTENT nvarchar2(200) NOT NULL,
+		BOARDCOMPLETE varchar2(10) DEFAULT '0' NOT NULL
+	 -->
+	
+	<select id="memoSelectOne" resultType="testDTO" parameterType="Map">
+		SELECT b.*,m.name FROM
+		member m JOIN board b ON m.id= b.id
+		WHERE bono = #{bono}
+	</select>
+	<delete id="memoDelete" parameterType="Map">
+		DELETE board WHERE bono=#{bono}
+	</delete>
+	  <!-- 
 	<delete id="itemsDelete" parameterType="Map">
 		DELETE ITEMS WHERE INO=#{INO}
 	</delete>
@@ -40,4 +80,15 @@
 		WHERE CATEGORY=#{CATEGORY}	
 	</update>
 	
+	<select id="itemaSelectOne" resultMap="itemsDTOResult" parameterType="Map">
+		SELECT * FROM ITEMS WHERE INO = #{INO}
+	</select>
+	
+	<select id="itemsShopping" resultMap="itemsDTOResult" parameterType="Map">
+		SELECT i.* FROM
+		BASKET b JOIN ITEMS i ON b.INO= i.INO
+		WHERE BNO = #{BNO}
+	</select>
+	   -->
+
 </mapper>
