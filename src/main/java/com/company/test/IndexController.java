@@ -119,5 +119,8 @@ public class IndexController {
 	}
 	
 	
+	//A마트 관련
+	
+	
 
 }
