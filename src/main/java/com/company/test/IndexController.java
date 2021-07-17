@@ -120,7 +120,21 @@ public class IndexController {
 	
 	
 	//A마트 관련
-	
+	//a메인
+	@RequestMapping("aMainpage.do")
+	public String aMainpage() {
+		return "aMart/aMainpage";
+	}
+	//a마트정보페이지
+	@RequestMapping("aMartInfo.do")
+	public String aMartInfo() {
+		return "aMart/aMartInfo";
+	}
+	//a상품리스트페이지
+	@RequestMapping("aMartproductPage.do")
+	public String aMartproductPage() {
+		return "aMart/aMartproductPage";
+	}
 	
 
 }
