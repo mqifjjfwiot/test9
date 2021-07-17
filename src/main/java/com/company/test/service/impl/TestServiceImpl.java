@@ -28,7 +28,7 @@ public class TestServiceImpl implements TestService {
 		//1.회원아이디 중복 체크
 		int count=dao.isExistMember(dto);
 		//2.중복 아이디가 아니면 insert ,중복이면 -1반환
-		if(count ==1) return -1;	
+		if(count ==1) return -1;
 		
 		return dao.insertMember(dto);
 	}///
