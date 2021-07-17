@@ -136,5 +136,12 @@ public class IndexController {
 		return "aMart/aMartproductPage";
 	}
 	
+	
+	//테스트용(나중에삭제)
+	//본인인증 기능 테스트
+	@RequestMapping("/SignUpTest.do")
+	public String SignUpTest() {	
+		return "clientPage/SignUpTest";
+	}
 
 }
