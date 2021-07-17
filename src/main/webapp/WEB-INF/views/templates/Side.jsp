@@ -19,5 +19,5 @@
 		class="btn btn-default btn-lg btn-block" onclick="location.href='#'">맞춤
 		장바구니 서비스</button>
 	 <button style="margin-top: 10px"
-		class="btn btn-default btn-lg btn-block" onclick="location.href='Mainpage.do'">A마트</button>	
+		class="btn btn-default btn-lg btn-block" onclick="location.href='aMainpage.do'">A마트</button>	
 </div>
