@@ -46,7 +46,7 @@
 
 			<h3 class="blind">장바구니 목록</h3>
 			<table class="table">
-				
+
 				<colgroup>
 					<col class="col_1--5TSKjnuT7E">
 					<col class="col_2--YKLfiddUoQ">
@@ -60,7 +60,7 @@
 						<th scope="col" class="th">
 							<div class="checkbox">
 								<label for="check_all" class="blind"><input
-									type="checkbox" id="check_all" class="input"  onclick="cAll();">전체선택</label>
+									type="checkbox" id="check_all" class="input" onclick="cAll();">전체선택</label>
 							</div>
 						</th>
 						<th scope="col-3" class="th" style="text-align: center;">상품정보</th>
@@ -71,13 +71,14 @@
 				</thead>
 
 				<tbody>
-				<!-- 예시상품 1 -->
+					<!-- 예시상품 1 -->
 					<tr class="table_row">
-					
+
 						<td class="table_cell">
 							<div class="checkbox">
 								<label for="bundle_checkbox" class="blind"><input
-									type="checkbox" id="bundle_checkbox" class="input" >상품	선택</label>
+									type="checkbox" id="bundle_checkbox" class="input">상품
+									선택</label>
 							</div>
 						</td>
 
@@ -85,9 +86,9 @@
 							<div class="product_desc_wrap">
 								<div class="product_description">
 									<span class="product_thumb"> <!-- img	src=""	alt="" class="product_img--eMB0AlWn-k"-->
-									</span> <a href="#" class="product_info" target="_blank">상품정보(메이커)</a>
+									</span> <a href="#" class="product_info" target="_blank">상품정보(메이커)
 									<span class="product_name"> 상품이름과 설명 이런저런 간단하게 보고 이해할 수
-										있게</span>
+										있게</span></a>
 								</div>
 							</div>
 						</td>
@@ -95,7 +96,14 @@
 						<td class="table_cell">
 							<div class="product_item">
 								<div class="product_options">
-									<div class="product_item">상품 주문 수량 : n개 (수량 조절하는 기능 추가)</div>
+									<div class="product_item">
+										<p>
+											수량 :
+											<button id="amount-">-</button>
+											<span id="amount">1</span>
+											<button id="amount+">+</button>
+										</p>
+									</div>
 								</div>
 							</div>
 						</td>
@@ -113,14 +121,15 @@
 						</td>
 
 					</tr>
-					
+
 					<!-- 예시상품 2 -->
 					<tr class="table_row">
-					
+
 						<td class="table_cell">
 							<div class="checkbox">
 								<label for="bundle_checkbox_1" class="blind"><input
-									type="checkbox" id="bundle_checkbox_1" class="input" checked="" >상품	선택</label>
+									type="checkbox" id="bundle_checkbox_1" class="input" checked="">상품
+									선택</label>
 							</div>
 						</td>
 
@@ -138,7 +147,14 @@
 						<td class="table_cell">
 							<div class="product_item">
 								<div class="product_options">
-									<div class="product_item">상품 주문 수량 : n개 (수량 조절하는 기능 추가)</div>
+									<div class="product_item">
+										<p>
+											수량 :
+											<button id="amount-">-</button>
+											<span id="amount">1</span>
+											<button id="amount+">+</button>
+										</p>
+									</div>
 								</div>
 							</div>
 						</td>
@@ -158,7 +174,7 @@
 					</tr>
 				</tbody>
 			</table>
-			
+
 			<div class="product_button_box">
 				<button type="button" class="button">선택상품 삭제</button>
 			</div>
@@ -166,28 +182,28 @@
 
 			<h3 class="blind">주문금액 정보</h3>
 			<div class="order_calculator">
-	
+
 				<dl class="product_price">
 					<dt>총 상품금액</dt>
 					<dd>
 						<span class="price">999,999</span>원
 					</dd>
 				</dl>
-									
+
 				<dl class="product_price">
 					<dt>배송비</dt>
 					<dd>
 						<span class="price">0</span>원
 					</dd>
 				</dl>
-								
+
 				<dl class="product_price">
 					<dt>할인예상금액</dt>
 					<dd class="discount">
 						<span class="price">8,888</span>원
 					</dd>
 				</dl>
-							
+
 			</div>
 			<div class="product_price_total">
 				<span class="text_mart">총 주문금액</span> <span class="text_point"><span
@@ -196,44 +212,37 @@
 	</div>
 
 
-			
-			
-			<div class="cart_button_box">
-				<a href="<c:url value="/home.do"/>" class="link_home">쇼핑 계속하기</a>
-				<button type="button" class="button"><a href="<c:url value="/Payment.do"/>">주문하기</a></button>
-			</div>
-		</main>
+
+
+	<div class="cart_button_box">
+		<a href="<c:url value="/home.do"/>" class="link_home">쇼핑 계속하기</a>
+		<button type="button" class="button">
+			<a href="<c:url value="/Payment.do"/>">주문하기</a>
+		</button>
 	</div>
-	
+	</main>
+	</div>
+
 	<!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요합니다) -->
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<!-- 모든 컴파일된 플러그인을 포함합니다 (아래), 원하지 않는다면 필요한 각각의 파일을 포함하세요 -->
 
 	<script src="<c:url value="/bootstrap/js/bootstrap.min.js"/>"></script>
-	
-	<script >
-	
-	function cAll() {
-        if ($("#check_all").is(':checked')) {
-            $("input[type=checkbox]").prop("checked", true);
-        } else {
-            $("input[type=checkbox]").prop("checked", false);
-        }
-    }
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+	<script>
+		function cAll() {
+			if ($("#check_all").is(':checked')) {
+				$("input[type=checkbox]").prop("checked", true);
+			} else {
+				$("input[type=checkbox]").prop("checked", false);
+			}
+		}
 	</script>
 	<!-- 실제 내용 끝 -->
 	<!--  푸터 시작 -->
 	<jsp:include page="/WEB-INF/views/templates/Side.jsp" />
 	<jsp:include page="/WEB-INF/views/templates/mainfooter.jsp" />
-	<!-- 푸터 끝 --></body>
+	<!-- 푸터 끝 -->
+</body>
 </html>

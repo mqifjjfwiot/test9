@@ -64,7 +64,7 @@
 	<delete id="memoDelete" parameterType="Map">
 		DELETE board WHERE bono=#{bono}
 	</delete>
-	  <!-- 
+
 	<delete id="itemsDelete" parameterType="Map">
 		DELETE ITEMS WHERE INO=#{INO}
 	</delete>
@@ -90,6 +90,6 @@
 		BASKET b JOIN ITEMS i ON b.INO= i.INO
 		WHERE BNO = #{BNO}
 	</select>
-	   -->
+
 
 </mapper>
