@@ -19,5 +19,12 @@ public class TestDTO {
 	private String name;
 	private String addr;
 	private String mail;
+	private String bono;
 	private Date regDate;
+	private String sno;
+	private String bcontent;
+	private java.sql.Date postDate;
+	//private java.sql.Date bDate;
+	private String commentCount;
+	
 }

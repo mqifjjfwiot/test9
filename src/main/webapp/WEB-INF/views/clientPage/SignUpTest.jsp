@@ -5,11 +5,16 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>SignUpEdit.jsp</title>
+<title>일반 회원가입</title>
+<jsp:include page="../templates/Links.jsp" />
 </head>
 <!-- daum 도로명주소 찾기 api -->
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
-<jsp:include page="../templates/Links.jsp" />
+
+<!-- jQuery -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
+<!-- iamport.payment.js -->
+<script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
 <script>
 	//우편번호 찾기 버튼 클릭시 발생 이벤트 
 	function execPostCode() {
@@ -67,6 +72,123 @@
 				}).open();
 	}
 </script>
+<script>
+	IMP.init("imp00000000");
+	IMP.certification(
+			//파라미터 생략시 빈 object는 입력해줘야한것 같음. 제거 시 모듈 동작 안함.
+			        {},
+			        function (rsp) {
+			            //본인인증 성공 프로세스
+			            if (rsp.success) {
+			            
+			            }
+			            //본인인증 실패 프로세스
+			            else{
+			                alert("인증에 실패하였습니다. 에러 내용: " +  rsp.error_msg);
+			            }
+			        }
+			    );
+	
+	IMP.certification(
+			  function (rsp) { 
+			  	//인증 성공시
+			    if (rsp.success) { 
+			      // jQuery로 본인 웹서버로 요청
+			      $.ajax({
+			      	type: 'POST',
+			       	url: '인증정보 조회할 본인 웹서버 API 경로',
+			       	dataType: 'json',
+			       	data: {'imp_uid' : rsp.imp_uid},
+			      });
+			    }else{
+			      alert("인증에 실패하였습니다. 에러 내용: " +  rsp.error_msg);
+			    }
+			  });
+			  
+			  
+			  
+			  //callback rsp 인자 값
+			 {
+			      error_code: null
+			      error_msg: null
+			      imp_uid: "고유인증값"
+			      merchant_uid: "주문번호(신경안써도됌)"
+			      pg_provider: "danal" //PG사
+			      pg_type: "certification" //PG타입(본인인증)
+			      success: true // 성공
+			}
+			  
+			//web.php
+			 Route::post('/iamport/certificate', [Controller::class,'certificate']);
+
+			 //Controller
+			 function certificate(Request $request){
+			       //아임포트 관리자 페이지의 시스템설정->내정보->REST API 키 값을 입력한다.
+			       $imp_key = "REST API 키";
+			       //아임포트 관리자 페이지의 시스템설정->내정보->REST API Secret 값을 입력한다.
+			       $imp_secret = "REST API Secret";
+			       //본인인증 모듈을 호출한 페이지에서 ajax로 넘겨받은 imp_uid값을 저장한다.
+			       $imp_uid = $request->input('imp_uid');
+			     
+			       try{
+			         $getToken  = Http::withHeaders([
+			           'Content-Type' => 'application/json'
+			         ])->post('https://api.iamport.kr/users/getToken', [
+			           'imp_key' => $imp_key,
+			           'imp_secret' => $imp_secret,
+			         ]);
+			         /**
+			          * 본인인증한 사람의 정보를 얻기 위해서는 아임포트 API 통신을해야 한다.
+			          * api access_key를 얻기위해 아임포트에서 제공되는 imp_key,imp_secret을 이용하여
+			          * 아래 api로 token을 얻는다.
+			          * return 값이 json이므로 decode하여 원하는 값을 들고온다.
+			         */
+			         $getTokenJson = json_decode($getToken, true);
+			         
+			         //API TOKEN
+			         $access_token = $getTokenJson['response']['access_token'];
+			         $getCertifications=Http::withHeaders([
+			           'Authorization' => $access_token
+			         ])->get('https://api.iamport.kr/certifications/'.$imp_uid);
+
+			         $getCertificationsJson = json_decode($getCertifications,true);
+			         $responseData = $getCertificationsJson['response'];
+
+			         $result = ['code'=>200, 'message'=>'success','data'=>$responseData];
+			       }catch(Exception $e){
+			         $result = [
+			           'code' => 410,
+			           'message' => $e->getMessage()
+			         ];
+			       }
+
+			       return response()->json($result);
+			       
+			     }
+			     
+			     //$responseData 상세 값
+			     
+			    {
+			     "birth":, //무슨 표기법으로 표시한지 모르겠음.
+			     "birthday":"YYYY-MM-DD",
+			     "carrier":"SKT", //통신사
+			     "certified":true, //인증 성공 여부
+			     "certified_at":인증날짜,
+			     "foreigner":false, //외국인 여부
+			     "gender":"male", // 성별
+			     "imp_uid":"인증고유값",
+			     "name":"이름",
+			     "origin":"요청URL",
+			     "pg_provider":"danal", //PG사
+			     "pg_tid":"요청일시",
+			     "phone":"휴대폰번호",
+
+			     }
+			    
+
+
+
+</script>
 
 <body>
 	<!-- 네비게이션 시작 -->
@@ -76,15 +198,17 @@
 	<article class="container">
 		<div class="page-header">
 			<div class="col-md-9 col-md-offset-3">
-				<h3>회원정보 수정</h3>
-				
+				<h3>회원가입</h3>
+				${message }
 			</div>
 		</div>
-		<form action="<c:url value="/memberEdit.do"/>" method="post">
+
+		<form action="<c:url value="/join.do"/>" method="post">
+
 			<div class="form-group">
-				<label for="id">아이디</label> 
-				<input type="text" class="form-control" id="id" name="id" value="${sessionScope.id }" disabled="disabled">
-				<input type="hidden" name="id" value="${sessionScope.id }"> 
+				<label for="id">아이디</label> <input type="text" class="form-control"
+					id="id" name="id" placeholder="ID">
+				<div class="eheck_font" id="id_check"></div>
 			</div>
 
 			<div class="form-group">
@@ -126,7 +250,7 @@
 			<div class="form-group">
 				<label for="addr">주소</label> 
 				<input class="form-control" style="width: 40%; display: inline;" placeholder="우편번호"
-					name="oaddr" id="addr" type="text"
+					name="addr" id="oaddr" type="text"
 					readonly="readonly">
 				<button type="button" class="btn btn-default"
 					onclick="execPostCode();">
@@ -147,7 +271,7 @@
 
 
 			<div class="form-group text-center">
-				<button type="submit" class="btn btn-primary">정보수정</button>
+				<button type="submit" class="btn btn-primary">회원가입</button>
 			</div>
 
 

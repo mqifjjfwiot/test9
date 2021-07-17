@@ -9,10 +9,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.company.test.service.ListPagingData;
-import com.company.test.service.OneMemoDTO;
 import com.company.test.service.PagingUtil;
 import com.company.test.service.TestDTO;
 import com.company.test.service.TestService;
+
+import lombok.Value;
 
 @Service
 public class TestServiceImpl implements TestService {
@@ -20,9 +21,9 @@ public class TestServiceImpl implements TestService {
 	@Autowired
 	private TestDAO dao;
 	//@Value("${PAGE_SIZE}")
-	private int pageSize = 10;
+	private int pageSize = 5;
 	//@Value("${BLOCK_PAGE}")
-	private int blockPage = 10;
+	private int blockPage = 5;
 	@Override
 	public int insertMember(TestDTO dto) {	
 		//1.회원아이디 중복 체크
@@ -46,7 +47,7 @@ public class TestServiceImpl implements TestService {
 		map.put("start", start);
 		map.put("end", end);
 		List lists=dao.selectList(map);		
-		String pagingString=PagingUtil.pagingBootStrapStyle(totalRecordCount,pageSize, blockPage, nowPage,req.getContextPath()+"/OneMemo/BBS/List.do?");
+		String pagingString=PagingUtil.pagingBootStrapStyle(totalRecordCount,pageSize, blockPage, nowPage,req.getContextPath()+"/CustomerBoard.do?");
 		
 		ListPagingData<TestDTO> listPagingData = 
 				ListPagingData.builder()
@@ -58,6 +59,27 @@ public class TestServiceImpl implements TestService {
 					.build();
 		
 		return listPagingData;
+	}
+	@Override
+	public int getTotalRecord(Map map) {
+		return dao.getTotalRecord(map);
+	}
+	@Override
+	public TestDTO selectOne(Map map) {
+		return dao.selectOne(map);
+	}
+	@Override
+	public int insert(Map map) {
+		return dao.insert(map);
+	}
+	@Override
+	public int delete(Map map) {
+		return dao.delete(map);
+	}
+	@Override
+	public int update(Map map) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 }

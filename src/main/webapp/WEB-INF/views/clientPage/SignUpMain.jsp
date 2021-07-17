@@ -30,6 +30,8 @@
 		<button type="button"  onclick="location.href='<c:url value="/SignUpPrivate.do"/>'">일반 회원가입</button>
 		<button type="button"  onclick="location.href='<c:url value="/SignUpMarket.do"/>'">사업자 회원가입</button>
 		<button type="button"  onclick="location.href='<c:url value="/SignUpRider.do"/>'">라이더 회원가입</button>
+		<button type="button"  onclick="location.href='<c:url value="/SignUpTest.do"/>'">회원가입 테스트</button>
+		
 	</div>
 	<!--  푸터 시작 -->
 	<jsp:include page="/WEB-INF/views/templates/Side.jsp" />

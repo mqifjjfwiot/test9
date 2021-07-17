@@ -87,38 +87,14 @@ public class IndexController {
 		return "shoppingService/PaymentRecord";
 	}
 	
-	//지도에마켓 페이지로
-		@RequestMapping("/FindMarket.do")
-		public String FindMarket() {
-			return "shoppingService/FindMarket";
-		}
-	//A마트 페이지로
-		@RequestMapping("/Mainpage.do")
-		public String Mainpage() {
-			return "aMart/Mainpage";
-		}	
 
 	
-	
-	//고객센터 관련
-	//고객센터 메인 페이지로
-	@RequestMapping("/CustomerMain.do")
-	public String CustomerMain() {
-		return "customerService/CustomerMain";
-	}
 
 	//QA페이지로
 	@RequestMapping("/CustomerQA.do")
 	public String CustomerQA() {
 		return "customerService/CustomerQA";
 	}
-	
-	//고객문의게시판으로
-	@RequestMapping("/CustomerBoard.do")
-	public String CustomerBoard() {
-		return "customerService/CustomerBoard";
-	}
-	
 	
 	
 	//기타
@@ -137,24 +113,35 @@ public class IndexController {
 	public String MemberEdit() {
 		return "clientPage/SignUpEdit";
 	}
+	@RequestMapping("CustomerMain.do")
+	public String CustomerMain() {
+		return "customerService/CustomerMain";
+	}
 	
 	
-	//A마트
-	//메인페이지로
-	@RequestMapping("/aMainpage.do")
+	//A마트 관련
+	//a메인
+	@RequestMapping("aMainpage.do")
 	public String aMainpage() {
 		return "aMart/aMainpage";
 	}
-	//상품페이지로
-	@RequestMapping("/aMartInfo.do")
+	//a마트정보페이지
+	@RequestMapping("aMartInfo.do")
 	public String aMartInfo() {
 		return "aMart/aMartInfo";
 	}
-	//마트소개 페이지로
-	@RequestMapping("/aProductList.do")
-	public String aProductList() {
-		return "aMart/aProductList";
+	//a상품리스트페이지
+	@RequestMapping("aMartproductPage.do")
+	public String aMartproductPage() {
+		return "aMart/aMartproductPage";
 	}
-
+	
+	
+	//테스트용(나중에삭제)
+	//본인인증 기능 테스트
+	@RequestMapping("/SignUpTest.do")
+	public String SignUpTest() {	
+		return "clientPage/SignUpTest";
+	}
 
 }

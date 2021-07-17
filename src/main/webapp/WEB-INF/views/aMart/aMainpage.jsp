@@ -12,9 +12,7 @@
 <!-- 페이지 설명은 여기에 -->
 
 <!-- 부트스트랩, 제이쿼리 -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<jsp:include page="../templates/Links.jsp" />
   <link href="<c:url value="/bootstrap/css/bootstrap.min.css"/>" rel="stylesheet">
 <!--------- 스타일 ----------->
 <style>
