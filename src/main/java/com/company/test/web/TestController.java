@@ -80,13 +80,7 @@ public class TestController {
 		//로그인이 안된경우 로그인 페이지로
 		return "clientPage/Login";
 	}
-	/*
-	@RequestMapping("/Write.do")
-	public String Write(@ModelAttribute("id") String id) {
-		
-		return "customerService/Write";
-	}
-	*/
+	
 	@RequestMapping(value = "Write.do",method = RequestMethod.GET)
 	public String write( @ModelAttribute("id") String id) {
 		//뷰정보 반환]
@@ -134,6 +128,27 @@ public class TestController {
 		//뷰정보 반환]
 		return "forward:/CustomerBoard.do";
 	}
-	
+	@RequestMapping("Edit.do")
+	public String edit(HttpServletRequest req,@RequestParam Map map,Authentication auth) {
+		if(req.getMethod().equals("GET")) {
+			//서비스 호출]
+			TestDTO record=service.selectOne(map);
+			//데이타 저장]
+			if(record.getBcontent().startsWith("<p>")) {
+				record.setBcontent(record.getBcontent().substring(3,record.getBcontent().indexOf("</p>") ));
+			}
+			//record.setSno(record.getSno().substring(3,record.getSno().indexOf("</p>") ));
+			req.setAttribute("record", record);
+			//수정 폼으로 이동]
+			return "customerService/Edit";
+		}
+		//수정처리후 상세보기로 이동
+		//서비스 호출
+		service.update(map);
+		//뷰로 포워드
+		return "forward:/View.do";
+		
+		
+	}
 	
 }
