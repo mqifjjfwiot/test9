@@ -34,7 +34,9 @@ $(document).ready(function() {
 	<form method="post" action="<c:url value="/Write.do"/>">
 		<input type="text" name="id" style="width: 20%;" value="${sessionScope.id }" disabled="disabled"/><br>
 		<input type="hidden" name="id" value="${sessionScope.id }"/>
-		<input type="text" name="sno" style="width: 40%;" placeholder="제목"/>
+		<input type="hidden" name="CATEGORY" value="임의"/>
+		<input type="hidden" name="BCOUNT" value="임의로"/>
+		<input type="text" name="title" style="width: 40%;" placeholder="제목"/>
   		<textarea id="summernote" name="bcontent"></textarea>
   		<input type="submit" value="글 작성" class="btn btn-primary" style="float: right;"/>
 	</form>

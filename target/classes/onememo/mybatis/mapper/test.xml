@@ -45,16 +45,17 @@
 	</select>
 	<insert id="memoInsert" parameterType="Map">
 		INSERT INTO BOARD 
-		VALUES(SEQ_BOARD.NEXTVAL,#{id},#{sno},'ex',DEFAULT,#{bcontent},DEFAULT)
+		VALUES(SEQ_BOARD.NEXTVAL,#{id},#{title},#{CATEGORY},#{BCOUNT},#{bcontent},DEFAULT)
 	</insert>
 	<!-- 
-		BONO varchar2(200) NOT NULL PRIMARY KEY,
-		ID varchar2(20) NOT NULL,
-		SNO varchar2(200) NOT NULL,
-		CATEGORY varchar2(200) NOT NULL,
-		BDATE date DEFAULT SYSDATE NOT NULL,
-		BCONTENT nvarchar2(200) NOT NULL,
-		BOARDCOMPLETE varchar2(10) DEFAULT '0' NOT NULL
+	BONO number NOT NULL,
+	ID varchar2(15) NOT NULL,
+	TITLE varchar2(20) NOT NULL,
+	CATEGORY varchar2(50) DEFAULT '' NOT NULL,
+	BCOUNT nvarchar2(200) DEFAULT '' NOT NULL,
+	BCONTENT nvarchar2(200) NOT NULL,
+	postDate date DEFAULT SYSDATE,
+	PRIMARY KEY (BONO)
 	 -->
 	
 	<select id="memoSelectOne" resultType="testDTO" parameterType="Map">
@@ -66,7 +67,7 @@
 		DELETE board WHERE bono=#{bono}
 	</delete>
 	<update id="memoUpdate" parameterType="Map">
-		UPDATE board SET sno=#{sno} , bcontent=#{bcontent}
+		UPDATE board SET title=#{title} , bcontent=#{bcontent}
 		WHERE bono=#{bono}	
 	</update>
 

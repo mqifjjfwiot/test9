@@ -53,7 +53,7 @@
 						varStatus="loop">
 						<tr>
 							<td>${listPagingData.totalRecordCount - (((listPagingData.nowPage - 1) * listPagingData.pageSize) + loop.index)}</td>
-							<td class="text-left"><a href="<c:url value="/View.do?bono=${item.bono}&nowPage="/><c:out value="${param.nowPage}" default="1"/>">${item.sno }</a>
+							<td class="text-left"><a href="<c:url value="/View.do?bono=${item.bono}&nowPage="/><c:out value="${param.nowPage}" default="1"/>">${item.title }</a>
 							<td>${item.name }</td>
 							<td>${item.postDate}</td>
 						</tr>

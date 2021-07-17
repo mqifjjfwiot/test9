@@ -45,7 +45,7 @@ $(document).ready(function() {
 	<form method="post" action="<c:url value='/Edit.do?bono=${record.bono }'/>">
 		<input type="text" name="id" style="width: 20%;" value="${sessionScope.id }" disabled="disabled"/><br>
 		<input type="hidden" name="id" value="${sessionScope.id }"/>
-		<input type="text" class="form-control" name="sno" placeholder="제목을 입력하세요?" value="${record.sno}">
+		<input type="text" class="form-control" name="title" placeholder="제목을 입력하세요?" value="${record.title}">
   		<textarea id="summernote" name="bcontent" placeholder="내용 입력하세요">${record.bcontent }</textarea>
   		<input type="submit" value="글 수정" class="btn btn-primary" style="float: right;"/>
 	</form>

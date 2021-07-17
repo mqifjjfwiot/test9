@@ -36,7 +36,7 @@
 				</tr>
 				<tr>
 					<th class="text-center">제목</th>
-					<td>${record.sno}</td>
+					<td>${record.title}</td>
 				</tr>
 				<tr>
 					<th class="text-center">작성자</th>
