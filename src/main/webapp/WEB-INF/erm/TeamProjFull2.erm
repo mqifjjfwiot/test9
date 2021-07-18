@@ -11,7 +11,7 @@
 	</page_setting>
 	<category_index>0</category_index>
 	<zoom>1.0</zoom>
-	<x>402</x>
+	<x>0</x>
 	<y>-12</y>
 	<default_color>
 		<r>128</r>
@@ -135,7 +135,7 @@
 			</connections>
 			<display>false</display>
 			<creation_date>2021-07-17 22:37:45</creation_date>
-			<updated_date>2021-07-18 00:46:58</updated_date>
+			<updated_date>2021-07-18 14:03:44</updated_date>
 			<model_property>
 				<name>프로젝트명</name>
 				<value></value>
@@ -676,7 +676,7 @@
 			<args></args>
 			<char_semantics>false</char_semantics>
 			<description></description>
-			<logical_name>상세주소</logical_name>
+			<logical_name>주소</logical_name>
 			<physical_name>MADDR2</physical_name>
 			<type>nvarchar(n)</type>
 		</word>
@@ -692,8 +692,8 @@
 			<args></args>
 			<char_semantics>false</char_semantics>
 			<description></description>
-			<logical_name>주소</logical_name>
-			<physical_name>MADDR2</physical_name>
+			<logical_name>상세주소</logical_name>
+			<physical_name>MADDR3</physical_name>
 			<type>nvarchar(n)</type>
 		</word>
 		<word>
@@ -842,7 +842,7 @@
 		</word>
 		<word>
 			<id>42</id>
-			<length>50</length>
+			<length>30</length>
 			<decimal>null</decimal>
 			<array>false</array>
 			<array_dimension>null</array_dimension>
@@ -1068,7 +1068,7 @@
 			<connections>
 				<relation>
 					<id>0</id>
-					<source>5</source>
+					<source>8</source>
 					<target>0</target>
 						<source_xp>-1</source_xp>
 						<source_yp>-1</source_yp>
@@ -1090,7 +1090,7 @@
 				</relation>
 				<relation>
 					<id>1</id>
-					<source>8</source>
+					<source>5</source>
 					<target>0</target>
 						<source_xp>-1</source_xp>
 						<source_yp>-1</source_yp>
@@ -1154,7 +1154,7 @@
 				<normal_column>
 					<id>1</id>
 					<referenced_column>51</referenced_column>
-					<relation>1</relation>
+					<relation>0</relation>
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -1188,7 +1188,7 @@
 				<normal_column>
 					<id>2</id>
 					<referenced_column>26</referenced_column>
-					<relation>0</relation>
+					<relation>1</relation>
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -1383,7 +1383,7 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-					<word_id>32</word_id>
+					<word_id>31</word_id>
 					<id>7</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -1416,7 +1416,7 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-					<word_id>31</word_id>
+					<word_id>32</word_id>
 					<id>8</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -1725,7 +1725,7 @@
 			<connections>
 				<relation>
 					<id>3</id>
-					<source>5</source>
+					<source>8</source>
 					<target>3</target>
 						<source_xp>-1</source_xp>
 						<source_yp>-1</source_yp>
@@ -1747,7 +1747,7 @@
 				</relation>
 				<relation>
 					<id>4</id>
-					<source>8</source>
+					<source>5</source>
 					<target>3</target>
 						<source_xp>-1</source_xp>
 						<source_yp>-1</source_yp>
@@ -1811,7 +1811,7 @@
 				<normal_column>
 					<id>16</id>
 					<referenced_column>51</referenced_column>
-					<relation>4</relation>
+					<relation>3</relation>
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -1845,7 +1845,7 @@
 				<normal_column>
 					<id>17</id>
 					<referenced_column>26</referenced_column>
-					<relation>3</relation>
+					<relation>4</relation>
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -2000,7 +2000,7 @@
 			<connections>
 				<relation>
 					<id>5</id>
-					<source>2</source>
+					<source>8</source>
 					<target>4</target>
 						<source_xp>-1</source_xp>
 						<source_yp>-1</source_yp>
@@ -2022,7 +2022,7 @@
 				</relation>
 				<relation>
 					<id>6</id>
-					<source>8</source>
+					<source>2</source>
 					<target>4</target>
 						<source_xp>-1</source_xp>
 						<source_yp>-1</source_yp>
@@ -2053,7 +2053,7 @@
 				<normal_column>
 					<id>21</id>
 					<referenced_column>51</referenced_column>
-					<relation>6</relation>
+					<relation>5</relation>
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -2087,7 +2087,7 @@
 				<normal_column>
 					<id>22</id>
 					<referenced_column>11</referenced_column>
-					<relation>5</relation>
+					<relation>6</relation>
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>

@@ -88,11 +88,11 @@
 		WHERE CATEGORY=#{CATEGORY}	
 	</update>
 	<!--
-	<select id="itemsSelectOne" resultMap="itemsDTOResult" parameterType="Map">
+	<select id="itemsSelectOne" resultMap="itemsDTOResult" parameterType="itemsDTO">
 		SELECT * FROM ITEMS WHERE INO = #{INO}
 	</select>
 	 
-	<select id="itemsShopping" resultMap="itemsDTOResult" parameterType="Map">
+	<select id="itemsShopping" resultMap="itemsDTOResult" parameterType="itemsDTO">
 		SELECT i.* FROM
 		BASKET b JOIN ITEMS i ON b.INO= i.INO
 		WHERE BNO = #{BNO}
