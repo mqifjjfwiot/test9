@@ -14,7 +14,7 @@ import com.company.test.service.ItemsDTO;
 import com.company.test.service.ItemsService;
 import com.company.test.service.TestDTO;
 
-@Service("itemService")
+@Service("BasketService")
 public class BasketServiceImpl implements ItemsService {
 
 	@Autowired
