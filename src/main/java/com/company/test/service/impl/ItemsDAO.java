@@ -28,7 +28,10 @@ public class ItemsDAO  {
 	public ItemsDTO selectOne(Map map) {		
 		return sqlMapper.selectOne("itemsSelectOne", map);
 	}
-
+	
+	public ItemsDTO shopping(Map map) {		
+		return sqlMapper.selectOne("itemsShopping",map);
+	}
 	
 	public int insert(Map map) {
 		
@@ -45,8 +48,5 @@ public class ItemsDAO  {
 	public int update(Map map) {		
 		return sqlMapper.update("itemsUpdate",map);
 	}
-	
-	public ItemsDTO shopping(Map map) {		
-		return sqlMapper.selectOne("itemsShopping",map);
-	}
+
 }
