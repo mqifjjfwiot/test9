@@ -26,6 +26,7 @@ public class TestDAO  {
 			result=sqlMapper.insert("myInsert",dto);
 		}
 		catch(Exception e) {
+			System.out.println(e.getMessage());
 			return -2;
 		}
 		return result;

@@ -96,9 +96,8 @@ CREATE TABLE MASTER
 
 CREATE TABLE MEMBER
 (
-	ID varchar2(15) NOT NULL,
-	MNO number NOT NULL,
 	NO number NOT NULL,
+	ID varchar2(15) NOT NULL,
 	PWD nvarchar2(20) NOT NULL,
 	NAME nvarchar2(20) NOT NULL,
 	ADDR varchar2(100) NOT NULL,

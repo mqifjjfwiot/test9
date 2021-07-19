@@ -10,6 +10,21 @@
 	<insert id="myInsert" parameterType="testDTO">
 		INSERT INTO MEMBER VALUES(no.nextval,#{id},#{pwd},#{name},#{addr},#{tel},#{mail},default)
 	</insert>
+	<!-- 
+		CREATE TABLE MEMBER
+(
+	NO number NOT NULL,
+	ID varchar2(15) NOT NULL,
+	MNO number DEFAULT 0,
+	PWD nvarchar2(20) NOT NULL,
+	NAME nvarchar2(20) NOT NULL,
+	ADDR varchar2(100) NOT NULL,
+	TEL varchar2(13) NOT NULL,
+	MALE varchar2(50) NOT NULL,
+	BIRTH date DEFAULT SYSDATE,
+	PRIMARY KEY (ID)
+);
+	 -->
 	<select id="myMemberCnt" resultType="int" parameterType="testDTO">
 		SELECT COUNT(*) FROM member WHERE id=#{id}
 	</select>
