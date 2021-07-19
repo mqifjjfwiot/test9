@@ -69,11 +69,15 @@
 						<th scope="col" class="th" style="text-align: center;">배송비</th>
 					</tr>
 				</thead>
-
-				<tbody>
+				
+				
+				
+					<c:forEach items="${lists}" var="item"	varStatus="loop">
 					<!-- 예시상품 1 -->
 					<tr class="table_row">
-
+						
+						
+					
 						<td class="table_cell">
 							<div class="checkbox">
 								<label for="bundle_checkbox" class="blind"><input
@@ -87,8 +91,7 @@
 								<div class="product_description">
 									<span class="product_thumb"> <!-- img	src=""	alt="" class="product_img--eMB0AlWn-k"-->
 									</span> <a href="#" class="product_info" target="_blank">상품정보(메이커)
-									<span class="product_name"> 상품이름과 설명 이런저런 간단하게 보고 이해할 수
-										있게</span></a>
+									<span class="product_name"> </span></a>
 								</div>
 							</div>
 						</td>
@@ -121,7 +124,8 @@
 						</td>
 
 					</tr>
-
+					</c:forEach>
+				
 					<!-- 예시상품 2 -->
 					<tr class="table_row">
 

@@ -68,23 +68,7 @@ dd {
 						주문한 물건 리스트
 					</dd>
 				</dl>
-				
-				
-				
-				<!--
-					<div class="accodian">
-						<span type="button" class="product-list title" data-toggle="collapse" href="#demo">주문한 상품 정보 확인하기</span>
-						
-						<div id="demo" class="panel-collapse collapse">
-							<div>
-								주문한 상품
-								상품1
-								상품2
-								상품3
-							</div>
-						</div>
-					</div>-->
-				</div>
+			</div>
 
 
 				<table class="pament-body">

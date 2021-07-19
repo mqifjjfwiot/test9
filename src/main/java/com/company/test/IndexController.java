@@ -68,24 +68,7 @@ public class IndexController {
 	
 
 	
-	//쇼핑관련 페이지 - shoppingservice
-	//장바구니 페이지로
-	@RequestMapping("/Basket.do")
-	public String Basket() {
-		return "shoppingService/Basket";
-	}
 	
-	//결제 페이지로
-	@RequestMapping("/Payment.do")
-	public String Payment() {
-		return "shoppingService/Payment";
-	}
-	
-	//주문/결제확인 페이지로
-	@RequestMapping("/PaymentRecord.do")
-	public String PaymentRecord() {
-		return "shoppingService/PaymentRecord";
-	}
 	
 
 	
