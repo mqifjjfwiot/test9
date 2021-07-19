@@ -6,7 +6,7 @@
 <!-- namespace속성:매퍼파일의 완전한경로 .xml는 생략 -->
 <!-- ※ibatis와는 다르게 id값에 .(dot)를 사용 못한다. -->
 <mapper namespace="onememo.mybatis.mapper.test">
-	
+	<!-- 멤버 관련 쿼리 -->
 	<insert id="myInsert" parameterType="testDTO">
 		INSERT INTO MEMBER VALUES(no.nextval,#{id},#{pwd},#{name},#{addr},#{tel},#{mail},default)
 	</insert>
@@ -21,6 +21,7 @@
 		WHERE id = #{id}	
 	</update>
 	
+	<!-- 게시판 관련 쿼리 -->
 	<select id="memoIsLogin" parameterType="Map" resultType="int">
 		SELECT COUNT(*) FROM member WHERE id=#{id} AND pwd=#{pwd}		
 	</select>
@@ -44,16 +45,17 @@
 	</select>
 	<insert id="memoInsert" parameterType="Map">
 		INSERT INTO BOARD 
-		VALUES(SEQ_BOARD.NEXTVAL,#{id},#{sno},'ex',DEFAULT,#{bcontent},DEFAULT)
+		VALUES(SEQ_BOARD.NEXTVAL,#{id},#{title},#{CATEGORY},#{BCOUNT},#{bcontent},DEFAULT)
 	</insert>
 	<!-- 
-		BONO varchar2(200) NOT NULL PRIMARY KEY,
-		ID varchar2(20) NOT NULL,
-		SNO varchar2(200) NOT NULL,
-		CATEGORY varchar2(200) NOT NULL,
-		BDATE date DEFAULT SYSDATE NOT NULL,
-		BCONTENT nvarchar2(200) NOT NULL,
-		BOARDCOMPLETE varchar2(10) DEFAULT '0' NOT NULL
+	BONO number NOT NULL,
+	ID varchar2(15) NOT NULL,
+	TITLE varchar2(20) NOT NULL,
+	CATEGORY varchar2(50) DEFAULT '' NOT NULL,
+	BCOUNT nvarchar2(200) DEFAULT '' NOT NULL,
+	BCONTENT nvarchar2(200) NOT NULL,
+	postDate date DEFAULT SYSDATE,
+	PRIMARY KEY (BONO)
 	 -->
 	
 	<select id="memoSelectOne" resultType="testDTO" parameterType="Map">
@@ -64,7 +66,12 @@
 	<delete id="memoDelete" parameterType="Map">
 		DELETE board WHERE bono=#{bono}
 	</delete>
-	  <!-- 
+	<update id="memoUpdate" parameterType="Map">
+		UPDATE board SET title=#{title} , bcontent=#{bcontent}
+		WHERE bono=#{bono}	
+	</update>
+
+	<!--  그 이외 쿼리 -->
 	<delete id="itemsDelete" parameterType="Map">
 		DELETE ITEMS WHERE INO=#{INO}
 	</delete>
@@ -80,16 +87,16 @@
 		UPDATE ITEMS SET IMAGE=#{IMAGE}, INAME = #{INAME}, INAME2=#{INAME2}, PRICE=#{PRICE}
 		WHERE CATEGORY=#{CATEGORY}	
 	</update>
-	
-	<select id="itemaSelectOne" resultMap="itemsDTOResult" parameterType="Map">
+	<!--
+	<select id="itemsSelectOne" resultMap="itemsDTOResult" parameterType="itemsDTO">
 		SELECT * FROM ITEMS WHERE INO = #{INO}
 	</select>
-	
-	<select id="itemsShopping" resultMap="itemsDTOResult" parameterType="Map">
+	 
+	<select id="itemsShopping" resultMap="itemsDTOResult" parameterType="itemsDTO">
 		SELECT i.* FROM
 		BASKET b JOIN ITEMS i ON b.INO= i.INO
 		WHERE BNO = #{BNO}
 	</select>
-	   -->
+	-->
 
 </mapper>

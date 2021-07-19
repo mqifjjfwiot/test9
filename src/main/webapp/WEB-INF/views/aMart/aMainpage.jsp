@@ -12,19 +12,17 @@
 <!-- 페이지 설명은 여기에 -->
 
 <!-- 부트스트랩, 제이쿼리 -->
-<jsp:include page="../templates/Links.jsp" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <link href="<c:url value="/bootstrap/css/bootstrap.min.css"/>" rel="stylesheet">
+  
 <!--------- 스타일 ----------->
 <style>
-	div.top_border {
-            padding-right: 10px;
-            padding-left: 10px;
+	hr.top_border {
+			width:900px;
             border-top: 4px double rgb(57, 169, 203);
             /*border:박스형/border-top:실선 solid:한줄,double:두줄 */
-        }
-        
-	div.top_header {
-            font-size: 12px;
         }
         
 	div.title {
@@ -33,6 +31,8 @@
             text-align: center;
             color: rgb(35, 35, 35);
         }
+     
+    hr.line {width:800px;color:black;border-top:thin solid black;}
         	
 	.navbar .navbar-nav {
   	display: inline-block;
@@ -43,63 +43,80 @@
  	.navbar .navbar-collapse{
   	text-align: center;
   	font-size: 130%;
-  	padding-left: 200px;
+  	padding-left: 90px;
 	}
+	
+	footer {
+    background-color: #E4EFE7;
+    padding: 25px;
+    font-size: 150%;
+    }
 	
 </style>
 </head>
 <body>
-	<div class="top_border">
-    </div>
+<h3></h3><hr class="top_border">
 <!-- top menu -->
-<div class="top_header">
-<nav class="navbar navbar-default" style="background-color: #ffffff;">
-  <div class="container-fluid">
-    <div>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">로그인</a></li>
-        <li><a href="#">회원가입</a></li>
-        <li><a href="#">고객센터</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-</div>
-
 <div class="title">
         <p>A마트</p>
     </div>
-
+    
 <div class="top_bottom">
 <nav class="navbar navbar-default" style="background-color: #ffffff;">
   <div class="container-fluid">
   	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav">
       
-      <li class="nav-item"><a href="#">신상품</a></li>
+      <li class="nav-item"><a href="#">인기상품</a></li>
       <li class="nav-item"><a href="#">행사상품</a></li>
-      <li class="nav-item"><a href="#">신선식품</a></li>
-      <li class="nav-item"><a href="#">밀키트,반조리</a></li>
-      <li class="nav-item"><a href="#">음료/차</a></li>
+      <li class="nav-item"><a href="<c:url value="/home.do"/>">KosmoMart</a></li>
+      <li class="nav-item"><a href="<c:url value="/aMartInfo.do"/>">고객센터</a></li>
+      <li class="nav-item"><a href="#">공지사항</a></li>
     </ul>
-  
-    <form class="navbar-form navbar-right" action="#">
-      <div class="input-group">
-        <input type="text" class="form-control" placeholder="검색어를 입력하세요" name="search">
-        <div class="input-group-btn">
-          <button class="btn btn-default" type="submit">
-            <i class="glyphicon glyphicon-search"></i>
-          </button>
-        </div>
-      </div>
-    </form>
   </div>
   </div>
 </nav>
+</div>    
+<!-------------->
+
+    
+<div class="container" style="text-align: center">
+  <h2>오늘의 전단</h2>
+  <img class="img-responsive center-block" alt="상품 이미지" src="<c:url value="/images/amartmain.jpg"/>">
 </div>
 
+<h3></h3><hr class="line"> <!-- 구분선 -->
 
+<div class="container text-center">    
+  <h3>금주의 득템 찬스!</h3>
+  <br>
+  <div class="row">
+    <div class="col-sm-3">
+      <img style="width:100%"
+       class="img-responsive" alt="상품 이미지" src="<c:url value="/images/amartprod1.jpg"/>">
+      <p>상품 1</p>
+    </div>
+    <div class="col-sm-3"> 
+      <img style="width:100%"
+       class="img-responsive" alt="상품 이미지" src="<c:url value="/images/amartprod2.jpg"/>">
+      <p>상품 2</p>    
+    </div>
+    <div class="col-sm-3"> 
+      <img style="width:100%"
+       class="img-responsive" alt="상품 이미지" src="<c:url value="/images/amartprod3.jpg"/>">
+      <p>상품 3</p>
+    </div>
+    <div class="col-sm-3"> 
+      <img style="width:100%"
+       class="img-responsive" alt="상품 이미지" src="<c:url value="/images/amartprod4.jpg"/>">
+      <p>상품 4</p>
+    </div>  
+  </div>
+</div><br>
 
+<footer class="container-fluid text-center">
+  <p>ⓒ2021 Copyright KOSMO 8기 4팀.</p>
+</footer>
 
 </body>
 </html>

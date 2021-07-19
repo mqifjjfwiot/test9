@@ -19,7 +19,7 @@ import com.company.test.service.ItemsDTO;
 
 
 @Repository
-public class ItemsDAO  {
+public class BasketDAO  {
 	
 	@Resource(name="itemstemplate")
 	private SqlSessionTemplate sqlMapper;

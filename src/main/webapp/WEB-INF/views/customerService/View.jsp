@@ -36,7 +36,7 @@
 				</tr>
 				<tr>
 					<th class="text-center">제목</th>
-					<td>${record.sno}</td>
+					<td>${record.title}</td>
 				</tr>
 				<tr>
 					<th class="text-center">작성자</th>
@@ -63,7 +63,7 @@
 				style="width: 200px; margin-bottom: 10px">
 			<c:if test="${sessionScope.id == record.id }">
 					<li><a
-						href="<c:url value='/Edit.do?no=${record.bono}'/>"
+						href="<c:url value='/Edit.do?bono=${record.bono}'/>"
 						class="btn btn-success">수정</a></li>
 					<li><a href="javascript:isDelete();" class="btn btn-success">삭제</a></li>
 			</c:if>

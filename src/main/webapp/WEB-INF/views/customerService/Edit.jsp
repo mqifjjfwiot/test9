@@ -4,9 +4,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <jsp:include page="../templates/Links.jsp" />
- <title>SummerNoteExample</title>
+<meta charset="UTF-8">
+<jsp:include page="../templates/Links.jsp" />
+<title>Insert title here</title>
+</head>
+<style>
+	.titleClick:hover, .commentDelete:hover {
+		text-decoration: underline;
+	}
+	
+	.titleClick, .commentDelete {
+		color: lightblue;
+		cursor: pointer;
+	}
+</style>
 <script>
 $(document).ready(function() {
 	  $('#summernote').summernote({
@@ -27,20 +38,19 @@ $(document).ready(function() {
 	  
 	});
 </script>
-</head>
 <body>
+
 <jsp:include page="../templates/mainheader.jsp" />
 <div style="width: 60%; margin: 0 auto;">
-	<form method="post" action="<c:url value="/Write.do"/>">
+	<form method="post" action="<c:url value='/Edit.do?bono=${record.bono }'/>">
 		<input type="text" name="id" style="width: 20%;" value="${sessionScope.id }" disabled="disabled"/><br>
 		<input type="hidden" name="id" value="${sessionScope.id }"/>
-		<input type="hidden" name="CATEGORY" value="임의"/>
-		<input type="hidden" name="BCOUNT" value="임의로"/>
-		<input type="text" name="title" style="width: 40%;" placeholder="제목"/>
-  		<textarea id="summernote" name="bcontent"></textarea>
-  		<input type="submit" value="글 작성" class="btn btn-primary" style="float: right;"/>
+		<input type="text" class="form-control" name="title" placeholder="제목을 입력하세요?" value="${record.title}">
+  		<textarea id="summernote" name="bcontent" placeholder="내용 입력하세요">${record.bcontent }</textarea>
+  		<input type="submit" value="글 수정" class="btn btn-primary" style="float: right;"/>
 	</form>
 </div>
+<div style="content: '';display: block;clear: both;"></div>
 <jsp:include page="/WEB-INF/views/templates/Side.jsp" />
 <jsp:include page="/WEB-INF/views/templates/mainfooter.jsp" />
 </body>

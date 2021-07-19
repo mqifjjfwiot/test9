@@ -65,4 +65,15 @@
 		BASKET b JOIN ITEMS i ON b.INO= i.INO
 		WHERE BNO = #{BNO}
 	</select>
+	
+	
+	<insert id="BasketInsert" parameterType="BasketDTO">
+		INSERT INTO ITEMS 
+		VALUES(SEQ_ITEMS.NEXTVAL,#{MNO},#{LNO},#{IMAGE},#{IMAGES2},#{INAME},#{INAME2},#{INAME3},
+		,#{PRICE},#{IPAGE},#{IPAGE2},#{CATEORY},#{STOCK},#{HASHTAG},#{DISH},#{BRAND},#{PNO})
+	</insert>
+	
+	
+	
+
 </mapper>

@@ -21,7 +21,7 @@ public class TestDTO {
 	private String mail;
 	private String bono;
 	private Date regDate;
-	private String sno;
+	private String title;
 	private String bcontent;
 	private java.sql.Date postDate;
 	//private java.sql.Date bDate;

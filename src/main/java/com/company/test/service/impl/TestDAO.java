@@ -52,13 +52,13 @@ public class TestDAO  {
 		return sqlMapper.selectOne("memoSelectOne", map);
 	}
 	public int insert(Map map) {
-		
 		return sqlMapper.insert("memoInsert", map);
 	}
 	public int delete(Map map) {
-		
 		return sqlMapper.delete("memoDelete",map);
 	}
-
+	public int update(Map map) {		
+		return sqlMapper.update("memoUpdate",map);
+	}
 	
 }

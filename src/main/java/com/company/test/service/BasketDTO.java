@@ -16,9 +16,8 @@ import lombok.Setter;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class ItemsDTO {
+public class BasketDTO {
 	private String INO;
-	private String MNO;
 	private String INAME;
 	private String INAME2;
 	private String INAME3;
