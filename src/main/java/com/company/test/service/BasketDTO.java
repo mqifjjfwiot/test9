@@ -17,19 +17,10 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class BasketDTO {
-	private String INO;
-	private String INAME;
-	private String INAME2;
-	private String INAME3;
-	private String PRICE;
-	private String CATEGORY;
-	private String STOCK;
-	private String DISH;
-	private String HASHTAG;
-	private String BRAND;
-	private File IMAGE;
-	private File IMAGE2;
-	private File IPAGE;
-	private File IPAGE2;
-	
+	private String id;
+	private String ino;
+	private String iname;
+	private String iname2;
+	private String price;
+	private String category;
 }

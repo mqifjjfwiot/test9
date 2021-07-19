@@ -44,11 +44,11 @@
 			<form class="form-horizontal">
 				<div class="form-group">
 				
-				<p class="col-md-offset-1">${sessionScope.id}님의 배송정보</p> </br>
-					<label class="col-sm-1 control-label">이름</label>
+				<p class="col-md-offset-1">${member.name}님의 배송정보</p> </br>
+					<label class="col-sm-1 control-label"> 이름</label>
 					<div class="col-sm-5">
 						<input type="text" class="form-control" name="name"
-							value="${member.name}">
+							value="${member.name}${sessionScope.id}">
 					</div>
 				</div>
 				
@@ -75,24 +75,6 @@
 							placeholder="${member.mail }">
 					</div>
 				</div>
-				
-				<div class="form-group">
-					<label class="col-sm-1 control-label">가격</label>
-					<div class="col-sm-5">
-							<span class="text_point"><span class="price">666,666</span>원</span>
-							
-					</div>
-				
-				</div>
-				
-				
-				<!-- 
-				<div class="form-group">
-					<div class="col-sm-offset-1 col-sm-11">
-						<button type="submit" class="btn_payment">결제</button>
-					</div>
-				</div>
-				 -->
 			</form>
 			
 			<button class="btn_payment" onclick="payment()">결제</button>
@@ -101,10 +83,8 @@
 	</div>
 	</div>
 	<!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요합니다) -->
-	<script
-		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-	<!-- 모든 컴파일된 플러그인을 포함합니다 (아래), 원하지 않는다면 필요한 각각의 파일을 포함하세요 -->
-
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
+<script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
 	<script src="<c:url value="/bootstrap/js/bootstrap.min.js"/>"></script>
 	
 	<!-- 실제 내용 끝 -->
