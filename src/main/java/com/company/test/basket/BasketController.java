@@ -59,7 +59,8 @@ public class BasketController {
 		//주문/결제확인 페이지로
 		@RequestMapping("/PaymentRecord.do")
 		public String PaymentRecord() {
-			return "shoppingService/PaymentRecord";
+			
+			return "forward:/mailSender.do";
 		}
 	
 
