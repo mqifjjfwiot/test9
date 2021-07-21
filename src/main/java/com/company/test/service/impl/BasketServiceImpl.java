@@ -23,15 +23,13 @@ public class BasketServiceImpl implements BasketService {
 	private  BasketDAO dao;
 
 	@Override
-	public List<Map<String,String>> selectList(Map map) {
+	public List<BasketDTO> selectList(Map map) {
 		
 		//dto 객체로 리턴해주고 포이치로 + 루프로 웹페이지에서 뿌려버리기
 		//게시판 로직 참고 
 		
-		List<Map<String ,String>> maplist = dao.selectList(map);
-		
 
-		return maplist;
+		return dao.selectList(map);
 	}
 		
 	/*					성공					실패
@@ -63,7 +61,8 @@ public class BasketServiceImpl implements BasketService {
 	}
 	 
 	@Override
-	public Map info(String id) {
+	public TestDTO info(String id) {
+		
 		
 		return dao.info(id);
 	}

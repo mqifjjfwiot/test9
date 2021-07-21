@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,7 +14,10 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.company.test.service.BasketDTO;
 import com.company.test.service.BasketService;
+import com.company.test.service.ListPagingData;
+import com.company.test.service.OneMemoDTO;
 import com.company.test.service.TestDTO;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -33,9 +37,15 @@ public class BasketController {
 			
 			map.put("id", "1234");//임시
 			
-			List lists = basketService.selectList(map); 
-			model.addAttribute("lists", lists);
-			System.out.println("리스트:"+lists);
+			List<BasketDTO> lists = basketService.selectList(map); 
+			
+					
+			model.addAttribute("lists",  basketService.selectList(map));
+			
+			for (int i =0 ;  i < lists.size() ; i++) {
+				System.out.println("리스트:"+lists.get(i).getId()+"물건"+lists.get(i).getIname());
+			}
+
 			return "shoppingService/Basket";
 		}
 		
@@ -46,10 +56,12 @@ public class BasketController {
 		@RequestMapping("/Payment.do")
 		public String Payment(Model model) {
 			String id = "1234";//임시, 원래는 세션 id값 받아와야함 
-			Map member=basketService.info(id);
+			TestDTO member=basketService.info(id);
 			model.addAttribute("member", member);
 			
+			
 			System.out.println("member : "+member);
+			
 			return "shoppingService/Payment";
 		}
 		
