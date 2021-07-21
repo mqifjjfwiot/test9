@@ -28,7 +28,7 @@ public class BasketDAO  {
 	
 	
 	
-	public List<Map<String,String>> selectList(Map map) {		
+	public List<BasketDTO> selectList(Map map) {		
 		return sqlMapper.selectList("BasketSelect", map);
 	}
 	
@@ -50,9 +50,9 @@ public class BasketDAO  {
 		return sqlMapper.update("CompletePayment",map);
 	}
 	
-	public Map info(String id) {
+	public TestDTO info(String id) {
 		
-		return sqlMapper.selectOne("memoSelectOne",id);
+		return sqlMapper.selectOne("selectCustomerInfo",id);
 	}
 	
 

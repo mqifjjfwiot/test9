@@ -44,11 +44,11 @@
 			<form class="form-horizontal">
 				<div class="form-group">
 				
-				<p class="col-md-offset-1">${member.name}님의 배송정보</p> </br>
+				<p class="col-md-offset-1">님의 배송정보</p> </br>
 					<label class="col-sm-1 control-label"> 이름</label>
 					<div class="col-sm-5">
 						<input type="text" class="form-control" name="name"
-							value="${member.name}${sessionScope.id}">
+							value="${member.name }">
 					</div>
 				</div>
 				
@@ -64,7 +64,7 @@
 					<label class="col-sm-1 control-label">연락처</label>
 					<div class="col-sm-5">
 						<input type="text" class="form-control" name="name"
-							placeholder="${member.tel }">
+							placeholder="${member.tel}">
 					</div>
 				</div>
 				
@@ -72,7 +72,7 @@
 					<label class="col-sm-1 control-label">이메일</label>
 					<div class="col-sm-5">
 						<input type="text" class="form-control" name="name"
-							placeholder="${member.mail }">
+							placeholder="${member.mail}">
 					</div>
 				</div>
 			</form>
