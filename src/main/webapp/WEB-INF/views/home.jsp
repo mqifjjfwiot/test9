@@ -105,25 +105,7 @@
 </div>
 
 
-<!-- div class="col-xs-2">
-				<div class="input-group" >
-					<div class="option">
-						<div>
-							<form onsubmit="searchPlaces(); return false;">
-									<input type="text" class="form-control" placeholder="검색어를 입력하시오" id="keyword" value="" > 
-									<span class="input-group-btn "  >
-										<button class="btn btn-default"  type="submit">검색</button>
-									</span>
-							</form>
-						</div>
-					</div>
-				</div>
-			
-				
-				<a class="row" href="#" role="button">배송조회</a>
-				<a class="row" href="#" role="button">주변마트조회</a>
-				<a class="row" href="#" role="button">맞춤장바구니서비스</a>
-				</div-->
+
 				</div>
 				</div>
 <!-- footer class="container-fluid text-center">
