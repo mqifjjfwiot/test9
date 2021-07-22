@@ -10,6 +10,8 @@
 	<insert id="myInsert" parameterType="testDTO">
 		INSERT INTO MEMBER VALUES(no.nextval,#{id},#{pwd},#{name},#{addr},#{tel},#{mail},default)
 	</insert>
+	
+	
 	<!-- 
 		CREATE TABLE MEMBER
 (
@@ -112,6 +114,86 @@
 		BASKET b JOIN ITEMS i ON b.INO= i.INO
 		WHERE BNO = #{BNO}
 	</select>
+	
+	<insert id="BasketInsert" parameterType="BasketDTO">
+		INSERT INTO ITEMS 
+		VALUES(SEQ_ITEMS.NEXTVAL,#{MNO},#{LNO},#{IMAGE},#{IMAGES2},#{INAME},#{INAME2},#{INAME3},
+		,#{PRICE},#{IPAGE},#{IPAGE2},#{CATEORY},#{STOCK},#{HASHTAG},#{DISH},#{BRAND},#{PNO})
+	</insert>
 	-->
-
+	<!--  
+	<resultMap type="BasketDTO" id="basketDTOResult">
+		<result column="id" property="id"/>
+		<result column="ino" property="ino"/>
+		<result column="iname" property="iname"/>
+		<result column="iname2" property="iname2"/>
+		<result column="price" property="price"/>
+		<result column="category" property="category"/>
+	</resultMap>
+	 -->
+	<!-- 
+	<resultMap type="TestDTO" id="testDTOResult">
+		<result column="NO" property="no"/>
+		<result column="ID" property="id"/>
+		<result column="PWD" property="pwd"/>
+		<result column="TEL" property="tel"/>
+		<result column="NAME" property="name"/>
+		<result column="ADDR" property="addr"/>
+		<result column="MAIL" property="mail"/>
+		<result column="BONO" property="bono"/>
+		<result column="regDate" property="regDate"/>
+		<result column="title" property="title"/>
+		<result column="bcontent" property="bcontent"/>
+		<result column="postDate" property="postDate"/>
+		<result column="commentCount" property="commentCount"/>
+		
+	</resultMap>
+ -->
+	
+	
+	<select id="BasketSelect" parameterType="Map" resultType="basketDTO">
+		SELECT 
+			m.id AS id,
+			 i.ino AS ino,
+			 i.iname AS iname,
+			 i.iname2 AS iname2, 
+			 i.price AS price, 
+			 i.category AS category
+		From basket b
+		join ITEMs i
+		on b.ino = i.ino
+		join member m
+		on b.id = m.id
+		where b.id=#{id} and b.payment =0
+	</select>
+	
+	<delete id="BasketDelete" parameterType="Map">
+		DELETE FROM basket
+		WHERE id=#{id} AND ino=#{ino}
+	</delete>
+	
+	<insert id="BasketInsert" parameterType="Map">
+		INSERT INTO basket (BNO,ID,INO,PAYMENT) 
+		VALUES (SEQ_BASKET.nextval,#{id},#{ino},DEFAULT)
+	</insert>
+	
+	<!-- 
+		ALTER TABLE BASKET MODIFY (PAYMENT DEFAULT 0); 추가해야함
+		장바구니에서 결제 완료시 BASKET 테이블에 PAYMENT (Default:0) 의 값이 1로 바뀜 
+		PAYMENT 값이 0이면 장바구니에
+		PAYMENT 값이 1이면 결제완료목록에 뿌려줄예정
+	 -->
+	<update id="CompletePayment" parameterType="Map">
+		UPDATE basket
+		SET payment = 1
+		WHERE id=#{id}
+	</update>
+	
+	<!-- 장바구니 주문자 정보 리스트 뿌려주기 -->
+	<select id="selectCustomerInfo" resultType="testDTO" parameterType="Map">
+		SELECT * FROM member WHERE id=#{id}
+	</select>
+	
+	
+	
 </mapper>
