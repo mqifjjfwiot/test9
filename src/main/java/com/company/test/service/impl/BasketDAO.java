@@ -15,38 +15,45 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.stereotype.Repository;
 
+import com.company.test.service.BasketDTO;
 import com.company.test.service.ItemsDTO;
+import com.company.test.service.TestDTO;
 
 
 @Repository
-public class ItemsDAO  {
+public class BasketDAO  {
 	
-	@Resource(name="itemstemplate")
+	@Resource(name="template")
 	private SqlSessionTemplate sqlMapper;
 	
 	
-	public ItemsDTO selectOne(Map map) {		
-		return sqlMapper.selectOne("itemsSelectOne", map);
+	
+	public List<BasketDTO> selectList(Map map) {		
+		return sqlMapper.selectList("BasketSelect", map);
 	}
 	
-	public ItemsDTO shopping(Map map) {		
-		return sqlMapper.selectOne("itemsShopping",map);
+	public BasketDTO shopping(Map map) {		
+		return sqlMapper.selectOne("BasketShopping",map);
 	}
 	
 	public int insert(Map map) {
 		
-		return sqlMapper.insert("itemsInsert", map);
+		return sqlMapper.insert("BasketInsert", map);
 	}
-
 	
 	public int delete(Map map) {
 		
-		return sqlMapper.delete("itemsDelete",map);
+		return sqlMapper.delete("BasketDelete",map);
 	}
-
 	
-	public int update(Map map) {		
-		return sqlMapper.update("itemsUpdate",map);
+	public int update(Map map) {
+		return sqlMapper.update("CompletePayment",map);
 	}
+	
+	public TestDTO info(String id) {
+		
+		return sqlMapper.selectOne("selectCustomerInfo",id);
+	}
+	
 
 }

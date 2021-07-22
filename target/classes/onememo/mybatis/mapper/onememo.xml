@@ -65,4 +65,11 @@
 		BASKET b JOIN ITEMS i ON b.INO= i.INO
 		WHERE BNO = #{BNO}
 	</select>
+	
+	
+	
+	
+	
+	
+
 </mapper>

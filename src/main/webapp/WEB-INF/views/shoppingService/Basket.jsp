@@ -69,11 +69,17 @@
 						<th scope="col" class="th" style="text-align: center;">배송비</th>
 					</tr>
 				</thead>
-
-				<tbody>
+					
+					<c:if test="${empty lists }" var="isEmpty">
+						<tr>
+							<td colspan="4">찜한 상품이 없어요</td>
+						</tr>
+					</c:if>
+				
+					<c:if test="${not isEmpty }">
+					<c:forEach items="${lists}" var="item"	varStatus="loop">
 					<!-- 예시상품 1 -->
 					<tr class="table_row">
-
 						<td class="table_cell">
 							<div class="checkbox">
 								<label for="bundle_checkbox" class="blind"><input
@@ -86,9 +92,8 @@
 							<div class="product_desc_wrap">
 								<div class="product_description">
 									<span class="product_thumb"> <!-- img	src=""	alt="" class="product_img--eMB0AlWn-k"-->
-									</span> <a href="#" class="product_info" target="_blank">상품정보(메이커)
-									<span class="product_name"> 상품이름과 설명 이런저런 간단하게 보고 이해할 수
-										있게</span></a>
+									</span> 
+									<a href="#" class="product_info" target="_blank">	${item.iname }<span class="product_name">  ${item.iname2 } ( ${item.category } )</span></a>
 								</div>
 							</div>
 						</td>
@@ -110,7 +115,7 @@
 
 						<td class="table_cell">
 							<div class="product_price">
-								<em class="product_detail_price">999,999<span class="unit">원</span></em>
+								<em class="product_detail_price">${item.price }<span class="unit">원</span></em>
 							</div>
 						</td>
 
@@ -121,57 +126,8 @@
 						</td>
 
 					</tr>
-
-					<!-- 예시상품 2 -->
-					<tr class="table_row">
-
-						<td class="table_cell">
-							<div class="checkbox">
-								<label for="bundle_checkbox_1" class="blind"><input
-									type="checkbox" id="bundle_checkbox_1" class="input" checked="">상품
-									선택</label>
-							</div>
-						</td>
-
-						<td class="table_cell">
-							<div class="product_desc_wrap">
-								<div class="product_description">
-									<span class="product_thumb"> <!-- img	src=""	alt="" class="product_img--eMB0AlWn-k"-->
-									</span> <a href="#" class="product_info" target="_blank">상품정보(메이커)</a>
-									<span class="product_name"> 상품이름과 설명 이런저런 간단하게 보고 이해할 수
-										있게</span>
-								</div>
-							</div>
-						</td>
-
-						<td class="table_cell">
-							<div class="product_item">
-								<div class="product_options">
-									<div class="product_item">
-										<p>
-											수량 :
-											<button id="amount-">-</button>
-											<span id="amount">1</span>
-											<button id="amount+">+</button>
-										</p>
-									</div>
-								</div>
-							</div>
-						</td>
-
-						<td class="table_cell">
-							<div class="product_price">
-								<em class="product_detail_price">999,999<span class="unit">원</span></em>
-							</div>
-						</td>
-
-						<td rowspan="1" class="table_cell">
-							<div class="delivery_fee">
-								<span class="delivery_price-">무료</span>
-							</div>
-						</td>
-
-					</tr>
+					</c:forEach>
+					</c:if>
 				</tbody>
 			</table>
 
@@ -186,7 +142,7 @@
 				<dl class="product_price">
 					<dt>총 상품금액</dt>
 					<dd>
-						<span class="price">999,999</span>원
+					<span class="price">666</span>원
 					</dd>
 				</dl>
 
@@ -200,7 +156,7 @@
 				<dl class="product_price">
 					<dt>할인예상금액</dt>
 					<dd class="discount">
-						<span class="price">8,888</span>원
+						<span class="price">0</span>원
 					</dd>
 				</dl>
 

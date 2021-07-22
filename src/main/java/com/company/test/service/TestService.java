@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 
 public interface TestService {
 	ListPagingData<TestDTO> selectList(Map map,HttpServletRequest req,int nowPage);
+	ListPagingData<TestDTO> selectMemberList(Map map,HttpServletRequest req,int nowPage);
 	//회원가입
 	int getTotalRecord(Map map);
 	TestDTO selectOne(Map map);

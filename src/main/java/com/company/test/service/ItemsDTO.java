@@ -18,6 +18,7 @@ import lombok.Setter;
 @AllArgsConstructor
 public class ItemsDTO {
 	private String INO;
+	private String MNO;
 	private String INAME;
 	private String INAME2;
 	private String INAME3;

@@ -26,5 +26,30 @@ public class TestDTO {
 	private java.sql.Date postDate;
 	//private java.sql.Date bDate;
 	private String commentCount;
+	private Date birth;
+	public String getTel() {
+		return tel;
+	}
+	public void setTel(String tel) {
+		this.tel = tel;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getAddr() {
+		return addr;
+	}
+	public void setAddr(String addr) {
+		this.addr = addr;
+	}
+	public String getMail() {
+		return mail;
+	}
+	public void setMail(String mail) {
+		this.mail = mail;
+	}
 	
 }

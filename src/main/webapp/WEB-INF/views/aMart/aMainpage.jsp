@@ -70,7 +70,7 @@
       <li class="nav-item"><a href="#">인기상품</a></li>
       <li class="nav-item"><a href="#">행사상품</a></li>
       <li class="nav-item"><a href="<c:url value="/home.do"/>">KosmoMart</a></li>
-      <li class="nav-item"><a href="#">고객센터</a></li>
+      <li class="nav-item"><a href="<c:url value="/aMartInfo.do"/>">고객센터</a></li>
       <li class="nav-item"><a href="#">공지사항</a></li>
     </ul>
   </div>

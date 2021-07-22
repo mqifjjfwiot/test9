@@ -26,7 +26,7 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
- 
+
 </head>
 <body>
 	<!-- 네비게이션 시작 -->
@@ -37,84 +37,63 @@
 		<div class="page-header">
 			<h1>결제정보확인</h1>
 		</div>
-		
+
 		<div class="row">
-		<div class="col-md-12">
-			<%-- <form class="form-horizontal" method="post" action="<c:url value='/PaymentRecord.do'/>" > --%>
-			<form class="form-horizontal">
-				<div class="form-group">
-				
-				<p class="col-md-offset-1">${sessionScope.id}님의 배송정보</p> </br>
-					<label class="col-sm-1 control-label">이름</label>
-					<div class="col-sm-5">
-						<input type="text" class="form-control" name="name"
-							value="${member.name}">
+			<div class="col-md-12">
+				<%-- <form class="form-horizontal" method="post" action="<c:url value='/PaymentRecord.do'/>" > --%>
+				<form class="form-horizontal">
+					<div class="form-group">
+
+						<p class="col-md-offset-1">님의 배송정보</p>
+						</br> <label class="col-sm-1 control-label"> 이름</label>
+						<div class="col-sm-5">
+							<input type="text" class="form-control" name="name" value="">
+						</div>
 					</div>
-				</div>
-				
-				<div class="form-group">
-					<label class="col-sm-1 control-label">주소</label>
-					<div class="col-sm-5">
-						<input type="text" class="form-control" name="name"
-							value="${member.addr}">
+
+					<div class="form-group">
+						<label class="col-sm-1 control-label">주소</label>
+						<div class="col-sm-5">
+							<input type="text" class="form-control" name="name" value="">
+						</div>
 					</div>
-				</div>
-				
-				<div class="form-group">
-					<label class="col-sm-1 control-label">연락처</label>
-					<div class="col-sm-5">
-						<input type="text" class="form-control" name="name"
-							placeholder="${member.tel }">
+
+					<div class="form-group">
+						<label class="col-sm-1 control-label">연락처</label>
+						<div class="col-sm-5">
+							<input type="text" class="form-control" name="name"
+								placeholder="">
+						</div>
 					</div>
-				</div>
-				
-				<div class="form-group">
-					<label class="col-sm-1 control-label">이메일</label>
-					<div class="col-sm-5">
-						<input type="text" class="form-control" name="name"
-							placeholder="${member.mail }">
+
+					<div class="form-group">
+						<label class="col-sm-1 control-label">이메일</label>
+						<div class="col-sm-5">
+							<input type="text" class="form-control" name="name"
+								placeholder="">
+						</div>
 					</div>
-				</div>
-				
-				<div class="form-group">
-					<label class="col-sm-1 control-label">가격</label>
-					<div class="col-sm-5">
-							<span class="text_point"><span class="price">666,666</span>원</span>
-							
-					</div>
-				
-				</div>
-				
-				
-				<!-- 
-				<div class="form-group">
-					<div class="col-sm-offset-1 col-sm-11">
-						<button type="submit" class="btn_payment">결제</button>
-					</div>
-				</div>
-				 -->
-			</form>
-			
-			<button class="btn_payment" onclick="payment()">결제</button>
-			<a href="<c:url value="/PaymentRecord.do"/>" >결제 (결제api생략)</a>
+				</form>
+
+				<button class="btn_payment" onclick="payment()">결제</button>
+				<a href="<c:url value="/PaymentRecord.do"/>">결제 (결제api생략)</a>
+			</div>
 		</div>
 	</div>
-	</div>
 	<!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요합니다) -->
-	<script
-		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-	<!-- 모든 컴파일된 플러그인을 포함합니다 (아래), 원하지 않는다면 필요한 각각의 파일을 포함하세요 -->
-
+	<script type="text/javascript"
+		src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript"
+		src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
 	<script src="<c:url value="/bootstrap/js/bootstrap.min.js"/>"></script>
-	
+
 	<!-- 실제 내용 끝 -->
 	<!--  푸터 시작 -->
 	<jsp:include page="/WEB-INF/views/templates/Side.jsp" />
 	<jsp:include page="/WEB-INF/views/templates/mainfooter.jsp" />
 	<!-- 푸터 끝 -->
-	
+
 	<script>
-		
 		//var btn = document.getElementById("form-horizontal");
 		//btn.addEventListener("click", payment);
 		
@@ -152,7 +131,7 @@
 				    	          }
 				    	      }).done(function (data) {
 				    	        // 가맹점 서버 결제 API 성공시 로직
-										
+										//location.href = "<c:url value="/mailSender.do"/>"
 					                     location.href="<c:url value="/PaymentRecord.do"/>"
 					                    
 					                        
@@ -165,10 +144,7 @@
 				
 			});
 		}
-		
-		
-	
 	</script>
-	
+
 </body>
 </html>

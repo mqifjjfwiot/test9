@@ -106,6 +106,17 @@ public class TestController {
 		model.addAttribute("listPagingData", listPagingData);
 		return "customerService/CustomerBoard";
 	}
+	//
+	@RequestMapping("/memberlist.do")
+	public String memberlist(
+			@RequestParam Map map,
+			@RequestParam(required = false,defaultValue = "1") int nowPage,
+			HttpServletRequest req,
+			Model model) {
+		ListPagingData listPagingData= service.selectMemberList(map,req,nowPage);
+		model.addAttribute("listPagingData", listPagingData);
+		return "admin/members";
+	}
 	@RequestMapping("View.do")
 	public String view(
 			@ModelAttribute("id") String id,

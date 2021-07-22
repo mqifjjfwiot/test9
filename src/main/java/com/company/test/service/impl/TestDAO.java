@@ -26,6 +26,7 @@ public class TestDAO  {
 			result=sqlMapper.insert("myInsert",dto);
 		}
 		catch(Exception e) {
+			System.out.println(e.getMessage());
 			return -2;
 		}
 		return result;
@@ -39,8 +40,10 @@ public class TestDAO  {
 	}
 	
 	public List<TestDTO> selectList(Map map) {
-		
 		return sqlMapper.selectList("memoSelectList",map);
+	}
+	public List<TestDTO> selectMemberList(Map map) {
+		return sqlMapper.selectList("memberSelectList",map);
 	}
 
 	
