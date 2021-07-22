@@ -62,7 +62,9 @@
 	</select>
 	
 	<select id="memberSelectList" parameterType="Map" resultType="testDTO">
-		SELECT m.*,ROWNUM R FROM member m ORDER BY rownum DESC
+		SELECT * FROM
+		(SELECT m.*,ROWNUM R FROM member m ORDER BY rownum DESC)
+		WHERE R BETWEEN #{start} AND #{end}
 	</select>
 	
 	<insert id="memoInsert" parameterType="Map">

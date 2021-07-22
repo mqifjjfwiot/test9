@@ -21,9 +21,9 @@ public class TestServiceImpl implements TestService {
 	@Autowired
 	private TestDAO dao;
 	//@Value("${PAGE_SIZE}")
-	private int pageSize = 5;
+	private int pageSize = 10;
 	//@Value("${BLOCK_PAGE}")
-	private int blockPage = 5;
+	private int blockPage = 10;
 	@Override
 	public int insertMember(TestDTO dto) {	
 		//1.회원아이디 중복 체크

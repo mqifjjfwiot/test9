@@ -54,6 +54,7 @@
 					<c:forEach items="${listPagingData.lists }" var="item" varStatus="loop">
 						<tr>
 							<td><input name="rowCheck" type="checkbox" value="${listPagingData.totalRecordCount - (((listPagingData.nowPage - 1) * listPagingData.pageSize) + loop.index)}"></td>
+							
 							<td class="text-left">${item.id }</td>
 							<td>${item.name }</td>
 							<td>${item.tel}</td>
