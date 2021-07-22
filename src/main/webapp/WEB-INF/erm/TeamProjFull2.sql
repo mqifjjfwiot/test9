@@ -22,6 +22,8 @@ CREATE TABLE BASKET
 	BNO number NOT NULL,
 	ID varchar2(15) NOT NULL,
 	INO number NOT NULL,
+	AMOUNT number NOT NULL,
+
 	PRIMARY KEY (BNO)
 );
 
