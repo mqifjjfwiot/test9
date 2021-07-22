@@ -117,6 +117,14 @@ public class TestController {
 		model.addAttribute("listPagingData", listPagingData);
 		return "admin/members";
 	}
+	@RequestMapping("/memberDelete.do")
+	public String memberlist(@RequestParam Map map) {
+		System.out.println(map.get("id"));
+		System.out.println(map.get("valueArr"));
+		service.deleteMember(map);
+		return "forward:/memberlist.do";
+	}
+	
 	@RequestMapping("View.do")
 	public String view(
 			@ModelAttribute("id") String id,

@@ -48,8 +48,10 @@ public class TestDAO  {
 
 	
 	public int getTotalRecord(Map map) {
-		
 		return sqlMapper.selectOne("memoTotalCount",map);
+	}
+	public int getTotalMember(Map map) {
+		return sqlMapper.selectOne("memberTotalCount",map);
 	}
 	public TestDTO selectOne(Map map) {		
 		return sqlMapper.selectOne("memoSelectOne", map);
@@ -59,6 +61,9 @@ public class TestDAO  {
 	}
 	public int delete(Map map) {
 		return sqlMapper.delete("memoDelete",map);
+	}
+	public int deleteMember(Map map) {
+		return sqlMapper.delete("memberDelete",map);
 	}
 	public int update(Map map) {		
 		return sqlMapper.update("memoUpdate",map);

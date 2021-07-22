@@ -53,9 +53,8 @@
 				<c:if test="${not isEmpty }">
 					<c:forEach items="${listPagingData.lists }" var="item" varStatus="loop">
 						<tr>
-							<td><input name="rowCheck" type="checkbox" value="${listPagingData.totalRecordCount - (((listPagingData.nowPage - 1) * listPagingData.pageSize) + loop.index)}"></td>
-							
-							<td class="text-left">${item.id }</td>
+							<td><input name="rowCheck" type="checkbox" value="${item.id}"></td>
+							<td class="text-left" id="id">${item.id }</td>
 							<td>${item.name }</td>
 							<td>${item.tel}</td>
 							<td>${item.birth}</td>
@@ -101,15 +100,16 @@
 		});
 	});
 		function deleteMember() {
-			console.log('들어오나');
-			var url = "delete.do";
+			var url = "memberDelete.do";
 			var valueArr = new Array();
 			var list = $("input[name='rowCheck']");
 			for(var i=0;i < list.length;i++){
 				if(list[i].checked){
 					valueArr.push(list[i].value);
+					//console.log(list[i].value);
 				}
 			}
+			console.log(valueArr);
 			if(valueArr.length==0){
 				alert("선택된 회원이 없습니다");
 			}
@@ -120,12 +120,12 @@
 					type : 'POST',
 					treditional : true,
 					data : {
-						valueArr : valueArr
+						id : valueArr
 					},
 					success : function(mdata) {
 						if(mdata==1){
 							alert("탈퇴처리 완료");
-							location.replace("<c:url value="/memberlist.do"/>");
+							//location.replace("<c:url value="/memberlist.do"/>");
 						}
 						else{
 							alert("실패");
