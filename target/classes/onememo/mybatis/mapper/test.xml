@@ -48,6 +48,12 @@
 			WHERE ${searchColumn} LIKE '%' || #{searchWord} || '%'
 		</if>		
 	</select>
+	<select id="memberTotalCount" parameterType="Map" resultType="int">
+		SELECT COUNT(*) FROM member
+		<if test="searchWord !=null">
+			WHERE ${searchColumn} LIKE '%' || #{searchWord} || '%'
+		</if>		
+	</select>
 	
 	<select id="memoSelectList" parameterType="Map" resultType="testDTO">
 		SELECT * FROM
@@ -66,6 +72,9 @@
 		(SELECT m.*,ROWNUM R FROM member m ORDER BY rownum DESC)
 		WHERE R BETWEEN #{start} AND #{end}
 	</select>
+	<delete id="memberDelete" parameterType="Map">
+		DELETE member WHERE id=#{id}
+	</delete>
 	
 	<insert id="memoInsert" parameterType="Map">
 		INSERT INTO BOARD 

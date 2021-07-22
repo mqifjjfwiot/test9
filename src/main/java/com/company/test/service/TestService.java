@@ -16,6 +16,7 @@ public interface TestService {
 	int delete(Map map);
 	int update(Map map);
 	
+	int deleteMember(Map map);
 	int insertMember(TestDTO dto);
 	int updateMember(TestDTO dto);
 	//글 작성
