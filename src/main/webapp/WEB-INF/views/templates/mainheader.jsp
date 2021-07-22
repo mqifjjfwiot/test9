@@ -15,11 +15,15 @@
         }
         
 	div.title {
+			text-align: center;
+		}
+	
+	.title a {
             font-size: 300%;
             font-weight: bold;
             text-align: center;
             color: rgb(255, 166, 72);
-        }
+            }
         
 	body{
 	font-family: 'Jua', sans-serif;
