@@ -61,6 +61,28 @@ public class TestServiceImpl implements TestService {
 		return listPagingData;
 	}
 	@Override
+	public ListPagingData<TestDTO> selectMemberList(Map map, HttpServletRequest req, int nowPage) {
+		int totalRecordCount=dao.getTotalRecord(map);		
+		int totalPage =(int)Math.ceil((double)totalRecordCount/pageSize);		
+		int start = (nowPage -1)*pageSize+1;
+		int end = nowPage * pageSize;	
+		map.put("start", start);
+		map.put("end", end);
+		List lists=dao.selectMemberList(map);		
+		String pagingString=PagingUtil.pagingBootStrapStyle(totalRecordCount,pageSize, blockPage, nowPage,req.getContextPath()+"/CustomerBoard.do?");
+		
+		ListPagingData<TestDTO> listPagingData = 
+				ListPagingData.builder()
+				.lists(lists)
+				.nowPage(nowPage)
+				.pageSize(pageSize)
+				.pagingString(pagingString)
+				.TotalRecordCount(totalRecordCount)
+				.build();
+		
+		return listPagingData;
+	}
+	@Override
 	public int getTotalRecord(Map map) {
 		return dao.getTotalRecord(map);
 	}

@@ -60,6 +60,11 @@
 		ORDER BY bono DESC) T)
 		WHERE R BETWEEN #{start} AND #{end}	
 	</select>
+	
+	<select id="memberSelectList" parameterType="Map" resultType="testDTO">
+		SELECT m.*,ROWNUM R FROM member m ORDER BY rownum DESC
+	</select>
+	
 	<insert id="memoInsert" parameterType="Map">
 		INSERT INTO BOARD 
 		VALUES(SEQ_BOARD.NEXTVAL,#{id},#{title},#{CATEGORY},#{BCOUNT},#{bcontent},DEFAULT)
@@ -164,7 +169,10 @@
 		on b.ino = i.ino
 		join member m
 		on b.id = m.id
-		where b.id=#{id} and b.payment =0
+		where b.id=#{id} 
+		<!-- 
+		and b.payment =0
+		 -->
 	</select>
 	
 	<delete id="BasketDelete" parameterType="Map">

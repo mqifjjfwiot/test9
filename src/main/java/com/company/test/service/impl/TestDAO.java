@@ -40,8 +40,10 @@ public class TestDAO  {
 	}
 	
 	public List<TestDTO> selectList(Map map) {
-		
 		return sqlMapper.selectList("memoSelectList",map);
+	}
+	public List<TestDTO> selectMemberList(Map map) {
+		return sqlMapper.selectList("memberSelectList",map);
 	}
 
 	

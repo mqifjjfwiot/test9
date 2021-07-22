@@ -26,6 +26,7 @@ public class TestDTO {
 	private java.sql.Date postDate;
 	//private java.sql.Date bDate;
 	private String commentCount;
+	private Date birth;
 	public String getTel() {
 		return tel;
 	}
