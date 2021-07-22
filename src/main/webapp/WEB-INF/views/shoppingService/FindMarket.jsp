@@ -42,7 +42,7 @@
 	            <button onclick='searchByAddress()'>마트검색</button>
         	</div>
         	
-			<div id="map" style="width:500px;height:400px;"></div>
+			<div id="map" style="width:600px;height:400px;"></div>
 		</div>
 
 		
@@ -64,8 +64,16 @@
 	
 	
 	<script>
-	
-	var map;
+	/*
+    var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+        mapOption = { 
+            center: new kakao.maps.LatLng(37.473083599999995,126.8788276), // 지도의 중심좌표
+            level: 4 // 지도의 확대 레벨
+        };
+
+    // 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
+    var map = new kakao.maps.Map(mapContainer, mapOption); */
+    var map;
     //나의 현재 위치의 위도와 경도 얻기
     if(navigator.geolocation){//브라우저의 Geolocation 지원 여부 판단           
             //PositionOptions객체 설정용]
@@ -141,39 +149,73 @@
      var ps = new kakao.maps.services.Places();
    
          
-    //ps.keywordSearch('마트', placesSearchCB,options); 
-    ps.keywordSearch('마트', placesSearchCB); 
+
+    ps.keywordSearch('마트', placesSearchCB)
+
+  
     
- // 지도에 마커를 표시하는 함수입니다
-    function displayMarker(place) {
+
+
+   
+    
+
+
+
+
+
+
+
+     // 키워드 검색 완료 시 호출되는 콜백함수 입니다
+function placesSearchCB (data, status, pagination) {
+    if (status === kakao.maps.services.Status.OK) {
+
+        // 검색된 장소 위치를 기준으로 지도 범위를 재설정하기위해
+        // LatLngBounds 객체에 좌표를 추가합니다
         
-        // 마커를 생성하고 지도에 표시합니다
-        var marker1 = new kakao.maps.Marker({
-            map: map,
-            position: new kakao.maps.LatLng(place.y, place.x) 
-        });
 
-        // 마커를 클릭했을 때 마커 위에 표시할 인포윈도우를 생성합니다
-        var iwContent = '<div style="padding:5px;">Hello World!</div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
-        iwRemoveable = true;
-        // 인포윈도우를 생성합니다
-        var infowindow1 = new kakao.maps.InfoWindow({
-        content : iwContent,
-        removable : iwRemoveable
-        }); 
+        for (var i=0; i<data.length; i++) {
+            displayMarker(data[i]);    
+        }       
+
+        
+    } 
+}
 
 
-        // 마커에 클릭이벤트를 등록합니다
-        kakao.maps.event.addListener(marker1, 'click', function() {
-            // 마커를 클릭하면 장소명이 인포윈도우에 표출됩니다
-            infowindow1.setContent('<div style="padding:5px;font-size:12px;">' + place.place_name + '</div>'
-            +'<div style="padding:5px;font-size:12px;">'+place.phone+'</div>'+
-            '<div style="padding:5px;font-size:12px;">'+'도로명주소:' +place.road_address_name+'</div>'
-            +'<a href='+place.place_url+'>'+'<div style="padding:5px;font-size:12px;width:fit-content;margin: 0;">'+'링크로 이동'+'</div>'+'</a>'
-            );
-            infowindow1.open(map, marker1);
-        });
-    }
+
+
+
+
+// 지도에 마커를 표시하는 함수입니다
+function displayMarker(place) {
+    
+    // 마커를 생성하고 지도에 표시합니다
+    var marker1 = new kakao.maps.Marker({
+        map: map,
+        position: new kakao.maps.LatLng(place.y, place.x) 
+    });
+
+    // 마커를 클릭했을 때 마커 위에 표시할 인포윈도우를 생성합니다
+    var iwContent = '<div style="padding:5px;">Hello World!</div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+    iwRemoveable = true;
+    // 인포윈도우를 생성합니다
+    var infowindow1 = new kakao.maps.InfoWindow({
+    content : iwContent,
+    removable : iwRemoveable
+    });
+
+
+    // 마커에 클릭이벤트를 등록합니다
+    kakao.maps.event.addListener(marker1, 'click', function() {
+        // 마커를 클릭하면 장소명이 인포윈도우에 표출됩니다
+        infowindow1.setContent('<div style="padding:5px;font-size:12px;">' + place.place_name + '</div>'
+        +'<div style="padding:5px;font-size:12px;">'+place.phone+'</div>'+
+        '<div style="padding:5px;font-size:12px;">'+'도로명주소:' +place.road_address_name+'</div>'
+        +'<a href='+place.place_url+'>'+'<div style="padding:5px;font-size:12px;width:fit-content;margin: 0;">'+place.place_url+'</div>'+'</a>'
+        );
+        infowindow1.open(map, marker1);
+    });
+}
 
 </script>
 	

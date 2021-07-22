@@ -58,7 +58,7 @@ dd {
 		<div class="page-header">
 			<h1>구매/결제내역</h1>
 				<div class="payment-header">
-					<span>주문이 완료</span>되었습니다. 감사합니다!
+					<span>${imp_uid }님 주문이 완료</span>되었습니다. 감사합니다!
 
 
 
@@ -86,7 +86,7 @@ dd {
 										<tbody>
 											<tr>
 												<td>받는사람</td>
-												<td>권용교 / 010-2093-0248</td>
+												<td> / 010-2093-0248</td>
 												<td></td>
 											</tr>
 											<tr>

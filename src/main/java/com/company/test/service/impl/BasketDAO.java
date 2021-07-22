@@ -28,8 +28,8 @@ public class BasketDAO  {
 	
 	
 	
-	public List<BasketDTO> selectList(Map map) {		
-		return sqlMapper.selectList("BasketSelect", map);
+	public List<BasketDTO> selectList(String id) {		
+		return sqlMapper.selectList("BasketSelect", id);
 	}
 	
 	public BasketDTO shopping(Map map) {		
