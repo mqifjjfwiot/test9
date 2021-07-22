@@ -47,14 +47,14 @@
 						<p class="col-md-offset-1">님의 배송정보</p>
 						</br> <label class="col-sm-1 control-label"> 이름</label>
 						<div class="col-sm-5">
-							<input type="text" class="form-control" name="name" value="">
+							<input type="text" class="form-control" name="name" value="${member.name }">
 						</div>
 					</div>
 
 					<div class="form-group">
 						<label class="col-sm-1 control-label">주소</label>
 						<div class="col-sm-5">
-							<input type="text" class="form-control" name="name" value="">
+							<input type="text" class="form-control" name="name" value="${member.addr}">
 						</div>
 					</div>
 
@@ -62,7 +62,7 @@
 						<label class="col-sm-1 control-label">연락처</label>
 						<div class="col-sm-5">
 							<input type="text" class="form-control" name="name"
-								placeholder="">
+								placeholder="${member.tel}">
 						</div>
 					</div>
 
@@ -70,12 +70,12 @@
 						<label class="col-sm-1 control-label">이메일</label>
 						<div class="col-sm-5">
 							<input type="text" class="form-control" name="name"
-								placeholder="">
+								placeholder="${member.mail}">
 						</div>
 					</div>
 				</form>
 
-				<button class="btn_payment" onclick="payment()">결제</button>
+				<a class="btn_payment" onclick="payment()">결제</a>
 				<a href="<c:url value="/PaymentRecord.do"/>">결제 (결제api생략)</a>
 			</div>
 		</div>
@@ -94,56 +94,54 @@
 	<!-- 푸터 끝 -->
 
 	<script>
-		//var btn = document.getElementById("form-horizontal");
-		//btn.addEventListener("click", payment);
+
 		
-		function payment(){
-				
-				
-			 	 var IMP = window.IMP; // 생략해도 괜찮습니다.
-			  	 IMP.init("imp57923173"); // 체험판 관리자
-			  	 
-			  	IMP.request_pay({
-			        
-			  		pg: "html5_inicis", 	// 결제방식
-			  	    pay_method: "card", // 결제 수단
-			  	    merchant_uid: 'merchant_' + new Date().getTime(),
-			  	    name: "노르웨이 회전 의자", // order 테이블에 들어갈 주문명 혹은 주문 번호
-			  	    amount: 100, // 결제 금액
-			  	    buyer_email: "gildong@gmail.com", // 구매자 email
-			  	    buyer_name: "홍길동", // 구매자 이름
-			  	    buyer_tel: "010-4242-4242", // 구매자 전화번호
-			  	    buyer_addr: "서울특별시 강남구 신사동", // 구매자 주소
-			  	    buyer_postcode: "01181", // 구매자 우편번호
-			  	    //m_redirect_url :"/PaymentRecord.do" // 결제 완료 후 보낼 컨트롤러의 메소드명
-			  		
-			     }, function(rsp) { //callback
-			    	 
-				    	 if (rsp.success) { // 결제 성공 시: 결제 승인 또는 가상계좌 발급에 성공한 경우
-				    	      // jQuery로 HTTP 요청
-				    	      jQuery.ajax({
-				    	          url: "http://localhost:9090/app/PaymentRecord.do", // 가맹점 서버
-				    	          method: "POST",
-				    	          headers: { "Content-Type": "application/json" },
-				    	          data: {
-				    	              imp_uid: rsp.imp_uid,
-				    	              merchant_uid: rsp.merchant_uid
-				    	          }
-				    	      }).done(function (data) {
-				    	        // 가맹점 서버 결제 API 성공시 로직
-										//location.href = "<c:url value="/mailSender.do"/>"
-					                     location.href="<c:url value="/PaymentRecord.do"/>"
-					                    
-					                        
-							              
-				    	      })
-			 
-			  	} else { // 실패시
-			  		alert("결제에 실패하였습니다. 에러 내용: " +  rsp.error_msg);
-			  	}
-				
-			});
-		}
+	function payment(){
+		
+		
+	 	 var IMP = window.IMP; // 생략해도 괜찮습니다.
+	  	 IMP.init("imp57923173"); // 체험판 관리자
+	  	 
+	  	IMP.request_pay({
+	        
+	  		pg: "html5_inicis", 	// 결제방식
+	  	    pay_method: "card", // 결제 수단
+	  	    merchant_uid: 'merchant_' + new Date().getTime(),
+	  	    name: "노르웨이 회전 의자", // order 테이블에 들어갈 주문명 혹은 주문 번호
+	  	    amount: 100, // 결제 금액
+	  	    buyer_email: "gildong@gmail.com", // 구매자 email
+	  	    buyer_name: "홍길동", // 구매자 이름
+	  	    buyer_tel: "010-4242-4242", // 구매자 전화번호
+	  	    buyer_addr: "서울특별시 강남구 신사동", // 구매자 주소
+	  	    buyer_postcode: "01181", // 구매자 우편번호
+	  	    //m_redirect_url :"/PaymentRecord.do" // 결제 완료 후 보낼 컨트롤러의 메소드명
+	  		
+	     }, function(rsp) { //callback
+	    	 
+		    	 if (rsp.success) { // 결제 성공 시: 결제 승인 또는 가상계좌 발급에 성공한 경우
+		    	      // jQuery로 HTTP 요청
+		    	      jQuery.ajax({
+		    	          url: "http://localhost:9090/app/PaymentRecord.do", // 가맹점 서버
+		    	          method: "POST",
+		    	          headers: { "Content-Type": "application/json" },
+		    	          data: {
+		    	              imp_uid: rsp.imp_uid,
+		    	              merchant_uid: rsp.merchant_uid
+		    	          }
+		    	      }).done(function (data) {
+		    	        // 가맹점 서버 결제 API 성공시 로직 	        	
+								location.href="<c:url value="/PaymentRecord.do"/>"          
+		    	      })
+	 
+	  	} else { // 실패시
+	  		alert("결제에 실패하였습니다. 에러 내용: " +  rsp.error_msg);
+	  	}
+		
+	});
+}
+		
+		
+		//location.href = "<c:url value="/mailSender.do"/>"
 	</script>
 
 </body>
