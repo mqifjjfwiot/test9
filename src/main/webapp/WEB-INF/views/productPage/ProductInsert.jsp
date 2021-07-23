@@ -154,7 +154,7 @@ td {
 								<td><input type="file" name="upload" size="30" /></td>
 							</tr>
 							<tr>
-								<td colspan="2"><input type="submit" value="업로드" /></td>
+								<td colspan="2"><input type="submit" id="Insert_btn" value="업로드" /></td>
 							</tr>
 						</table>
 					</form>
