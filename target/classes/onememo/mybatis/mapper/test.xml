@@ -168,7 +168,17 @@
 	
 	
 	<select id="BasketSelect" parameterType="Map" resultType="basketDTO">
-		SELECT member m.id AS id, items i.ino AS ino, i.iname AS iname, i.iname2 AS iname2, i.price AS price, i.category AS category From basket b join i on b.ino = i.ino join member m on b.id = m.id where b.id=#{id}
+		SELECT 
+			m.id AS id, 
+			i.ino AS ino, 
+			i.iname AS iname, 
+			i.iname2 AS iname2, 
+			i.price AS price, 
+			i.category AS category 
+		From basket b 
+		JOIN items i ON b.ino = i.ino 
+		JOIN member m ON b.id = m.id 
+		WHERE b.id=#{id}
 		<!-- 
 		and b.payment =0
 		 -->
