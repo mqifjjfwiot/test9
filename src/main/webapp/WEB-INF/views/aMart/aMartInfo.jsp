@@ -130,10 +130,12 @@
 </ul>
 </div>    
 
-
-<h4>A 마트의 위치</h4>
+<div class="container">
+		
 		<div>
 			<div id="map" style="width:600px;height:400px;"></div>
+		</div>
+
 		</div>
 
 
