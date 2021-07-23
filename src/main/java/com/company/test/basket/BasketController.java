@@ -53,9 +53,11 @@ public class BasketController {
 			String id = (String)session.getAttribute("id");
 			TestDTO member=basketService.info(id);
 			model.addAttribute("member", member);
+			List<BasketDTO> lists = basketService.selectList(id); 
+			model.addAttribute("lists",  basketService.selectList(id));
 			
 			
-			System.out.println("member : "+member);
+			System.out.println("member : "+member+"lists"+lists);
 			
 			return "shoppingService/Payment";
 		}

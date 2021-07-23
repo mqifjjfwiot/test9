@@ -37,7 +37,10 @@
 		<div class="page-header">
 			<h1>결제정보확인</h1>
 		</div>
-
+		<c:set var = "sum" value = "0" />
+		<c:forEach items="${lists}" var="item"	varStatus="loop">
+		<c:set var= "sum" value="${sum + item.price}"/>
+		</c:forEach>
 		<div class="row">
 			<div class="col-md-12">
 				<%-- <form class="form-horizontal" method="post" action="<c:url value='/PaymentRecord.do'/>" > --%>
@@ -95,6 +98,8 @@
 
 	<script>
 
+	
+	
 		
 	function payment(){
 		
@@ -107,12 +112,12 @@
 	  		pg: "html5_inicis", 	// 결제방식
 	  	    pay_method: "card", // 결제 수단
 	  	    merchant_uid: 'merchant_' + new Date().getTime(),
-	  	    name: "노르웨이 회전 의자", // order 테이블에 들어갈 주문명 혹은 주문 번호
-	  	    amount: 100, // 결제 금액
-	  	    buyer_email: "gildong@gmail.com", // 구매자 email
-	  	    buyer_name: "홍길동", // 구매자 이름
-	  	    buyer_tel: "010-4242-4242", // 구매자 전화번호
-	  	    buyer_addr: "서울특별시 강남구 신사동", // 구매자 주소
+	  	    name: "${lists[0].iname} 외", // order 테이블에 들어갈 주문명 혹은 주문 번호
+	  	    amount: "${sum}", // 결제 금액
+	  	    buyer_email: "${member.mail}", // 구매자 email
+	  	    buyer_name: "${member.name}", // 구매자 이름
+	  	    buyer_tel: "${member.tel}", // 구매자 전화번호
+	  	    buyer_addr: "${member.addr}", // 구매자 주소
 	  	    buyer_postcode: "01181", // 구매자 우편번호
 	  	    //m_redirect_url :"/PaymentRecord.do" // 결제 완료 후 보낼 컨트롤러의 메소드명
 	  		

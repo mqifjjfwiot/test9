@@ -115,7 +115,15 @@
 
 						<td class="table_cell">
 							<div class="product_price">
-								<em class="product_detail_price">${item.price }<span class="unit">원</span></em>
+									<c:if test="${empty lists }" var="isEmpty">
+										<tr>
+											<em class="product_detail_price">0<span
+												class="unit">원</span></em>
+										</tr>
+									</c:if>
+									<c:if test="${not isEmpty }">
+									<em class="product_detail_price">${item.price }<span class="unit">원</span></em>
+									</c:if>
 							</div>
 						</td>
 
@@ -128,7 +136,11 @@
 					</tr>
 					
 					<c:set var= "sum" value="${sum + item.price}"/>
+					
+					
 					</c:forEach>
+					
+					
 					</c:if>
 				</tbody>
 			</table>
@@ -136,7 +148,7 @@
 			<div class="product_button_box">
 				<button type="button" class="button">선택상품 삭제</button>
 			</div>
-
+		
 
 			<h3 class="blind">주문금액 정보</h3>
 			<div class="order_calculator">
@@ -168,7 +180,7 @@
 					class="price"><c:out value="${sum}"/></span>원</span>
 			</div>
 	</div>
-
+	
 
 
 
