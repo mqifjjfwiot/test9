@@ -8,7 +8,7 @@
 <mapper namespace="onememo.mybatis.mapper.test">
 	<!-- 멤버 관련 쿼리 -->
 	<insert id="myInsert" parameterType="testDTO">
-		INSERT INTO MEMBER VALUES(no.nextval,#{id},#{pwd},#{name},#{addr},#{tel},#{mail},default)
+		INSERT INTO MEMBER VALUES(#{id},no.nextval,#{pwd},#{name},#{addr},#{tel},#{mail},default)
 	</insert>
 	
 	
