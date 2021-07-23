@@ -10,7 +10,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=96ae258013acf305ddfa3db9d504c4a9&libraries=services"></script>
 <title>A마트info.jsp</title>
-<!-- 페이지 설명은 여기에 -->
+<!-- 페이지 설명은 여기에 --> 
 
 <!-- 부트스트랩, 제이쿼리 -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
