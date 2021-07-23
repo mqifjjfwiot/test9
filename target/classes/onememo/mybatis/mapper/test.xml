@@ -211,6 +211,8 @@
 		SELECT * FROM member WHERE id=#{id}
 	</select>
 	
+	<!--  주문완료 후 장바구니에서 삭제하기  -->
+	
 	
 	
 </mapper>
