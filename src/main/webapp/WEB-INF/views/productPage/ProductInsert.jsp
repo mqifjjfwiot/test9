@@ -64,7 +64,7 @@ input {
 			<div class="col-xs-10">
 				<fieldset>
 					<legend id='p_legend'>상품 등록</legend>
-					<form action="<c:url value='#'/>" method="post"
+					<form action="<c:url value='/Item/List.do'/>" method="post"
 						enctype="multipart/form-data">
 						<table>
 							<tr>
@@ -84,7 +84,7 @@ input {
 							<tr>
 								<td>가격</td>
 								<td><input type="text" minlength="1" maxlength="20"
-									size="15"></td>
+									size="15">(원)</td>
 							</tr>
 							<tr>
 								<td>상호명</td>
