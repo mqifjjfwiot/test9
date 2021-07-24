@@ -120,7 +120,8 @@
 					$.ajax({
 						url : url,
 						type : 'POST',
-						dataType : 'json',
+						//dataType : 'json',
+						traditional: true,
 						data : {
 							valueArr : valueArr
 						},

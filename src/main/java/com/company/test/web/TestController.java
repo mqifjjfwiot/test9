@@ -120,13 +120,13 @@ public class TestController {
 		return "admin/members";
 	}
 	@RequestMapping(value = "/memberDelete.do",produces = "text/plain;charset=UTF-8")
-	public void memberlist(@RequestParam Map map) {
+	public String memberlist(@RequestParam Map map) {
 		String[] mList = map.get("valueArr").toString().replace("[", "").replace("]", "").replace("\"", "").split(",");
 		for(int i = 0; i < mList.length;i++) {
 			map.put("id", mList[i]);
 			service.deleteMember(map);
 		}
-		//return "forward:/memberlist.do";
+		return "forward:/memberlist.do";
 		
 	}
 	
