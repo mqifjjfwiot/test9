@@ -68,6 +68,7 @@
         <a href="<c:url value="/Write.do"/>" class="btn btn-primary">게시글 작성</a>
         <div class="row">
 		<div class="text-center">
+				<!-- 
 			<form class="form-inline" method="post"
 				action="#">
 				<div class="form-group">
@@ -77,7 +78,6 @@
 						<option value="content">내용</option>
 					</select>
 				</div>
-				<!-- 
 				<div class="form-group">
 					<input type="text" name="searchWord" class="form-control" />
 				</div>

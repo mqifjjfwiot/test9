@@ -69,7 +69,7 @@ public class TestServiceImpl implements TestService {
 		map.put("start", start);
 		map.put("end", end);
 		List lists=dao.selectMemberList(map);		
-		String pagingString=PagingUtil.pagingBootStrapStyle(totalRecordCount,pageSize, blockPage, nowPage,req.getContextPath()+"/CustomerBoard.do?");
+		String pagingString=PagingUtil.pagingBootStrapStyle(totalRecordCount,pageSize, blockPage, nowPage,req.getContextPath()+"/memberlist.do?");
 		
 		ListPagingData<TestDTO> listPagingData = 
 				ListPagingData.builder()

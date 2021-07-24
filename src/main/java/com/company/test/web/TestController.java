@@ -2,6 +2,7 @@ package com.company.test.web;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -17,6 +18,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.HttpSessionRequiredException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -117,12 +119,15 @@ public class TestController {
 		model.addAttribute("listPagingData", listPagingData);
 		return "admin/members";
 	}
-	@RequestMapping("/memberDelete.do")
-	public String memberlist(@RequestParam Map map) {
-		System.out.println(map.get("id"));
-		System.out.println(map.get("valueArr"));
-		service.deleteMember(map);
-		return "forward:/memberlist.do";
+	@RequestMapping(value = "/memberDelete.do",produces = "text/plain;charset=UTF-8")
+	public void memberlist(@RequestParam Map map) {
+		String[] mList = map.get("valueArr").toString().replace("[", "").replace("]", "").replace("\"", "").split(",");
+		for(int i = 0; i < mList.length;i++) {
+			map.put("id", mList[i]);
+			service.deleteMember(map);
+		}
+		//return "forward:/memberlist.do";
+		
 	}
 	
 	@RequestMapping("View.do")

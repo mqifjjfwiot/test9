@@ -100,7 +100,8 @@
 		});
 	});
 		function deleteMember() {
-			var url = "memberDelete.do";
+			//var url = "memberDelete.do";
+			var url = "<c:url value="/memberDelete.do"/>";
 			var valueArr = new Array();
 			var list = $("input[name='rowCheck']");
 			for(var i=0;i < list.length;i++){
@@ -109,29 +110,31 @@
 					//console.log(list[i].value);
 				}
 			}
-			console.log(valueArr);
 			if(valueArr.length==0){
 				alert("선택된 회원이 없습니다");
 			}
 			else{
+				valueArr = JSON.stringify(valueArr);
 				var chk = confirm("정말로 탈퇴처리 하시겠습니까?");
-				$.ajax({
-					url : url,
-					type : 'POST',
-					treditional : true,
-					data : {
-						id : valueArr
-					},
-					success : function(mdata) {
-						if(mdata==1){
-							alert("탈퇴처리 완료");
-							//location.replace("<c:url value="/memberlist.do"/>");
+				if(chk){
+					$.ajax({
+						url : url,
+						type : 'POST',
+						dataType : 'json',
+						data : {
+							valueArr : valueArr
+						},
+						success : function(data) {
+							console.log('여기로 들어오나?');
+								alert("탈퇴처리 완료");
+								location.replace("<c:url value="/memberlist.do"/>");
+						},
+						error : function() {
+								location.replace("<c:url value="/memberlist.do"/>");
+							console.log('여기는 에러?');
 						}
-						else{
-							alert("실패");
-						}
-					}
-				})
+					})
+				}
 			}
 		}
 	</script>
