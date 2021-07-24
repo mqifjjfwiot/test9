@@ -15,11 +15,15 @@
         }
         
 	div.title {
+			text-align: center;
+		}
+	
+	.title a {
             font-size: 300%;
             font-weight: bold;
             text-align: center;
             color: rgb(255, 166, 72);
-        }
+            }
         
 	body{
 	font-family: 'Jua', sans-serif;
@@ -59,6 +63,7 @@
         <c:if test="${not login }">
         	<li><a href="<c:url value="/Logout.do"/>">로그아웃</a></li>
 			<li><a href="<c:url value="/MyPage.do"/>">마이페이지</a></li>
+			<li><a href="<c:url value="/ProductInser.do"/>">상품등록</a></li>
         </c:if>
         <li><a href="<c:url value="/Basket.do"/>">장바구니</a></li>
         <li><a href="<c:url value="/CustomerMain.do"/>">고객센터</a></li>
@@ -72,7 +77,7 @@
 </div>
 
 <div class="title">
-        <p><a href="<c:url value="/home.do"/>">KOSMO마트<span class="glyphicon glyphicon-shopping-cart"></span></a></p>
+        <p><a href="<c:url value="/home.do"/>">장보기좋은날<span class="glyphicon glyphicon-shopping-cart"></span></a></p>
     </div>
 
 <div class="top_bottom">

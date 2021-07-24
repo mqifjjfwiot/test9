@@ -69,13 +69,13 @@
 						<th scope="col" class="th" style="text-align: center;">배송비</th>
 					</tr>
 				</thead>
-					
+					<c:set var = "sum" value = "0" />
 					<c:if test="${empty lists }" var="isEmpty">
 						<tr>
 							<td colspan="4">찜한 상품이 없어요</td>
 						</tr>
 					</c:if>
-				
+					
 					<c:if test="${not isEmpty }">
 					<c:forEach items="${lists}" var="item"	varStatus="loop">
 					<!-- 예시상품 1 -->
@@ -93,7 +93,7 @@
 								<div class="product_description">
 									<span class="product_thumb"> <!-- img	src=""	alt="" class="product_img--eMB0AlWn-k"-->
 									</span> 
-									<a href="#" class="product_info" target="_blank">	${item.iname }<span class="product_name">  ${item.iname2 } ( ${item.category } )</span></a>
+									<a href="#" class="product_info" target="_blank">	${item.iname } //<span class="product_name">  ${item.iname2 } ( ${item.category } )</span></a>
 								</div>
 							</div>
 						</td>
@@ -115,7 +115,15 @@
 
 						<td class="table_cell">
 							<div class="product_price">
-								<em class="product_detail_price">${item.price }<span class="unit">원</span></em>
+									<c:if test="${empty lists }" var="isEmpty">
+										<tr>
+											<em class="product_detail_price">0<span
+												class="unit">원</span></em>
+										</tr>
+									</c:if>
+									<c:if test="${not isEmpty }">
+									<em class="product_detail_price">${item.price }<span class="unit">원</span></em>
+									</c:if>
 							</div>
 						</td>
 
@@ -126,7 +134,13 @@
 						</td>
 
 					</tr>
+					
+					<c:set var= "sum" value="${sum + item.price}"/>
+					
+					
 					</c:forEach>
+					
+					
 					</c:if>
 				</tbody>
 			</table>
@@ -134,7 +148,7 @@
 			<div class="product_button_box">
 				<button type="button" class="button">선택상품 삭제</button>
 			</div>
-
+		
 
 			<h3 class="blind">주문금액 정보</h3>
 			<div class="order_calculator">
@@ -142,7 +156,7 @@
 				<dl class="product_price">
 					<dt>총 상품금액</dt>
 					<dd>
-					<span class="price">666</span>원
+					<span class="price"><c:out value="${sum}"/></span>원
 					</dd>
 				</dl>
 
@@ -163,10 +177,10 @@
 			</div>
 			<div class="product_price_total">
 				<span class="text_mart">총 주문금액</span> <span class="text_point"><span
-					class="price">666,666</span>원</span>
+					class="price"><c:out value="${sum}"/></span>원</span>
 			</div>
 	</div>
-
+	
 
 
 
@@ -194,6 +208,9 @@
 				$("input[type=checkbox]").prop("checked", false);
 			}
 		}
+		
+		
+	
 	</script>
 	<!-- 실제 내용 끝 -->
 	<!--  푸터 시작 -->

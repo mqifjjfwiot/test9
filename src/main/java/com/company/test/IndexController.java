@@ -77,7 +77,8 @@ public class IndexController {
 		return "productPage/ProductInfo";
 	}
 	
-
+	
+	
 	
 	
 	
@@ -111,7 +112,11 @@ public class IndexController {
 	public String CustomerMain() {
 		return "customerService/CustomerMain";
 	}
-	
+	//상품 등록 페이지로
+		@RequestMapping("/ProductInser.do")
+		public String ProductInsert() {
+			return "productPage/ProductInsert";
+		}
 	
 	//A마트 관련
 	//a메인

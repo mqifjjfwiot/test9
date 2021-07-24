@@ -8,7 +8,7 @@
 <mapper namespace="onememo.mybatis.mapper.test">
 	<!-- 멤버 관련 쿼리 -->
 	<insert id="myInsert" parameterType="testDTO">
-		INSERT INTO MEMBER VALUES(no.nextval,#{id},#{pwd},#{name},#{addr},#{tel},#{mail},default)
+		INSERT INTO MEMBER VALUES(#{id},no.nextval,#{pwd},#{name},#{addr},#{tel},#{mail},default)
 	</insert>
 	
 	
@@ -48,6 +48,12 @@
 			WHERE ${searchColumn} LIKE '%' || #{searchWord} || '%'
 		</if>		
 	</select>
+	<select id="memberTotalCount" parameterType="Map" resultType="int">
+		SELECT COUNT(*) FROM member
+		<if test="searchWord !=null">
+			WHERE ${searchColumn} LIKE '%' || #{searchWord} || '%'
+		</if>		
+	</select>
 	
 	<select id="memoSelectList" parameterType="Map" resultType="testDTO">
 		SELECT * FROM
@@ -66,6 +72,9 @@
 		(SELECT m.*,ROWNUM R FROM member m ORDER BY rownum DESC)
 		WHERE R BETWEEN #{start} AND #{end}
 	</select>
+	<delete id="memberDelete" parameterType="Map">
+		DELETE member WHERE id=#{id}
+	</delete>
 	
 	<insert id="memoInsert" parameterType="Map">
 		INSERT INTO BOARD 
@@ -101,9 +110,10 @@
 	</delete>
 	
 	<insert id="itemsInsert" parameterType="Map">
+		<!-- INO ID INAME INAME2 PRICE BRAND CATEGORY INAME3 IMAGE IMAGE2 IPAGE IPAGE2 STOCK HASHTAG DISH -->
 		INSERT INTO ITEMS 
-		VALUES(SEQ_ITEMS.NEXTVAL,#{MNO},#{LNO},#{IMAGE},#{IMAGES2},#{INAME},#{INAME2},#{INAME3},
-		,#{PRICE},#{IPAGE},#{IPAGE2},#{CATEORY},#{STOCK},#{HASHTAG},#{DISH},#{BRAND},#{PNO})
+		VALUES(SEQ_ITEMS.NEXTVAL,#{ID},#{INAME},#{INAME2},#{PRICE},#{BRAND},#{CATEGORY},#{INAME3},
+		#{IMAGE},#{IMAGE2},#{IPAGE},#{IPAGE2},#{STOCK},#{HASHTAG},#{DISH})
 	</insert>
 	
 	
@@ -160,18 +170,16 @@
 	
 	<select id="BasketSelect" parameterType="Map" resultType="basketDTO">
 		SELECT 
-			m.id AS id,
-			 i.ino AS ino,
-			 i.iname AS iname,
-			 i.iname2 AS iname2, 
-			 i.price AS price, 
-			 i.category AS category
-		From basket b
-		join ITEMs i
-		on b.ino = i.ino
-		join member m
-		on b.id = m.id
-		where b.id=#{id} 
+			m.id AS id, 
+			i.ino AS ino, 
+			i.iname AS iname, 
+			i.iname2 AS iname2, 
+			i.price AS price, 
+			i.category AS category 
+		From basket b 
+		JOIN items i ON b.ino = i.ino 
+		JOIN member m ON b.id = m.id 
+		WHERE b.id=#{id}
 		<!-- 
 		and b.payment =0
 		 -->
@@ -203,6 +211,8 @@
 	<select id="selectCustomerInfo" resultType="testDTO" parameterType="Map">
 		SELECT * FROM member WHERE id=#{id}
 	</select>
+	
+	<!--  주문완료 후 장바구니에서 삭제하기  -->
 	
 	
 	

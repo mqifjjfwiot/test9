@@ -62,7 +62,7 @@ public class TestServiceImpl implements TestService {
 	}
 	@Override
 	public ListPagingData<TestDTO> selectMemberList(Map map, HttpServletRequest req, int nowPage) {
-		int totalRecordCount=dao.getTotalRecord(map);		
+		int totalRecordCount=dao.getTotalMember(map);		
 		int totalPage =(int)Math.ceil((double)totalRecordCount/pageSize);		
 		int start = (nowPage -1)*pageSize+1;
 		int end = nowPage * pageSize;	
@@ -97,6 +97,10 @@ public class TestServiceImpl implements TestService {
 	@Override
 	public int delete(Map map) {
 		return dao.delete(map);
+	}
+	@Override
+	public int deleteMember(Map map) {
+		return dao.deleteMember(map);
 	}
 	@Override
 	public int update(Map map) {
