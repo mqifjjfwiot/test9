@@ -10,7 +10,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 
-
 @Getter
 @Setter
 @Builder
@@ -18,7 +17,7 @@ import lombok.Setter;
 @AllArgsConstructor
 public class ItemsDTO {
 	private String INO;
-	private String MNO;
+	private String ID;
 	private String INAME;
 	private String INAME2;
 	private String INAME3;
