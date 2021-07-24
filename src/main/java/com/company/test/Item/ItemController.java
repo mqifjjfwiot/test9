@@ -1,11 +1,15 @@
 package com.company.test.Item;
 
+import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 
@@ -48,5 +52,39 @@ public class ItemController {
 	public String Accordian() {
 		return "productPage/Intro";
 	}
+	
+	@Autowired
+	private ObjectMapper objectMapper;
+	
+	@RequestMapping(value="/Item/Category.do",produces = "application/json;charset=UTF-8")
+	public @ResponseBody String ajaxCourse(@RequestParam String p_category) throws JsonProcessingException {
+		
+		Map map = new HashMap();
+		switch(p_category) {
+			case "fresh":
+					map.put("meat", "육류/계란");
+					map.put("fish", "생선/어패류");
+					map.put("furit", "과일");
+					map.put("vegetable", "채소");
+					map.put("rice", "쌀/잡곡/견과");
+				break;
+			case "milkket":
+				map.put("milkket", "밀키트");
+				map.put("frozen", "냉동/냉장/통조림");
+				map.put("meatfish", "육/어육가공품");
+				map.put("kimchi", "김치");
+				map.put("noodle", "라면/면류");
+				map.put("bakery", "베이커리");
+				map.put("snack", "과자/시리얼");
+				break;
+			default:
+				map.put("water", "생수");
+				map.put("juice", "주스/탄산");
+				map.put("tea", "차");
+				map.put("alcohol", "주류");
+		}
+		
+		return objectMapper.writeValueAsString(map);
+	}/////////////////
 
 }

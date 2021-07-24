@@ -30,7 +30,7 @@ table {
 	cellspacing: "1";
 	bgcolor: "gray";
 	border-collapse: separate;
-	border-spacing: 0px 10px 10px 0px;
+	border-spacing: 0 10px;
 }
 
 tr {
@@ -38,10 +38,19 @@ tr {
 	
 }
 
-td {
-	
+#insertContainer {
+	font-size: 1.5em;
+}
+
+#p_legend {
+	font-family: fantasy;
+}
+
+input {
+	font-family: monospace;
 }
 </style>
+
 </head>
 <body>
 	<!-- 네비게이션 시작 -->
@@ -50,18 +59,18 @@ td {
 	<!-- 실제 내용 시작 -->
 	<!-- 모든 컴파일된 플러그인을 포함합니다 (아래), 원하지 않는다면 필요한 각각의 파일을 포함하세요 -->
 
-	<div class="container">
+	<div class="container" id='insertContainer'>
 		<div class="row">
 			<div class="col-xs-10">
 				<fieldset>
-					<legend>상품 등록</legend>
+					<legend id='p_legend'>상품 등록</legend>
 					<form action="<c:url value='#'/>" method="post"
 						enctype="multipart/form-data">
 						<table>
 							<tr>
 								<td>상품명</td>
 								<td><input type="text" minlength="2" maxlength="20"
-									size="20"></td>
+									size="17"></td>
 							</tr>
 							<tr>
 								<td>상품정보(홍보문구)</td>
@@ -75,7 +84,7 @@ td {
 							<tr>
 								<td>가격</td>
 								<td><input type="text" minlength="1" maxlength="20"
-									size="20"></td>
+									size="15"></td>
 							</tr>
 							<tr>
 								<td>상호명</td>
@@ -83,58 +92,21 @@ td {
 									size="20"></td>
 							</tr>
 							<tr>
-								<td>상품 카테고리(대분류)</td>
-								<td><select name="p_category">
-										<option value="main">대분류를 선택하세요</option>
+								<td>상품 카테고리</td>
+								<td><select name="p_category" id='p_category'>
 										<option value="fresh">신선식품</option>
 										<option value="milkket">밀키트/반조리</option>
 										<option value="drink">음료/차</option>
-										
 								</select></td>
 							</tr>
 							<tr>
-								<td>상품 카테고리(소분류)</td>
-								<td><select name="sub_category1">
-										<option value="simple">소분류를 선택하세요</option>
+								<td>상품 카테고리(상세)</td>
+								<td><select name="sub_category" id="sub_category">
 										<option value="meat">육류/계란</option>
 										<option value="fish">생선/어패류</option>
 										<option value="furit">과일</option>
 										<option value="vegetable">채소</option>
 										<option value="rice">쌀/잡곡/견과</option>
-										<option value="milkket">밀키트</option>
-										<option value="frozen">냉동/냉장/통조림</option>
-										<option value="meatfish">육/어육가공품</option>
-										<option value="kimchi">김치</option>
-										<option value="noodle">라면/면류</option>
-										<option value="bakery">베이커리</option>
-										<option value="snack">과자/시리얼</option>
-										<option value="water">생수</option>
-										<option value="juice">주스/탄산</option>
-										<option value="tea">차</option>
-										<option value="alcohol">주류</option>
-								</select></td>
-							</tr>
-							<tr>
-								<td>상품 카테고리(소분류)</td>
-								<td><select name="sub_category2">
-										<option value="simple">소분류를 선택하세요</option>
-										<option value="milkket">밀키트</option>
-										<option value="frozen">냉동/냉장/통조림</option>
-										<option value="meatfish">육/어육가공품</option>
-										<option value="kimchi">김치</option>
-										<option value="noodle">라면/면류</option>
-										<option value="bakery">베이커리</option>
-										<option value="snack">과자/시리얼</option>
-								</select></td>
-							</tr>
-							<tr>
-								<td>상품 카테고리(소분류)</td>
-								<td><select name="sub_category3">
-										<option value="simple">소분류를 선택하세요</option>
-										<option value="water">생수</option>
-										<option value="juice">주스/탄산</option>
-										<option value="tea">차</option>
-										<option value="alcohol">주류</option>
 								</select></td>
 							</tr>
 							<tr>
@@ -158,7 +130,7 @@ td {
 							</tr>
 						</table>
 					</form>
-					<span style="color: red; font-size: 1.8em">${empty param.error ?'':'파일 용량 초과'}</span>
+					<span style="color: red; font-size: 1.8em">테스트</span>
 				</fieldset>
 			</div>
 		</div>
@@ -169,5 +141,29 @@ td {
 	<jsp:include page="/WEB-INF/views/templates/Side.jsp" />
 	<jsp:include page="/WEB-INF/views/templates/mainfooter.jsp" />
 	<!-- 푸터 끝 -->
+	<script>
+	$("#p_category").change(function(){
+		console.log('과정 선택:',$(this).val());
+		//ajax로 요청]
+		$.ajax({
+			url:"<c:url value="/Item/Category.do"/>",
+			data:{p_category:$(this).val()},
+			dataType:'json'
+			}).done(function(data){
+				console.log("서버로부터 받은 데이타:",data);
+				var options="";
+				$.each(data,function(key,value){
+					options+="<option value='"+key+"'>"+value+"</option>";					
+				});
+				$('#sub_category').html(options);
+				
+			}).fail(function(request,error){
+				console.log('상태코드:',request.status);
+				console.log('서버로부터 받은 HTML:',request.responseText);
+				console.log('에러:',error);				
+			});
+	});
+
+	</script>
 </body>
 </html>
