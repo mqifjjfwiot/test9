@@ -36,7 +36,7 @@
 
 		<div class="container">
 		<div class="page-header">
-			<h1>스프링<small>파일 업로드/다운로드</small></h1>
+			<h1>파일 등록 성공</h1>
 		</div>
 		<fieldset>
 			<legend>파일 업로드 결과</legend>
