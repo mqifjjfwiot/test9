@@ -20,10 +20,14 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.company.test.Item.FileUpDownUtils;
 import com.company.test.Item.UploadCommand;
+import com.company.test.service.ItemsService;
+import com.company.test.service.TestService;
 
 @Controller
 public class ItemController {
-
+	
+	@Autowired
+	private ItemsService service;
 	// 메인으로
 	@RequestMapping("/Item/Items.do")
 	public String Items(@RequestParam int menu, Map map) {
@@ -134,7 +138,7 @@ public class ItemController {
 	}/////////////////
 
 	@RequestMapping("/Item/Upload.do")
-	public String upload(UploadCommand cmd, HttpServletRequest req) throws IllegalStateException, IOException {
+	public String upload(UploadCommand cmd, HttpServletRequest req, @RequestParam Map map) throws IllegalStateException, IOException {
 		// 1]서버의 물리적 경로 얻기
 		String physicalPath = req.getServletContext().getRealPath("/upload");
 		MultipartFile upload = cmd.getUpload();
@@ -149,29 +153,15 @@ public class ItemController {
 		req.setAttribute("real", renameFilename);
 		req.setAttribute("type", upload.getContentType());
 		req.setAttribute("size", (int) Math.ceil(upload.getSize() / 1024.0));
+		map.put("INAME",req.getParameter("INAME"));
+		map.put("INAME2",req.getParameter("INAME2"));
+		map.put("INAME3",req.getParameter("INAME3"));
+		map.put("PRICE",req.getParameter("PRICE"));
+		map.put("BRAND",req.getParameter("BRAND"));
+		map.put("CATEGORY",req.getParameter("CATEGORY"));
+		map.put("ID","sjwonsj94");
+		service.insert(map);
 		return "productPage/UploadComplete";
 	}
 
-	// 목록 이동용 컨트롤러 메소드
-	@RequestMapping("/Item/List.do")
-	public String list(HttpServletRequest req) {
-		// 1]서버의 물리적 경로 얻기
-		String physicalPath = req.getServletContext().getRealPath("/upload");
-		// 2]File객체 생성
-		File f = new File(physicalPath);
-		File[] files = f.listFiles();
-		// 방법1]컬렉션 저장
-		List<Map> list = new Vector();
-		for (File file : files) {
-			Map map = new HashMap();
-			map.put("name", file.getName());
-			map.put("size", (int) Math.ceil(file.length() / 1024.0));
-			list.add(map);
-		}
-		req.setAttribute("list", list);
-		// 방법2]File[]배열 저장
-		req.setAttribute("files", files);
-
-		return "productPage/List";
-	}
 }

@@ -63,7 +63,7 @@ input {
 		<div class="row">
 			<div class="col-xs-10">
 				<fieldset>
-					<legend id='p_legend'><a href="<c:url value='Item/List.do'/>">상품 등록</a></legend>
+					<legend id='p_legend'>상품 등록</legend>
 					<form action="<c:url value='/Item/Upload.do'/>" method="post"
 						enctype="multipart/form-data">
 						<table>
@@ -130,7 +130,6 @@ input {
 							</tr>
 						</table>
 					</form>
-					<span style="color: red; font-size: 1.8em">테스트</span>
 				</fieldset>
 			</div>
 		</div>
