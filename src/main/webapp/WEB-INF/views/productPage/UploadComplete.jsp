@@ -41,8 +41,12 @@
 		<fieldset>
 			<legend>파일 업로드 결과</legend>
 			<ul style="list-style: upper-roman;">
-				<li>올린이 : ${param.writer}</li>
-				<li>제목 : ${param.title}</li>
+				<li>상품명 : ${param.INAME}</li>
+				<li>상품정보 : ${param.INAME2}</li>
+				<li>상품추가설명 : ${param.INAME3}</li>
+				<li>가격 : ${param.PRICE}</li>
+				<li>상호명 : ${param.BRAND}</li>
+				<li>상품카테고리 : ${param.CATEGORY}</li>
 				<li>원본 파일명 : ${original}</li>
 				<li>실제 서버에 저장된 파일명 : ${real}</li>
 				<li>컨텐츠 타입 : ${type}</li>

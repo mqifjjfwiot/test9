@@ -63,32 +63,32 @@ input {
 		<div class="row">
 			<div class="col-xs-10">
 				<fieldset>
-					<legend id='p_legend'>상품 등록</legend>
-					<form action="<c:url value='/Item/List.do'/>" method="post"
+					<legend id='p_legend'><a href="<c:url value='Item/List.do'/>">상품 등록</a></legend>
+					<form action="<c:url value='/Item/Upload.do'/>" method="post"
 						enctype="multipart/form-data">
 						<table>
 							<tr>
 								<td>상품명</td>
-								<td><input type="text" minlength="2" maxlength="20"
+								<td><input type="text" name="INAME" minlength="2" maxlength="20"
 									size="17"></td>
 							</tr>
 							<tr>
 								<td>상품정보(홍보문구)</td>
-								<td><input type="text" minlength="5" maxlength="50"
+								<td><input type="text" name="INAME2" minlength="5" maxlength="50"
 									size="50"></td>
 							</tr>
 							<tr>
 								<td>상품정보(추가설명)</td>
-								<td><input type="text" maxlength="50" size="50"></td>
+								<td><input type="text" name="INAME3" maxlength="50" size="50"></td>
 							</tr>
 							<tr>
 								<td>가격</td>
-								<td><input type="text" minlength="1" maxlength="20"
+								<td><input type="text" name="PRICE" minlength="1" maxlength="20"
 									size="15">(원)</td>
 							</tr>
 							<tr>
 								<td>상호명</td>
-								<td><input type="text" minlength="1" maxlength="20"
+								<td><input type="text" name="BRAND" minlength="1" maxlength="20"
 									size="20"></td>
 							</tr>
 							<tr>
@@ -101,7 +101,7 @@ input {
 							</tr>
 							<tr>
 								<td>상품 카테고리(상세)</td>
-								<td><select name="sub_category" id="sub_category">
+								<td><select name="CATEGORY" id="sub_category">
 										<option value="meat">육류/계란</option>
 										<option value="fish">생선/어패류</option>
 										<option value="furit">과일</option>
