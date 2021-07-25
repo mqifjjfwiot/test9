@@ -55,22 +55,43 @@ public class BasketController {
 			model.addAttribute("member", member);
 			List<BasketDTO> lists = basketService.selectList(id); 
 			model.addAttribute("lists",  basketService.selectList(id));
-			
-			
-			System.out.println("member : "+member+"lists"+lists);
-			
+
 			return "shoppingService/Payment";
 		}
 		
+		
+		//결제정보 확인 & 결제 페이지로
+				@RequestMapping("/PaymentList.do")
+				public String PaymentList(Model model,HttpSession session) {
+					String id = (String)session.getAttribute("id");
+					TestDTO member=basketService.info(id);
+					model.addAttribute("member", member);
+					List<BasketDTO> lists = basketService.selectPaymentList(id); 
+					model.addAttribute("lists",  lists);
+
+					return "shoppingService/PaymentList";
+				}
 		
 		
 		
 		//주문/결제확인 페이지로
 		@RequestMapping("/PaymentRecord.do")
-		public String PaymentRecord(@RequestParam Map<String, Object> param) {
-			System.out.println("제이쿼리로 전달한 값"+param.get("imp_uid"));
+		public String PaymentRecord(Model model,HttpSession session,@RequestParam Map<String, Object> param) {
+			
+			String id = (String)session.getAttribute("id");
+			TestDTO member=basketService.info(id);
+			model.addAttribute("member", member);
+			List<BasketDTO> lists = basketService.selectList(id); 
+			model.addAttribute("lists",  basketService.selectList(id));
+			
+			basketService.update(id);
+			
+			
+			//장바구니 삭제
+			//결제내역목록에 추가
 			
 			return "forward:/mailSender.do";
+			
 		}
 		
 		

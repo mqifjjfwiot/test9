@@ -61,15 +61,15 @@ dd {
 					<span>${imp_uid }님 주문이 완료</span>되었습니다. 감사합니다!
 
 
-
-				<dl class="accodian">
+					<dt><a href="<c:url value="/PaymentList.do"/>">클릭해서 주문한 상품 보기</a></dt>
+				<!-- <dl class="accodian">
 					<dt><a>클릭해서 주문한 상품 보기</a></dt>
 					<dd>
 						주문한 물건 리스트
 					</dd>
 				</dl>
 			</div>
-
+ -->
 
 				<table class="pament-body">
 					<tbody>
@@ -86,13 +86,12 @@ dd {
 										<tbody>
 											<tr>
 												<td>받는사람</td>
-												<td> / 010-2093-0248</td>
+												<td> ${member.name }/ ${member.tel}</td>
 												<td></td>
 											</tr>
 											<tr>
 												<td>받는주소</td>
-												<td>21523<!-- --> <!-- -->인천광역시 남동구 만수동 1115-1
-													향촌휴먼시아1단지아파트 135동 701호
+												<td>${member.addr}
 												</td>
 												<td><span>변경하기 〉</span></td>
 											</tr>
@@ -141,6 +140,7 @@ dd {
 				<div class="button-group">
 					<button class="link_order info">주문 상세보기</button><!-- 내정보 -> 주문한 물품 보는 사이트가 있으면 그쪽으로 연결 -->
 					<button><a href="<c:url value="/home.do"/>" class="link_home">쇼핑 계속하기</a></button>
+					
 				</div>
 
 			</div>
