@@ -47,7 +47,7 @@
 				<form class="form-horizontal">
 					<div class="form-group">
 
-						<p class="col-md-offset-1">님의 배송정보</p>
+						<p class="col-md-offset-1">고객님의 배송정보</p>	
 						</br> <label class="col-sm-1 control-label"> 이름</label>
 						<div class="col-sm-5">
 							<input type="text" class="form-control" name="name" value="${member.name }">

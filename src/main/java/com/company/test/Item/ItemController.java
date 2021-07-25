@@ -159,7 +159,7 @@ public class ItemController {
 		map.put("PRICE",req.getParameter("PRICE"));
 		map.put("BRAND",req.getParameter("BRAND"));
 		map.put("CATEGORY",req.getParameter("CATEGORY"));
-		map.put("ID","sjwonsj94");
+		map.put("ID","qwerty");
 		service.insert(map);
 		return "productPage/UploadComplete";
 	}
