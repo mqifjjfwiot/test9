@@ -98,7 +98,7 @@
 
 	<script>
 
-	
+	setItem("price", ${sum});
 	
 		
 	function payment(){

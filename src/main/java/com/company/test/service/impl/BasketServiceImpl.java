@@ -54,10 +54,10 @@ public class BasketServiceImpl implements BasketService {
 
 
 	@Override
-	public int update(Map map) {
+	public int update(String id) {
 		
-		map.put("id", "1234");//임시
-		return dao.update(map);
+		
+		return dao.update(id);
 	}
 	 
 	@Override
@@ -65,6 +65,12 @@ public class BasketServiceImpl implements BasketService {
 		
 		
 		return dao.info(id);
+	}
+
+	@Override
+	public List<BasketDTO> selectPaymentList(String id) {
+		
+		return dao.selectPaymentList(id);
 	}
 
 	

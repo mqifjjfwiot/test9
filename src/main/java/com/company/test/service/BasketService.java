@@ -13,10 +13,11 @@ public interface BasketService {
 	//입력/수정/삭제용]
 	int insert(Map map);
 	int delete(Map map);
-	int update(Map map);
+	int update(String id);
 	//구매자 정보 조회
 	TestDTO info(String id);
-	
+	//결제완료리스트 뿌려주기
+	List<BasketDTO> selectPaymentList(String id);
 
 	
 	

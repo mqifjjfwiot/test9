@@ -33,8 +33,82 @@
 	<!-- 실제 내용 시작 -->
 	<div class="container">
 		<div class="page-header">
-			<h1>카테코리</h1>
+			<h1>결제완료페이지</h1>
 		</div>
+
+		<main class="page_cart">
+			<ul>
+				<li><em>주문하신 상품을 나열한 페이지입니다.</em></li>
+				<li>환불여부는 환불규정에 따라 환불</li>
+			</ul>
+
+			<h3 class="blind">장바구니 목록</h3>
+			<table class="table">
+
+				<colgroup>
+					<col class="col_2--YKLfiddUoQ">
+					<col class="col_3--3kO7FM0QDn">
+					<col class="col_4--2HuEbgLS2c">
+					<col class="col_5--1Q8JnXqems">
+				</colgroup>
+
+				<thead>
+					<tr>
+						<th scope="col-3" class="th" style="text-align: center;">상품정보</th>
+						<th scope="col" class="th" style="text-align: center;">상품금액</th>
+						<th scope="col" class="th" style="text-align: center;">배송비</th>
+					</tr>
+				</thead>
+					<c:set var = "sum" value = "0" />
+					<c:if test="${empty lists }" var="isEmpty">
+					</c:if>
+					
+					<c:if test="${not isEmpty }">
+					<c:forEach items="${lists}" var="item"	varStatus="loop">
+					<!-- 예시상품 1 -->
+					<tr class="table_row">
+
+						<td class="table_cell">
+							<div class="product_desc_wrap">
+								<div class="product_description">
+									<span class="product_thumb"> <!-- img	src=""	alt="" class="product_img--eMB0AlWn-k"-->
+									</span> 
+									<a href="#" class="product_info" target="_blank">	${item.iname } //<span class="product_name">  ${item.iname2 } ( ${item.category } )</span></a>
+								</div>
+							</div>
+						</td>
+
+						<td class="table_cell">
+							<div class="product_price">
+									<c:if test="${empty lists }" var="isEmpty">
+										<tr>
+											<em class="product_detail_price">0<span
+												class="unit">원</span></em>
+										</tr>
+									</c:if>
+									<c:if test="${not isEmpty }">
+									<em class="product_detail_price">${item.price }<span class="unit">원</span></em>
+									</c:if>
+							</div>
+						</td>
+
+						<td rowspan="1" class="table_cell">
+							<div class="delivery_fee">
+								<span class="delivery_price-">무료</span>
+							</div>
+						</td>
+
+					</tr>
+					
+					<c:set var= "sum" value="${sum + item.price}"/>
+					
+					
+					</c:forEach>
+					
+					
+					</c:if>
+				</tbody>
+			</table>
 	</div>
 	<!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요합니다) -->
 	<script

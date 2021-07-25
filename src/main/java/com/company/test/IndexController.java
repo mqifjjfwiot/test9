@@ -1,5 +1,6 @@
 package com.company.test;
 
+import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 
@@ -13,10 +14,13 @@ import javax.mail.internet.MimeMessage;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.company.test.service.BasketDTO;
+import com.company.test.service.TestDTO;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 
@@ -147,7 +151,7 @@ public class IndexController {
 	 * @throws MessagingException 
 	 * @throws AddressException **/
 	@RequestMapping("/mailSender")
-	public String mailSender(HttpServletRequest request, ModelMap mo) throws AddressException, MessagingException {
+	public String mailSender(HttpServletRequest  sess,Model model,HttpServletRequest request, ModelMap mo) throws AddressException, MessagingException {
 		
 		// 네이버일 경우 smtp.naver.com 을 입력합니다.
 		// Google일 경우 smtp.gmail.com 을 입력합니다.
@@ -189,6 +193,14 @@ public class IndexController {
 		mimeMessage.setSubject(subject);  //제목셋팅
 		mimeMessage.setText(body);        //내용셋팅
 		Transport.send(mimeMessage); //javax.mail.Transport.send() 이용
+		
+		
+		
+		
+		
+		
+		
+		
 		return "shoppingService/PaymentRecord";
 		
 	}

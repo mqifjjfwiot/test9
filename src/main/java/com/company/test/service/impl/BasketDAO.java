@@ -32,6 +32,10 @@ public class BasketDAO  {
 		return sqlMapper.selectList("BasketSelect", id);
 	}
 	
+	public List<BasketDTO> selectPaymentList(String id) {		
+		return sqlMapper.selectList("BasketSelectPayment", id);
+	}
+	
 	public BasketDTO shopping(Map map) {		
 		return sqlMapper.selectOne("BasketShopping",map);
 	}
@@ -46,8 +50,8 @@ public class BasketDAO  {
 		return sqlMapper.delete("BasketDelete",map);
 	}
 	
-	public int update(Map map) {
-		return sqlMapper.update("CompletePayment",map);
+	public int update(String id) {
+		return sqlMapper.update("CompletePayment",id);
 	}
 	
 	public TestDTO info(String id) {
