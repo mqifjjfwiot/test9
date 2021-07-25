@@ -42,7 +42,7 @@
 				<li>환불여부는 환불규정에 따라 환불</li>
 			</ul>
 
-			<h3 class="blind">장바구니 목록</h3>
+
 			<table class="table">
 
 				<colgroup>
