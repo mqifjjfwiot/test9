@@ -93,7 +93,7 @@
 								<div class="product_description">
 									<span class="product_thumb"> <!-- img	src=""	alt="" class="product_img--eMB0AlWn-k"-->
 									</span> 
-									<a href="#" class="product_info" target="_blank">	${item.iname } //<span class="product_name">  ${item.iname2 } ( ${item.category } )</span></a>
+									<a href="<c:url value="/Item/Product.do"/>" class="product_info" target="_blank">	${item.iname } //<span class="product_name">  ${item.iname2 } ( ${item.category } )</span></a>
 								</div>
 							</div>
 						</td>

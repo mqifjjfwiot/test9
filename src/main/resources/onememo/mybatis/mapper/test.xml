@@ -175,7 +175,7 @@ ID varchar2(15) NOT NULL,
 		From basket b 
 		JOIN items i ON b.ino = i.ino 
 		JOIN member m ON b.id = m.id 
-		WHERE b.id=#{id} 
+		WHERE b.id=#{id} AND b.payment = 0
 		
 	</select>
 	

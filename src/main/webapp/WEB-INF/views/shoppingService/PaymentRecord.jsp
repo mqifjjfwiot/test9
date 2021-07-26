@@ -114,7 +114,7 @@ dd {
 									<tbody>
 										<tr>
 											<td>주문금액</td>
-											<td>29,800<!-- -->원
+											<td>1,000<!-- -->원
 											</td>
 										</tr>
 										<tr>
@@ -128,7 +128,7 @@ dd {
 											<td>총 결제금액</td>
 											<td><span
 												style="font-size: 10px; color: #888888; margin-right: 3px">국민카드</span><span
-												style="font-size: 20px; color: #AA0000; font-weight: 700">29,800</span><span
+												style="font-size: 20px; color: #AA0000; font-weight: 700">1,000</span><span
 												style="font-size: 15px; color: #AA0000">원</span></td>
 										</tr>
 									</tfoot>

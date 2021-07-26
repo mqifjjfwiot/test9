@@ -155,16 +155,16 @@ public class IndexController {
 		
 		// 네이버일 경우 smtp.naver.com 을 입력합니다.
 		// Google일 경우 smtp.gmail.com 을 입력합니다.
-		String host = "smtp.gmail.com";
+		String host = "smtp.naver.com";
 		
-		final String username = "sjwonsj00";       //구글 아이디를 입력해주세요. @nave.com은 입력하지 마시구요.
-		final String password = "hutwuldjsmlfabfw";   //구글 이메일 비밀번호를 입력해주세요.
+		final String username = "mqifjjfwiot";       //구글 아이디를 입력해주세요. @nave.com은 입력하지 마시구요.
+		final String password = "zmfltm12#$";   //구글 이메일 비밀번호를 입력해주세요.
 		int port=465; //포트번호
 		 
 		// 메일 내용
-		String recipient = "sjwonsj94@gmail.com";    //받는 사람의 메일주소를 입력해주세요.
-		String subject = "메일테스트"; 					  //메일 제목 입력해주세요.
-		String body = username+"님으로 부터 메일을 받았습니다."; //메일 내용 입력해주세요.
+		String recipient = "mqifjjfwiot@naver.com";    //받는 사람의 메일주소를 입력해주세요.
+		String subject = "결제 완료 안내"; 					  //메일 제목 입력해주세요.
+		String body = username+"님의 결제가 완료되었습니다. "+'\n'+"구매 상품 : 사과"+'\n'+"구매 금액 : 1,000원"; //메일 내용 입력해주세요.
 		 
 		Properties props = System.getProperties(); // 정보를 담기 위한 객체 생성
 		 
