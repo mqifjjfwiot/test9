@@ -16,7 +16,8 @@ public class FileUpDownUtils {
 		File file = new File(path + File.separator + fileName);
 		if (!file.exists()) {
 			return fileName;
-		} else {
+		} 
+		else {
 			String ext = fileName.substring(fileName.lastIndexOf(".") + 1).trim();
 			String fileNameExcludeExt = fileName.substring(0, fileName.lastIndexOf("."));
 

@@ -117,47 +117,47 @@ li {
 		<div class="row">
 			<div class="col-md-5">
 				<img id="picture" alt="상품이미지"
-					src="<c:url value='/images/manager1.jpg'/>">
+					src="<c:url value='/images/apple.jpg'/>">
 			</div>
 			<div class="col-md-6">
 				<table>
 					<thead>
 						<tr colspan="2" id="pro" class="space">
-							<td><b>상품 홍보글</b></td>
+							<td><b>상품 정보</b></td>
 						</tr>
 						<tr colspan="2" id="proname" class="space">
-							<th>상품명</th>
+							<th>사과</th>
 					</thead>
 					<tbody>
 						<tr class="space">
 							<td>판매가</td>
-							<td>{판매가}</td>
+							<td>1,000원</td>
 						</tr>
 						<tr class="space">
 							<td>적립금</td>
-							<td>{적립금}</td>
+							<td>0</td>
 						</tr>
 						<tr class="space">
 							<td>원산지</td>
-							<td>{원산지}</td>
+							<td>영주</td>
 						</tr>
 						<tr class="space">
 							<td>제조사/브랜드</td>
-							<td>{제조사/브랜드}</td>
+							<td>영주 농원</td>
 						</tr>
 						<tr class="space">
 							<td>배송비</td>
-							<td>{배송비}</td>
+							<td>0원</td>
 						</tr>
 						<tr class="space">
 							<td>상품 선택</td>
 							<td><fieldset>
 									<select name="speed" id="speed">
 										<option selected="selected">옵션을 선택해주세요.</option>
-										<option>옵션1</option>
-										<option>옵션2</option>
-										<option>옵션3</option>
-										<option>옵션4</option>
+										<option>없음</option>
+										<option>1박스</option>
+										<option>2박스</option>
+										<option>3박스</option>
 									</select></td>
 						</tr>
 						<!-- tr class="space">
@@ -177,7 +177,7 @@ li {
 				<button id="amount+">+</button>
 					
 				</p>
-				<p>금액 : <span id="price">20000</span>원</p>
+				<p>금액 : <span id="price">1,000</span>원</p>
 				<div id="abutton">
 					<button value="장바구니" class="btn btn-default btn-lg"
 						onclick="<c:url value="#"/>">장바구니</button>

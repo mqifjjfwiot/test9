@@ -50,12 +50,12 @@ li {
 									<div style="width: 250px; height: 350px">
 										<img
 											style="width: 230px; height: 230px; margin: 10px; margin-bottom: 5px"
-											alt="상품 이미지" src="<c:url value="/images/manager1.jpg"/>">
+											alt="상품 이미지" src="<c:url value="/images/apple.jpg"/>">
 										<p
-											style="font-size: large; color: black; text-align: center; margin-bottom: 3px">상품명1</p>
-										<p style="color: gray; text-align: center">[상품] 짧은설명</p>
+											style="font-size: large; color: black; text-align: center; margin-bottom: 3px">사과</p>
+										<p style="color: gray; text-align: center">사과입니다</p>
 										<p
-											style="font-family: '맑은 고딕'; color: black; text-align: center;">20,000원</p>
+											style="font-family: '맑은 고딕'; color: black; text-align: center;">1,000원</p>
 									</div>
 								</div>
 							 </a>
@@ -65,12 +65,12 @@ li {
 									<div style="width: 250px; height: 350px">
 										<img
 											style="width: 230px; height: 230px; margin: 10px; margin-bottom: 5px"
-											alt="상품 이미지" src="<c:url value="/images/manager1.jpg"/>">
+											alt="상품 이미지" src="<c:url value="/images/snack.jpg"/>">
 										<p
-											style="font-size: large; color: black; text-align: center; margin-bottom: 3px">상품명2</p>
-										<p style="color: gray; text-align: center">[상품] 짧은설명</p>
+											style="font-size: large; color: black; text-align: center; margin-bottom: 3px">과자</p>
+										<p style="color: gray; text-align: center">과자입니다</p>
 										<p
-											style="font-family: '맑은 고딕'; color: black; text-align: center;">20,000원</p>
+											style="font-family: '맑은 고딕'; color: black; text-align: center;">2,000원</p>
 									</div>
 								</div>
 						</a></li>
