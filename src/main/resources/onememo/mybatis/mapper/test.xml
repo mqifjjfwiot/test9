@@ -108,8 +108,8 @@ ID varchar2(15) NOT NULL,
 	<insert id="itemsInsert" parameterType="Map">
 		<!-- INO ID INAME INAME2 PRICE BRAND CATEGORY INAME3 IMAGE IMAGE2 IPAGE IPAGE2 STOCK HASHTAG DISH -->
 		INSERT INTO ITEMS 
-		VALUES(SEQ_ITEMS.NEXTVAL,#{ID},#{INAME},#{INAME2},#{PRICE},#{BRAND},#{CATEGORY},#{INAME3},null,null,null,null,null,null,null
-		<!-- #{IMAGE},#{IMAGE2},#{IPAGE},#{IPAGE2},#{STOCK},#{HASHTAG},#{DISH}-->)
+		VALUES(SEQ_ITEMS.NEXTVAL,#{ID},#{INAME},#{INAME2},#{PRICE},#{BRAND},#{CATEGORY},#{INAME3},null,null,null,null,null,null,null)
+		<!-- #{IMAGE},#{IMAGE2},#{IPAGE},#{IPAGE2},#{STOCK},#{HASHTAG},#{DISH}-->
 	</insert>
 	
 	

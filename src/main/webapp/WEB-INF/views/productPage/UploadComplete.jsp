@@ -53,6 +53,8 @@
 				<li>파일크기 : ${size}KB</li>
 			</ul>
 		</fieldset>
+		<button onclick="<c:url value='/home.do'/>">메인으로</button>
+		<button onclick="<c:url value='/ProductInser.do'/>">상품 추가등록</button>
 	</div>
 	<!-- 실제 내용 끝 -->
 	<!--  푸터 시작 -->

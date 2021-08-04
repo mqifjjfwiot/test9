@@ -15,16 +15,7 @@
 <!-- 부트스트랩 -->
 <jsp:include page="../templates/Links.jsp" />
 <!-- IE8 에서 HTML5 요소와 미디어 쿼리를 위한 HTML5 shim 와 Respond.js -->
-<!-- WARNING: Respond.js 는 당신이 file:// 을 통해 페이지를 볼 때는 동작하지 않습니다. -->
-<!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
 
-<!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요합니다) -->
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script src="<c:url value="/bootstrap/js/bootstrap.min.js"/>"></script>
 <style>
 table {
 	cellspacing: "1";
@@ -34,8 +25,7 @@ table {
 }
 
 tr {
-	bgcolor : "white";
-	
+	bgcolor: "white";
 }
 
 #insertContainer {
@@ -49,6 +39,40 @@ tr {
 input {
 	font-family: monospace;
 }
+
+.ui-tabs-vertical {
+	width: 55em;
+}
+
+.ui-tabs-vertical .ui-tabs-nav {
+	padding: .2em .1em .2em .2em;
+	float: left;
+	width: 12em;
+}
+
+.ui-tabs-vertical .ui-tabs-nav li {
+	clear: left;
+	width: 100%;
+	border-bottom-width: 1px !important;
+	border-right-width: 0 !important;
+	margin: 0 -1px .2em 0;
+}
+
+.ui-tabs-vertical .ui-tabs-nav li a {
+	display: block;
+}
+
+.ui-tabs-vertical .ui-tabs-nav li.ui-tabs-active {
+	padding-bottom: 0;
+	padding-right: .1em;
+	border-right-width: 1px;
+}
+
+.ui-tabs-vertical .ui-tabs-panel {
+	padding: 1em;
+	float: right;
+	width: 40em;
+}
 </style>
 
 </head>
@@ -61,35 +85,47 @@ input {
 
 	<div class="container" id='insertContainer'>
 		<div class="row">
+			<div class="col-xs-2">
+				<div id="tabs">
+					<ul>
+						<li><a href="#tabs-1">상품 등록</a></li>
+						<li><a href="#tabs-2">상품 수정</a></li>
+						<li><a href="#tabs-3">상품 삭제</a></li>
+					</ul>
+				</div>
+			</div>
 			<div class="col-xs-10">
-				<fieldset>
-					<legend id='p_legend'>상품 등록</legend>
+
+				<div id="tabs-1">
+					<h2>상품 등록</h2>
+
 					<form action="<c:url value='/Item/Upload.do'/>" method="post"
 						enctype="multipart/form-data">
 						<table>
 							<tr>
 								<td>상품명</td>
-								<td><input type="text" name="INAME" minlength="2" maxlength="20"
-									size="17"></td>
+								<td><input type="text" name="INAME" minlength="2"
+									maxlength="20" size="17"></td>
 							</tr>
 							<tr>
 								<td>상품정보(홍보문구)</td>
-								<td><input type="text" name="INAME2" minlength="5" maxlength="50"
-									size="50"></td>
+								<td><input type="text" name="INAME2" minlength="5"
+									maxlength="50" size="50"></td>
 							</tr>
 							<tr>
 								<td>상품정보(추가설명)</td>
-								<td><input type="text" name="INAME3" maxlength="50" size="50"></td>
+								<td><input type="text" name="INAME3" maxlength="50"
+									size="50"></td>
 							</tr>
 							<tr>
 								<td>가격</td>
-								<td><input type="text" name="PRICE" minlength="1" maxlength="20"
-									size="15">(원)</td>
+								<td><input type="text" name="PRICE" minlength="1"
+									maxlength="20" size="15">(원)</td>
 							</tr>
 							<tr>
 								<td>상호명</td>
-								<td><input type="text" name="BRAND" minlength="1" maxlength="20"
-									size="20"></td>
+								<td><input type="text" name="BRAND" minlength="1"
+									maxlength="20" size="20"></td>
 							</tr>
 							<tr>
 								<td>상품 카테고리</td>
@@ -126,14 +162,51 @@ input {
 								<td><input type="file" name="upload" size="30" /></td>
 							</tr>
 							<tr>
-								<td colspan="2"><input type="submit" id="Insert_btn" value="업로드" /></td>
+								<td colspan="2"><input type="submit" id="Insert_btn"
+									value="업로드" /></td>
 							</tr>
 						</table>
 					</form>
-				</fieldset>
+				</div>
+				<div id="tabs-2">
+					<h2>상품 수정</h2>
+					<p>Morbi tincidunt, dui sit amet facilisis feugiat, odio metus
+						gravida ante, ut pharetra massa metus id nunc. Duis scelerisque
+						molestie turpis. Sed fringilla, massa eget luctus malesuada, metus
+						eros molestie lectus, ut tempus eros massa ut dolor. Aenean
+						aliquet fringilla sem. Suspendisse sed ligula in ligula suscipit
+						aliquam. Praesent in eros vestibulum mi adipiscing adipiscing.
+						Morbi facilisis. Curabitur ornare consequat nunc. Aenean vel
+						metus. Ut posuere viverra nulla. Aliquam erat volutpat.
+						Pellentesque convallis. Maecenas feugiat, tellus pellentesque
+						pretium posuere, felis lorem euismod felis, eu ornare leo nisi vel
+						felis. Mauris consectetur tortor et purus.</p>
+				</div>
+				<div id="tabs-3">
+					<h2>상품 삭제</h2>
+					<p>Mauris eleifend est et turpis. Duis id erat. Suspendisse
+						potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque
+						rutrum erat, eu congue orci lorem eget lorem. Vestibulum non ante.
+						Class aptent taciti sociosqu ad litora torquent per conubia
+						nostra, per inceptos himenaeos. Fusce sodales. Quisque eu urna vel
+						enim commodo pellentesque. Praesent eu risus hendrerit ligula
+						tempus pretium. Curabitur lorem enim, pretium nec, feugiat nec,
+						luctus a, lacus.</p>
+					<p>Duis cursus. Maecenas ligula eros, blandit nec, pharetra at,
+						semper at, magna. Nullam ac lacus. Nulla facilisi. Praesent
+						viverra justo vitae neque. Praesent blandit adipiscing velit.
+						Suspendisse potenti. Donec mattis, pede vel pharetra blandit,
+						magna ligula faucibus eros, id euismod lacus dolor eget odio. Nam
+						scelerisque. Donec non libero sed nulla mattis commodo. Ut
+						sagittis. Donec nisi lectus, feugiat porttitor, tempor ac, tempor
+						vitae, pede. Aenean vehicula velit eu tellus interdum rutrum.
+						Maecenas commodo. Pellentesque nec elit. Fusce in lacus. Vivamus a
+						libero vitae lectus hendrerit hendrerit.</p>
+				</div>
 			</div>
 		</div>
 	</div>
+
 	<!-- 실제 내용 끝 -->
 	<!--  푸터 시작 -->
 
@@ -141,28 +214,37 @@ input {
 	<jsp:include page="/WEB-INF/views/templates/mainfooter.jsp" />
 	<!-- 푸터 끝 -->
 	<script>
-	$("#p_category").change(function(){
-		console.log('과정 선택:',$(this).val());
-		//ajax로 요청]
-		$.ajax({
-			url:"<c:url value="/Item/Category.do"/>",
-			data:{p_category:$(this).val()},
-			dataType:'json'
-			}).done(function(data){
-				console.log("서버로부터 받은 데이타:",data);
-				var options="";
-				$.each(data,function(key,value){
-					options+="<option value='"+key+"'>"+value+"</option>";					
-				});
-				$('#sub_category').html(options);
-				
-			}).fail(function(request,error){
-				console.log('상태코드:',request.status);
-				console.log('서버로부터 받은 HTML:',request.responseText);
-				console.log('에러:',error);				
-			});
-	});
+		$(function() {
+			$("#tabs").tabs().addClass("ui-tabs-vertical ui-helper-clearfix");
+			$("#tabs li").removeClass("ui-corner-top").addClass(
+					"ui-corner-left");
+		});
+		$("#p_category").change(
+				function() {
+					console.log('과정 선택:', $(this).val());
+					//ajax로 요청]
+					$.ajax({
+						url : "<c:url value="/Item/Category.do"/>",
+						data : {
+							p_category : $(this).val()
+						},
+						dataType : 'json'
+					}).done(
+							function(data) {
+								console.log("서버로부터 받은 데이타:", data);
+								var options = "";
+								$.each(data, function(key, value) {
+									options += "<option value='"+key+"'>"
+											+ value + "</option>";
+								});
+								$('#sub_category').html(options);
 
+							}).fail(function(request, error) {
+						console.log('상태코드:', request.status);
+						console.log('서버로부터 받은 HTML:', request.responseText);
+						console.log('에러:', error);
+					});
+				});
 	</script>
 </body>
 </html>

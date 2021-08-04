@@ -75,14 +75,7 @@ public class IndexController {
 		return "productPage/ProductList";
 	}
 	
-	//상품 상세 페이지로
-	@RequestMapping("/ProductInfo.do")
-	public String ProductInfo() {
-		return "productPage/ProductInfo";
-	}
-	
-	
-	
+
 	
 	
 	
@@ -117,7 +110,7 @@ public class IndexController {
 		return "customerService/CustomerMain";
 	}
 	//상품 등록 페이지로
-		@RequestMapping("/ProductInser.do")
+		@RequestMapping("/ProductInsert.do")
 		public String ProductInsert() {
 			return "productPage/ProductInsert";
 		}
